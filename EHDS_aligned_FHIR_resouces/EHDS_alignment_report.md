@@ -9,6 +9,7 @@ Alignment baseline used:
 - FHIR Bundle structure and local Composition sections were preserved; missing clinical facts were not invented.
 - CTS terminology enrichment status: enabled.
 - NMPC medication enrichment status: enabled.
+- HAPI FHIR validation status: disabled: run with --validate-hapi to enable public HAPI validation.
 
 ## Diana_Ferreira_bundle.json
 
@@ -60,6 +61,21 @@ Medication catalogue enrichment:
 - Added NMPC candidate extension to MedicationStatement/6f276609-e29e-44e6-8679-1546df277b9e (2017-05-07): 24 candidates found from http://www.whocc.no/atc|J01CR02; no asserted NMPC coding added.
 - Added NMPC candidate extension to MedicationStatement/f7b6ddeb-f878-4856-b5d8-43c1aa1f5b2b (2015-01-02): 2 candidates found from http://www.whocc.no/atc|R03AL02; no asserted NMPC coding added.
 
+Gazelle validator-facing outputs:
+
+- `EHDS_aligned_FHIR_resouces/gazelle/Diana_Ferreira_bundle_ips_gazelle.json`
+- Created IPS Gazelle validator-facing copy.
+- Removed local CTS/NMPC audit and candidate extensions.
+- Removed NMPC HPRA/PCRS codings and NMPC-added Irish Drug Module codings that Gazelle validates as SNOMED International.
+- Changed Provenance/6c939b65-8b3e-4782-afc5-59de9e4fa062 activity display from 'Update' to 'revise'.
+- `EHDS_aligned_FHIR_resouces/gazelle/Diana_Ferreira_bundle_eps_gazelle.json`
+- Created EU-EPS Gazelle validator-facing copy.
+- Removed local CTS/NMPC audit and candidate extensions.
+- Removed NMPC HPRA/PCRS codings and NMPC-added Irish Drug Module codings that Gazelle validates as SNOMED International.
+- Changed Provenance/6c939b65-8b3e-4782-afc5-59de9e4fa062 activity display from 'Update' to 'revise'.
+- Removed optional sections from EU-EPS validator copy: History of Past Illness, History of Immunizations, Social History, History of Pregnancies, Advance Directives.
+- Pruned unreferenced resources after EU-EPS section filtering so the Bundle only contains the Composition graph submitted for validation.
+
 ## Patrick_Murphy_bundle.json
 
 - Aligned output: `EHDS_aligned_FHIR_resouces/Patrick_Murphy_bundle_ehds_aligned.json`
@@ -99,6 +115,20 @@ Medication catalogue enrichment:
 
 - Added NMPC candidate extension to MedicationStatement/aacdd6bd-98e2-4ad9-9b90-13d95206ab4a (2024-01-01): 2 candidates found from http://www.whocc.no/atc|A10AE04; no asserted NMPC coding added.
 
+Gazelle validator-facing outputs:
+
+- `EHDS_aligned_FHIR_resouces/gazelle/Patrick_Murphy_bundle_ips_gazelle.json`
+- Created IPS Gazelle validator-facing copy.
+- Removed local CTS/NMPC audit and candidate extensions.
+- Removed NMPC HPRA/PCRS codings and NMPC-added Irish Drug Module codings that Gazelle validates as SNOMED International.
+- Changed Provenance/0c347627-a407-4af6-a335-5263b248aabb activity display from 'Update' to 'revise'.
+- `EHDS_aligned_FHIR_resouces/gazelle/Patrick_Murphy_bundle_eps_gazelle.json`
+- Created EU-EPS Gazelle validator-facing copy.
+- Removed local CTS/NMPC audit and candidate extensions.
+- Removed NMPC HPRA/PCRS codings and NMPC-added Irish Drug Module codings that Gazelle validates as SNOMED International.
+- Changed Provenance/0c347627-a407-4af6-a335-5263b248aabb activity display from 'Update' to 'revise'.
+- No EU-EPS-specific optional sections required filtering.
+
 ## Assumptions and Unresolved Items
 
 - Empty sections use `emptyReason` code `unavailable` because the source bundles did not contain those clinical facts.
@@ -106,5 +136,8 @@ Medication catalogue enrichment:
 - CTS-sourced coding changes are conservative: existing codes may receive missing display text from `$lookup`; text-only concepts are coded only when `$expand` returns one exact unambiguous display match.
 - NMPC-sourced medication changes are conservative: an asserted NMPC coding is added only for a single unambiguous product match; multiple matches are recorded as candidate extensions for human review.
 - GTIN mappings are not asserted by this script because the NMPC testing reference notes GTIN is file-only or sparsely available via API.
+- HAPI public server validation is useful for base FHIR R4 structure checks, but it may not validate EHDS/HL7 Europe EPS profiles unless the relevant ImplementationGuide packages are available on that server.
+- IPS Gazelle output is a validator-facing copy. It removes local enrichment trace extensions and candidate data that are useful internally but not known to the selected Gazelle profile.
+- Do not send real patient-identifiable data to public validation servers.
 - Full conformance still requires validation against the selected EHDS/IPS FHIR profiles and terminology bindings.
 - The live HL7 EU build may change over time; record the guide version used before formal sign-off.

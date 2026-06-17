@@ -21,8 +21,10 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE_DIR = ROOT / "Test_documents"
 OUTPUT_DIR = ROOT / "EHDS_aligned_FHIR_resouces"
 REPORT_PATH = OUTPUT_DIR / "EHDS_alignment_report.md"
+GAZELLE_OUTPUT_DIR = OUTPUT_DIR / "gazelle"
 DEFAULT_CTS_ENV_PATH = Path(r"C:\Users\duncanfalconer\VS_Code_Projects\CTS_testing\.env")
 DEFAULT_NMPC_ENV_PATH = Path(r"C:\Users\duncanfalconer\VS_Code_Projects\NMPC_Testing\.env")
+DEFAULT_HAPI_BASE_URL = "http://hapi.fhir.org/baseR4"
 
 
 SYSTEM_VALUESETS = {
@@ -64,6 +66,28 @@ NMPC_EXTERNAL_SYSTEMS = {
     "hpra": "https://nmpc.hse.ie/HPRA",
     "pcrs": "https://nmpc.hse.ie/PCRS",
     "atc": "http://www.whocc.no/atc",
+}
+
+
+VALIDATION_SEVERITIES = ("fatal", "error", "warning", "information")
+LOCAL_ENRICHMENT_EXTENSION_PREFIXES = (
+    "https://datastandards.hse.ie/fhir/StructureDefinition/cts-",
+    "https://nmpc.hse.ie/fhir/StructureDefinition/nmpc-",
+)
+NMPC_EXTERNAL_CODING_SYSTEMS = {
+    "https://nmpc.hse.ie/HPRA",
+    "https://nmpc.hse.ie/PCRS",
+}
+
+EPS_VALIDATOR_EXCLUDED_SECTION_CODES = {
+    # These optional sections are useful in the internal aligned bundle, but the
+    # current EU-EPS alpha validator either does not slice them cleanly or expects
+    # a different clinical model than the source bundle provides.
+    "11348-0",  # History of Past Illness
+    "11369-6",  # History of Immunizations
+    "29762-2",  # Social History
+    "10162-6",  # History of Pregnancies
+    "42348-3",  # Advance Directives
 }
 
 
@@ -494,6 +518,93 @@ class NMPCClient:
         return matches
 
 
+class HAPIFHIRValidator:
+    """Validate FHIR R4 resources through a HAPI FHIR $validate endpoint."""
+
+    def __init__(self, base_url: str = DEFAULT_HAPI_BASE_URL) -> None:
+        self.base_url = base_url.rstrip("/")
+        self.timeout = int(os.getenv("HAPI_VALIDATE_TIMEOUT_SECONDS", "30"))
+
+    def validate_resource(self, resource: dict[str, Any]) -> dict[str, Any]:
+        resource_type = resource.get("resourceType")
+        if not resource_type:
+            return {
+                "status": "skipped",
+                "resource_type": "Unknown",
+                "resource_id": resource.get("id"),
+                "summary": {"fatal": 0, "error": 1, "warning": 0, "information": 0},
+                "issues": [
+                    {
+                        "severity": "error",
+                        "code": "invalid",
+                        "details": "Resource has no resourceType.",
+                    }
+                ],
+            }
+
+        url = f"{self.base_url}/{resource_type}/$validate"
+        body = json.dumps(resource, ensure_ascii=False).encode("utf-8")
+        http_request = request.Request(
+            url,
+            data=body,
+            method="POST",
+            headers={
+                "Content-Type": "application/fhir+json",
+                "Accept": "application/fhir+json",
+            },
+        )
+
+        try:
+            with request.urlopen(http_request, timeout=self.timeout) as response:
+                response_body = response.read().decode("utf-8")
+            outcome = json.loads(response_body) if response_body else {}
+            issues = operation_outcome_issues(outcome)
+            return {
+                "status": "validated",
+                "resource_type": resource_type,
+                "resource_id": resource.get("id"),
+                "summary": issue_summary(issues),
+                "issues": issues,
+            }
+        except error.HTTPError as exc:
+            if exc.code == 413:
+                return {
+                    "status": "too-large",
+                    "resource_type": resource_type,
+                    "resource_id": resource.get("id"),
+                    "summary": issue_summary([]),
+                    "issues": [],
+                    "message": "Request Entity Too Large",
+                }
+            return {
+                "status": "failed",
+                "resource_type": resource_type,
+                "resource_id": resource.get("id"),
+                "summary": {"fatal": 0, "error": 1, "warning": 0, "information": 0},
+                "issues": [
+                    {
+                        "severity": "error",
+                        "code": "exception",
+                        "details": f"HTTP {exc.code}: {exc.reason}",
+                    }
+                ],
+            }
+        except Exception as exc:
+            return {
+                "status": "failed",
+                "resource_type": resource_type,
+                "resource_id": resource.get("id"),
+                "summary": {"fatal": 0, "error": 1, "warning": 0, "information": 0},
+                "issues": [
+                    {
+                        "severity": "error",
+                        "code": "exception",
+                        "details": str(exc)[:300],
+                    }
+                ],
+            }
+
+
 def parameters_to_dict(parameters_resource: dict[str, Any] | None) -> dict[str, Any]:
     values: dict[str, Any] = {}
     if not parameters_resource:
@@ -536,6 +647,297 @@ def parse_translate_matches(parameters_resource: dict[str, Any]) -> list[dict[st
         if match.get("code"):
             matches.append(match)
     return matches
+
+
+def operation_outcome_issues(outcome: dict[str, Any]) -> list[dict[str, str]]:
+    issues: list[dict[str, str]] = []
+    for issue in outcome.get("issue", []):
+        details = issue.get("details", {}).get("text")
+        diagnostics = issue.get("diagnostics")
+        expression = ", ".join(issue.get("expression", []))
+        location = ", ".join(issue.get("location", []))
+        issues.append(
+            {
+                "severity": str(issue.get("severity", "information")),
+                "code": str(issue.get("code", "")),
+                "details": str(details or diagnostics or ""),
+                "expression": expression or location,
+            }
+        )
+    return issues
+
+
+def issue_summary(issues: list[dict[str, str]]) -> dict[str, int]:
+    summary = {severity: 0 for severity in VALIDATION_SEVERITIES}
+    for issue in issues:
+        severity = issue.get("severity", "information")
+        if severity in summary:
+            summary[severity] += 1
+        else:
+            summary["information"] += 1
+    return summary
+
+
+def summarize_validation_results(results: list[dict[str, Any]]) -> dict[str, int]:
+    summary = {severity: 0 for severity in VALIDATION_SEVERITIES}
+    for result in results:
+        for severity in VALIDATION_SEVERITIES:
+            summary[severity] += result.get("summary", {}).get(severity, 0)
+    return summary
+
+
+def validate_bundle_with_hapi(
+    bundle: dict[str, Any], validator: HAPIFHIRValidator
+) -> dict[str, Any]:
+    bundle_result = validator.validate_resource(bundle)
+    results = [bundle_result]
+    fallback_used = False
+
+    if bundle_result["status"] == "too-large":
+        fallback_used = True
+        results = []
+        for entry in bundle.get("entry", []):
+            resource = entry.get("resource")
+            if isinstance(resource, dict):
+                results.append(validator.validate_resource(resource))
+
+    return {
+        "status": "resource-fallback" if fallback_used else bundle_result["status"],
+        "bundle_result": bundle_result,
+        "resource_results": results if fallback_used else [],
+        "summary": summarize_validation_results(results),
+    }
+
+
+def is_local_enrichment_extension(extension: dict[str, Any]) -> bool:
+    url = extension.get("url", "")
+    return any(url.startswith(prefix) for prefix in LOCAL_ENRICHMENT_EXTENSION_PREFIXES)
+
+
+def has_local_enrichment_extension(element: dict[str, Any]) -> bool:
+    return any(
+        isinstance(extension, dict) and is_local_enrichment_extension(extension)
+        for extension in element.get("extension", [])
+    )
+
+
+def has_enrichment_extension_with_prefix(element: dict[str, Any], prefix: str) -> bool:
+    return any(
+        isinstance(extension, dict)
+        and str(extension.get("url", "")).startswith(prefix)
+        for extension in element.get("extension", [])
+    )
+
+
+def strip_local_extensions(value: Any) -> None:
+    if isinstance(value, dict):
+        extensions = value.get("extension")
+        if isinstance(extensions, list):
+            value["extension"] = [
+                extension
+                for extension in extensions
+                if not (
+                    isinstance(extension, dict)
+                    and is_local_enrichment_extension(extension)
+                )
+            ]
+            if not value["extension"]:
+                value.pop("extension", None)
+
+        for child in list(value.values()):
+            strip_local_extensions(child)
+    elif isinstance(value, list):
+        for item in value:
+            strip_local_extensions(item)
+
+
+def strip_validator_unfriendly_codings(value: Any) -> None:
+    if isinstance(value, dict):
+        codings = value.get("coding")
+        if isinstance(codings, list):
+            kept_codings = []
+            for coding in codings:
+                if not isinstance(coding, dict):
+                    continue
+
+                if coding.get("system") in NMPC_EXTERNAL_CODING_SYSTEMS:
+                    continue
+
+                if (
+                    coding.get("system") == NMPC_SNOMED_SYSTEM
+                    and has_enrichment_extension_with_prefix(
+                        coding, "https://nmpc.hse.ie/fhir/StructureDefinition/nmpc-"
+                    )
+                ):
+                    continue
+
+                kept_codings.append(coding)
+
+            if kept_codings:
+                value["coding"] = kept_codings
+            else:
+                value.pop("coding", None)
+
+        for child in list(value.values()):
+            strip_validator_unfriendly_codings(child)
+    elif isinstance(value, list):
+        for item in value:
+            strip_validator_unfriendly_codings(item)
+
+
+def fix_common_validator_display_issues(bundle: dict[str, Any]) -> list[str]:
+    changes: list[str] = []
+    for resource in bundle_resources(bundle):
+        if resource.get("resourceType") != "Provenance":
+            continue
+
+        activity = resource.get("activity", {})
+        for coding in activity.get("coding", []):
+            if (
+                coding.get("system")
+                == "http://terminology.hl7.org/CodeSystem/v3-DataOperation"
+                and coding.get("code") == "UPDATE"
+                and coding.get("display") == "Update"
+            ):
+                coding["display"] = "revise"
+                changes.append(
+                    f"Changed Provenance/{resource.get('id')} activity display from 'Update' to 'revise'."
+                )
+    return changes
+
+
+def create_ips_gazelle_bundle(bundle: dict[str, Any]) -> tuple[dict[str, Any], list[str]]:
+    gazelle_bundle = copy.deepcopy(bundle)
+    changes = [
+        "Created IPS Gazelle validator-facing copy.",
+        "Removed local CTS/NMPC audit and candidate extensions.",
+        "Removed NMPC HPRA/PCRS codings and NMPC-added Irish Drug Module codings that Gazelle validates as SNOMED International.",
+    ]
+
+    strip_validator_unfriendly_codings(gazelle_bundle)
+    strip_local_extensions(gazelle_bundle)
+    changes.extend(fix_common_validator_display_issues(gazelle_bundle))
+
+    return gazelle_bundle, changes
+
+
+def reference_value(reference: Any) -> str | None:
+    if isinstance(reference, dict):
+        value = reference.get("reference")
+        return value if isinstance(value, str) else None
+    return None
+
+
+def collect_references(value: Any) -> set[str]:
+    references: set[str] = set()
+    if isinstance(value, dict):
+        if set(value.keys()) <= {"reference", "type", "identifier", "display"}:
+            reference = reference_value(value)
+            if reference:
+                references.add(reference)
+        for child in value.values():
+            references.update(collect_references(child))
+    elif isinstance(value, list):
+        for item in value:
+            references.update(collect_references(item))
+    return references
+
+
+def prune_provenance_targets(bundle: dict[str, Any], kept_full_urls: set[str]) -> None:
+    for resource in bundle_resources(bundle):
+        if resource.get("resourceType") != "Provenance":
+            continue
+
+        targets = resource.get("target")
+        if not isinstance(targets, list):
+            continue
+
+        resource["target"] = [
+            target
+            for target in targets
+            if reference_value(target) in kept_full_urls
+            or not str(reference_value(target) or "").startswith("urn:uuid:")
+        ]
+
+
+def prune_bundle_to_composition_graph(bundle: dict[str, Any]) -> None:
+    entries = bundle.get("entry")
+    if not isinstance(entries, list):
+        return
+
+    composition_entry = next(
+        (
+            entry
+            for entry in entries
+            if isinstance(entry.get("resource"), dict)
+            and entry["resource"].get("resourceType") == "Composition"
+        ),
+        None,
+    )
+    if not composition_entry:
+        return
+
+    composition = composition_entry["resource"]
+    kept_full_urls = {composition_entry.get("fullUrl")}
+    kept_full_urls.update(collect_references(composition))
+
+    # Keep provenance but trim targets to the resources still present.
+    for entry in entries:
+        resource = entry.get("resource")
+        if isinstance(resource, dict) and resource.get("resourceType") == "Provenance":
+            kept_full_urls.add(entry.get("fullUrl"))
+
+    patient_ref = reference_value(composition.get("subject"))
+    if patient_ref:
+        kept_full_urls.add(patient_ref)
+    for author in composition.get("author", []):
+        reference = reference_value(author)
+        if reference:
+            kept_full_urls.add(reference)
+    custodian_ref = reference_value(composition.get("custodian"))
+    if custodian_ref:
+        kept_full_urls.add(custodian_ref)
+
+    kept_full_urls = {value for value in kept_full_urls if isinstance(value, str)}
+    prune_provenance_targets(bundle, kept_full_urls)
+    bundle["entry"] = [
+        entry for entry in entries if entry.get("fullUrl") in kept_full_urls
+    ]
+
+
+def create_eps_gazelle_bundle(bundle: dict[str, Any]) -> tuple[dict[str, Any], list[str]]:
+    gazelle_bundle, changes = create_ips_gazelle_bundle(bundle)
+    changes[0] = "Created EU-EPS Gazelle validator-facing copy."
+
+    composition = find_composition(gazelle_bundle)
+    removed_sections: list[str] = []
+    if composition:
+        sections = composition.get("section", [])
+        if isinstance(sections, list):
+            kept_sections = []
+            for section in sections:
+                code = section_code(section)
+                if code in EPS_VALIDATOR_EXCLUDED_SECTION_CODES:
+                    removed_sections.append(section_title(section))
+                    continue
+                kept_sections.append(section)
+            composition["section"] = kept_sections
+
+    prune_bundle_to_composition_graph(gazelle_bundle)
+
+    if removed_sections:
+        changes.append(
+            "Removed optional sections from EU-EPS validator copy: "
+            + ", ".join(removed_sections)
+            + "."
+        )
+        changes.append(
+            "Pruned unreferenced resources after EU-EPS section filtering so the Bundle only contains the Composition graph submitted for validation."
+        )
+    else:
+        changes.append("No EU-EPS-specific optional sections required filtering.")
+
+    return gazelle_bundle, changes
 
 
 def normalize_term(value: str) -> str:
@@ -1087,8 +1489,11 @@ def report_for(
     terminology_stats_by_file: dict[str, dict[str, int]],
     medication_changes_by_file: dict[str, list[str]],
     medication_stats_by_file: dict[str, dict[str, int]],
+    validation_results_by_file: dict[str, dict[str, Any]],
+    gazelle_outputs_by_file: dict[str, list[str]],
     cts_status: str,
     nmpc_status: str,
+    validation_status: str,
 ) -> str:
     lines = [
         "# EHDS Patient Summary Alignment Report",
@@ -1102,6 +1507,7 @@ def report_for(
         "- FHIR Bundle structure and local Composition sections were preserved; missing clinical facts were not invented.",
         f"- CTS terminology enrichment status: {cts_status}.",
         f"- NMPC medication enrichment status: {nmpc_status}.",
+        f"- HAPI FHIR validation status: {validation_status}.",
         "",
     ]
 
@@ -1168,6 +1574,42 @@ def report_for(
             lines.append(f"- {change}")
         lines.append("")
 
+        validation_result = validation_results_by_file.get(result["source"])
+        if validation_result:
+            summary = validation_result["summary"]
+            lines.extend(
+                [
+                    "HAPI FHIR validation:",
+                    "",
+                    f"- Mode/status: {validation_result['status']}",
+                    f"- Fatal: {summary.get('fatal', 0)}",
+                    f"- Errors: {summary.get('error', 0)}",
+                    f"- Warnings: {summary.get('warning', 0)}",
+                    f"- Information: {summary.get('information', 0)}",
+                    "",
+                ]
+            )
+            if validation_result["status"] == "resource-fallback":
+                lines.append(
+                    "- Bundle-level validation returned 413 Request Entity Too Large, so each contained resource was validated individually."
+                )
+                lines.append("")
+
+            issue_lines = validation_issue_lines(validation_result)
+            if issue_lines:
+                lines.append("Validation issues:")
+                lines.append("")
+                lines.extend(issue_lines)
+                lines.append("")
+
+        gazelle_outputs = gazelle_outputs_by_file.get(result["source"], [])
+        if gazelle_outputs:
+            lines.append("Gazelle validator-facing outputs:")
+            lines.append("")
+            for item in gazelle_outputs:
+                lines.append(f"- {item}")
+            lines.append("")
+
     lines.extend(
         [
             "## Assumptions and Unresolved Items",
@@ -1177,6 +1619,9 @@ def report_for(
             "- CTS-sourced coding changes are conservative: existing codes may receive missing display text from `$lookup`; text-only concepts are coded only when `$expand` returns one exact unambiguous display match.",
             "- NMPC-sourced medication changes are conservative: an asserted NMPC coding is added only for a single unambiguous product match; multiple matches are recorded as candidate extensions for human review.",
             "- GTIN mappings are not asserted by this script because the NMPC testing reference notes GTIN is file-only or sparsely available via API.",
+            "- HAPI public server validation is useful for base FHIR R4 structure checks, but it may not validate EHDS/HL7 Europe EPS profiles unless the relevant ImplementationGuide packages are available on that server.",
+            "- IPS Gazelle output is a validator-facing copy. It removes local enrichment trace extensions and candidate data that are useful internally but not known to the selected Gazelle profile.",
+            "- Do not send real patient-identifiable data to public validation servers.",
             "- Full conformance still requires validation against the selected EHDS/IPS FHIR profiles and terminology bindings.",
             "- The live HL7 EU build may change over time; record the guide version used before formal sign-off.",
             "",
@@ -1184,6 +1629,31 @@ def report_for(
     )
 
     return "\n".join(lines)
+
+
+def validation_issue_lines(validation_result: dict[str, Any], limit: int = 20) -> list[str]:
+    if validation_result["status"] == "resource-fallback":
+        raw_results = validation_result.get("resource_results", [])
+    else:
+        raw_results = [validation_result.get("bundle_result", {})]
+
+    lines: list[str] = []
+    for result in raw_results:
+        resource_label = result.get("resource_type", "Resource")
+        if result.get("resource_id"):
+            resource_label += f"/{result['resource_id']}"
+
+        for issue in result.get("issues", []):
+            severity = issue.get("severity", "information")
+            details = issue.get("details") or issue.get("code") or "No details returned"
+            expression = issue.get("expression")
+            suffix = f" ({expression})" if expression else ""
+            lines.append(f"- {resource_label}: {severity} - {details}{suffix}")
+            if len(lines) >= limit:
+                lines.append(f"- Additional validation issues omitted after first {limit}.")
+                return lines
+
+    return lines
 
 
 def parse_args() -> argparse.Namespace:
@@ -1212,6 +1682,26 @@ def parse_args() -> argparse.Namespace:
         default=DEFAULT_NMPC_ENV_PATH,
         help="Path to an NMPC .env file containing NMPC_API_BASE_URL, NMPC_AUTH_URL, NMPC_CLIENT_ID, and NMPC_CLIENT_SECRET.",
     )
+    parser.add_argument(
+        "--validate-hapi",
+        action="store_true",
+        help="Validate aligned bundles with the public HAPI FHIR R4 $validate endpoint. Falls back to resource-by-resource validation on HTTP 413.",
+    )
+    parser.add_argument(
+        "--hapi-base-url",
+        default=DEFAULT_HAPI_BASE_URL,
+        help="Base URL for the HAPI FHIR R4 server.",
+    )
+    parser.add_argument(
+        "--target-ips-gazelle",
+        action="store_true",
+        help="Create an IPS Gazelle validator-facing bundle copy with local enrichment artifacts stripped.",
+    )
+    parser.add_argument(
+        "--target-eps-gazelle",
+        action="store_true",
+        help="Create a EU-EPS Gazelle validator-facing bundle copy with EPS-alpha-problematic optional sections filtered.",
+    )
     return parser.parse_args()
 
 
@@ -1232,6 +1722,13 @@ def main() -> None:
         nmpc_client.enabled = False
         nmpc_client.status = "disabled: run with --use-nmpc to enable live medication catalogue enrichment"
 
+    hapi_validator = HAPIFHIRValidator(args.hapi_base_url)
+    validation_status = (
+        f"enabled: {args.hapi_base_url}"
+        if args.validate_hapi
+        else "disabled: run with --validate-hapi to enable public HAPI validation"
+    )
+
     OUTPUT_DIR.mkdir(exist_ok=True)
     results: list[dict[str, Any]] = []
     changes_by_file: dict[str, list[str]] = {}
@@ -1239,6 +1736,8 @@ def main() -> None:
     terminology_stats_by_file: dict[str, dict[str, int]] = {}
     medication_changes_by_file: dict[str, list[str]] = {}
     medication_stats_by_file: dict[str, dict[str, int]] = {}
+    validation_results_by_file: dict[str, dict[str, Any]] = {}
+    gazelle_outputs_by_file: dict[str, list[str]] = {}
 
     for source_path in sorted(SOURCE_DIR.glob("*.json")):
         bundle = load_bundle(source_path)
@@ -1253,6 +1752,33 @@ def main() -> None:
         output_path = OUTPUT_DIR / f"{source_path.stem}_ehds_aligned.json"
 
         write_bundle(output_path, aligned)
+        gazelle_outputs_by_file[source_path.name] = []
+        if args.target_ips_gazelle:
+            GAZELLE_OUTPUT_DIR.mkdir(exist_ok=True)
+            gazelle_bundle, gazelle_changes = create_ips_gazelle_bundle(aligned)
+            gazelle_path = (
+                GAZELLE_OUTPUT_DIR / f"{source_path.stem}_ips_gazelle.json"
+            )
+            write_bundle(gazelle_path, gazelle_bundle)
+            gazelle_outputs_by_file[source_path.name].append(
+                f"`EHDS_aligned_FHIR_resouces/gazelle/{gazelle_path.name}`"
+            )
+            gazelle_outputs_by_file[source_path.name].extend(gazelle_changes)
+        if args.target_eps_gazelle:
+            GAZELLE_OUTPUT_DIR.mkdir(exist_ok=True)
+            gazelle_bundle, gazelle_changes = create_eps_gazelle_bundle(aligned)
+            gazelle_path = (
+                GAZELLE_OUTPUT_DIR / f"{source_path.stem}_eps_gazelle.json"
+            )
+            write_bundle(gazelle_path, gazelle_bundle)
+            gazelle_outputs_by_file[source_path.name].append(
+                f"`EHDS_aligned_FHIR_resouces/gazelle/{gazelle_path.name}`"
+            )
+            gazelle_outputs_by_file[source_path.name].extend(gazelle_changes)
+        if args.validate_hapi:
+            validation_results_by_file[source_path.name] = validate_bundle_with_hapi(
+                aligned, hapi_validator
+            )
         results.append(analysis)
         changes_by_file[source_path.name] = changes
         terminology_changes_by_file[source_path.name] = terminology_changes
@@ -1268,8 +1794,11 @@ def main() -> None:
             terminology_stats_by_file,
             medication_changes_by_file,
             medication_stats_by_file,
+            validation_results_by_file,
+            gazelle_outputs_by_file,
             terminology_client.status,
             nmpc_client.status,
+            validation_status,
         ),
         encoding="utf-8",
     )

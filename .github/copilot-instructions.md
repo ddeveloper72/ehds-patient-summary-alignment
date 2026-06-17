@@ -21,7 +21,9 @@ Use these external references when checking alignment:
 - XT-EHR Patient Summary overview: https://www.xt-ehr.eu/fhir/models/1.0.0/en/overview-patientsummary.html
 - HL7 Europe implementation guides: https://confluence.hl7.org/spaces/HEU/pages/358255737/Implementation+Guides
 - HL7 EU ePrescription / Patient Summary build: https://build.fhir.org/ig/hl7-eu/eps/
+- HL7 Europe EPS / XT-EHR model map: https://hl7.eu/fhir/eps/xtehr/modelmap.html
 - ART-DECOR eHDSI Patient Summary template: https://art-decor.ehdsi.eu/publication/epsos-html-20240422T073854/tmp-1.3.6.1.4.1.12559.11.10.1.3.1.1.3-2024-04-19T100332.html
+- EHDS Gazelle EVS validator UI: https://ehds.gazelle-platform.net/evs/
 
 Use this local project as the reference implementation for Irish HSE Central Terminology Service (CTS) access:
 
@@ -54,8 +56,10 @@ Other sample bundles may also be present in the repository root or in `Test_docu
 5. Create an amended copy of the bundle in `EHDS_aligned_FHIR_resouces/`.
 6. Where CTS credentials are available, use the Irish HSE CTS to complete missing semantic coding metadata such as code system authority, code display, and safe terminology matches.
 7. Where NMPC credentials are available, use the Irish NMPC API to enrich medication coding and identify Irish catalogue product candidates.
-8. Preserve the original clinical meaning wherever possible.
-9. Keep a clear note of changes made and any assumptions used to complete missing data.
+8. Where validation is requested, use FHIR R4 `$validate` endpoints such as HAPI FHIR for base structural checks and record any OperationOutcome issues.
+9. Where EHDS/IPS profile validation is requested, prefer Gazelle EVS or its underlying validation web services. Treat EVS REST endpoints as lightweight and instance-specific; the stable automation path is the SOAP/WSDL validation service operations such as `validateDocument`, `validateBase64Document`, `getListOfValidators`, and `about`.
+10. Preserve the original clinical meaning wherever possible.
+11. Keep a clear note of changes made and any assumptions used to complete missing data.
 
 ## Repository Layout
 
@@ -81,3 +85,7 @@ EHDS_PS_Alignment/
 - Terminology enrichment must be conservative and traceable. Prefer exact `CodeSystem/$lookup` for known codes and only add new codings from text when CTS returns one exact, unambiguous match.
 - Keep NMPC credentials in local environment variables or local `.env` files only. Do not commit credentials, access tokens, downloaded catalogue files, or exported terminology/product datasets.
 - NMPC medication enrichment must be conservative and traceable. Add an asserted NMPC coding only when a single unambiguous product match is found; record multiple possible matches as candidates for human review.
+- Public HAPI FHIR validation may return `413 Request Entity Too Large` for full document Bundles. If that happens, fall back to validating each contained resource individually and document that bundle-level validation was not completed.
+- Do not send real patient-identifiable data to public validation servers. Use public HAPI only for synthetic or appropriately de-identified test bundles.
+- Keep Gazelle credentials in local environment variables or local `.env` files only. Do not commit API keys, access tokens, downloaded reports, or validation payloads that contain real patient-identifiable data.
+- For Gazelle validator-facing exports, strip local CTS/NMPC audit extensions and non-profile code-system artefacts from the submitted copy only. Do not remove useful traceability from the internally enriched aligned bundle.

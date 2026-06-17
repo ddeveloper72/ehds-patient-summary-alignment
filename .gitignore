@@ -4,3 +4,5 @@
 # Ignore Python cache files
 __pycache__/
 
+.env
+EHDS_aligned_FHIR_resouces.zip
