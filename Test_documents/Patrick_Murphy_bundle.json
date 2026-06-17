@@ -1,0 +1,472 @@
+{
+  "resourceType": "Bundle",
+  "id": "ips-e9dfce40-dff3-4712-b097-cec8df8926ea",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/ips/StructureDefinition/Bundle-uv-ips|2.0.0"
+    ]
+  },
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:08ac2491-c559-4062-8cf4-ab694d6a9a60"
+  },
+  "type": "document",
+  "timestamp": "2025-11-02T23:08:13.790623Z",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:893c6961-eb7c-4480-aa89-312c4a56789c",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "acf3e3d8-7956-4eb1-a00f-e066ddf3f49c",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Composition-uv-ips"
+          ]
+        },
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "60591-5",
+              "display": "Patient summary Document"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:9bbeb92c-d7d2-4c22-a6f5-c126852ffe90"
+        },
+        "date": "2025-11-02T23:08:13.789616Z",
+        "author": [
+          {
+            "reference": "urn:uuid:b5d69749-bc7a-4ca3-8d06-7bd20a15bed4"
+          }
+        ],
+        "title": "Patient Summary",
+        "custodian": {
+          "reference": "urn:uuid:80ad3e93-312f-4a14-a8b6-5b4041885f83"
+        },
+        "section": [
+          {
+            "title": "Allergies and Intolerances",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48765-2",
+                  "display": "Allergies and adverse reactions Document"
+                }
+              ]
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>\n                            Propensity to adverse reactions to Sitagliptin, manifested as Nausea,\n                            onset 03-Oct-1994, moderate to severe, low risk, confirmed.\n                        </p>\n                        <p>\n                            Propensity to adverse reactions to Latex, manifested as Urticaria, onset\n                            01-Jan-1990, moderate to severe, low risk, confirmed.\n                        </p>\n                        <table>\n                            <thead>\n                                <tr>\n                                    <th>Reaction Type</th>\n                                    <th>Clinical Manifestation</th>\n                                    <th>Agent</th>\n                                    <th>Onset Date</th>\n                                    <th>Severity</th>\n                                    <th>Criticality</th>\n                                    <th>Status</th>\n                                    <th>Certainty</th>\n                                    <th>Description</th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr>\n                                    <td>\n                                        <span>Propensity to\n                                            adverse reactions , Sitagliptin</span>\n                                    </td>\n                                    <td>\n                                        <span>\n                                            Nausea</span>\n                                    </td>\n                                    <td>\n                                        <span>Sitagliptin</span>\n                                        <br></br>\n                                    </td>\n                                    <td>03-Oct-1994</td>\n                                    <td>\n                                        <span>Moderate\n                                            to severe</span>\n                                        <br></br>\n                                    </td>\n                                    <td>\n                                        <span>low\n                                            risk</span>\n                                        <br></br>\n                                    </td>\n                                    <td>\n                                        <span>Status</span>\n                                        <br></br>\n                                    </td>\n                                    <td>\n                                        <span>Confirmed</span>\n                                        <br></br>\n                                    </td>\n                                    <td>\n                                        <span>Finding\n                                            reported by\n                                            subject or history provider</span>\n                                        <br></br>\n                                    </td>\n                                </tr>\n                                <tr>\n                                    <td>\n                                        <span>Propensity to\n                                            adverse\n                                            reactions , Latex</span>\n                                    </td>\n                                    <td>\n                                        <span>\n                                            Urticaria</span>\n                                    </td>\n                                    <td>\n                                        <span>Latex</span>\n                                    </td>\n                                    <td>\n                                        <span>01-Jan-1990</span>\n                                    </td>\n                                    <td>\n                                        <span>Moderate\n                                            to severe</span>\n                                    </td>\n                                    <td>\n                                        <span>Low\n                                            risk</span>\n                                    </td>\n                                    <td>\n                                        <span>Active</span>\n                                    </td>\n                                    <td>\n                                        <span>Confirmed</span>\n                                    </td>\n                                    <td>\n                                        <span>Finding\n                                            reported by subject or history provider</span>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:d14ca9b2-ca6b-4018-ba3d-1b6ea8b6cb8f"
+              },
+              {
+                "reference": "urn:uuid:f637a94f-aad3-49e9-b656-27870d1822e8"
+              }
+            ]
+          },
+          {
+            "title": "Problem List",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "11450-4",
+                  "display": "Problem list - Reported"
+                }
+              ]
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>\n                            Type 2 diabetes mellitus, Disease, onset 18-Jun-2009\n                        </p>\n                        <table>\n                            <thead>\n                                <tr>\n                                    <th>Active Problem</th>\n                                    <th>Problem Type</th>\n                                    <th>Onset Date</th>\n                                    <th>Problem Status</th>\n                                    <th>Severity</th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr>\n                                    <td>\n                                        <span>Type 2\n                                            diabetes mellitus, Disease</span>\n                                    </td>\n                                    <td>\n                                        <span>Clinical finding</span>\n                                    </td>\n                                    <td>\n                                        <span>Since\n                                            18-Jun-2009</span>\n                                    </td>\n                                    <td>active</td>\n                                    <td>\n                                        <span>Moderate</span>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:7a4d22a5-a81a-41da-9836-6920ff3f3733"
+              }
+            ]
+          },
+          {
+            "title": "History of Procedures",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "47519-4",
+                  "display": "History of Procedures Document"
+                }
+              ]
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>Fracture 4th metacarpal, 09-Apr-2002</p>\n                        <p>Resection of a benign salivary gland tumor, 11-Oct-2013</p>\n                        <table>\n                            <thead>\n                                <tr>\n                                    <th>Description</th>\n                                    <th>Procedure Date</th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr>\n                                    <td>\n                                        <span>Fracture 4th\n                                            metacarpal</span>\n                                    </td>\n                                    <td>09-Apr-2002</td>\n                                </tr>\n                                <tr>\n                                    <td>\n                                        <span>Resection of\n                                            a benign salivary gland tumor</span>\n                                    </td>\n                                    <td>11-Oct-2013</td>\n                                </tr>\n                            </tbody>\n                        </table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:d4a230df-8aa0-467d-a586-7518017bed08"
+              },
+              {
+                "reference": "urn:uuid:a321e564-9f90-41cf-b426-e102c46229ce"
+              }
+            ]
+          },
+          {
+            "title": "Medication Summary",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "10160-0",
+                  "display": "History of Medication use Narrative"
+                }
+              ]
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>\n                            Lantus Solostar: Insulin Glargine 100mg/ml, Pre-filled pen : 1 unit, 1\n                            per day : 2024-01-01 to 2025-01-01 : Type 2 diabetes mellitus\n                            (injection)\n                        </p>\n                        <table width=\"100%\">\n                            <thead>\n                                <tr>\n                                    <th>Name (Class)</th>\n                                    <th>Active Ingredient [Strength]</th>\n                                    <th>Dose Form [Package]</th>\n                                    <th>Units per Intake</th>\n                                    <th>Dosage Frequency</th>\n                                    <th>Route of Administration</th>\n                                    <th>Duration of Treatment</th>\n                                    <th>Medication Reason</th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr>\n                                    <td valign=\"top\">Lantus Solostar</td>\n                                    <td valign=\"top\">\n                                        <span>Insulin\n                                        Glargine</span> 100mg/ml <br></br>\n                                    </td>\n                                    <td>\n                                        <span>Pre-filled\n                                            pen</span>\n                                    </td>\n                                    <td>1 unit</td>\n                                    <td>1 per day</td>\n                                    <td>\n                                        <span>Injection</span>\n                                        <br></br>\n                                    </td>\n                                    <td>2024-01-01 to 2025-01-01</td>\n                                    <td>\n                                        <span>Type 2\n                                            diabetes\n                                            mellitus</span>\n                                        <br></br>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:aacdd6bd-98e2-4ad9-9b90-13d95206ab4a"
+              }
+            ]
+          }
+        ],
+        "attester": [
+          {
+            "mode": "legal",
+            "time": "2023-10-20T13:30:45Z",
+            "party": {
+              "reference": "urn:uuid:b5d69749-bc7a-4ca3-8d06-7bd20a15bed4"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9bbeb92c-d7d2-4c22-a6f5-c126852ffe90",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "539305455995368085",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Patient-uv-ips"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.372.980010.1.2",
+            "value": "539305455995368085"
+          }
+        ],
+        "name": [
+          {
+            "family": "Murphy",
+            "given": [
+              "Patrick"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1977-08-07",
+        "address": [
+          {
+            "line": [
+              "New Vista, Prosperous Road"
+            ],
+            "city": "Clane",
+            "postalCode": "W91 XP83",
+            "country": "IE"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:b5d69749-bc7a-4ca3-8d06-7bd20a15bed4",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "legal.authenticator.gov.ie",
+        "name": [
+          {
+            "family": "MacNeill",
+            "given": [
+              "Minister Carroll"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:80ad3e93-312f-4a14-a8b6-5b4041885f83",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "mhec.gov.ie",
+        "name": "Health Service Executive"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d14ca9b2-ca6b-4018-ba3d-1b6ea8b6cb8f",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "d14ca9b2-ca6b-4018-ba3d-1b6ea8b6cb8f",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips"
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "inactive"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.whocc.no/atc",
+              "code": "A10BH01",
+              "display": "Sitagliptin"
+            }
+          ],
+          "text": "Sitagliptin"
+        },
+        "patient": {
+          "reference": "urn:uuid:9bbeb92c-d7d2-4c22-a6f5-c126852ffe90"
+        },
+        "onsetDateTime": "1994-10-03",
+        "recordedDate": "1994-10-03"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f637a94f-aad3-49e9-b656-27870d1822e8",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "f637a94f-aad3-49e9-b656-27870d1822e8",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips"
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "inactive"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "111088007",
+              "display": "Latex"
+            }
+          ],
+          "text": "Latex"
+        },
+        "patient": {
+          "reference": "urn:uuid:9bbeb92c-d7d2-4c22-a6f5-c126852ffe90"
+        },
+        "onsetDateTime": "1990-01-01",
+        "recordedDate": "1990-01-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7a4d22a5-a81a-41da-9836-6920ff3f3733",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "7a4d22a5-a81a-41da-9836-6920ff3f3733",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "55561003",
+              "display": "Active"
+            }
+          ],
+          "text": "Active"
+        },
+        "subject": {
+          "reference": "urn:uuid:9bbeb92c-d7d2-4c22-a6f5-c126852ffe90"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d4a230df-8aa0-467d-a586-7518017bed08",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "d4a230df-8aa0-467d-a586-7518017bed08",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Procedure-uv-ips"
+          ]
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "112746006",
+              "display": "Operative procedure on hand"
+            }
+          ],
+          "text": "Operative procedure on hand"
+        },
+        "subject": {
+          "reference": "urn:uuid:9bbeb92c-d7d2-4c22-a6f5-c126852ffe90"
+        },
+        "performedDateTime": "2002-04-09"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a321e564-9f90-41cf-b426-e102c46229ce",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "a321e564-9f90-41cf-b426-e102c46229ce",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Procedure-uv-ips"
+          ]
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "86273004",
+              "display": "Biopsy"
+            }
+          ],
+          "text": "Biopsy"
+        },
+        "subject": {
+          "reference": "urn:uuid:9bbeb92c-d7d2-4c22-a6f5-c126852ffe90"
+        },
+        "performedDateTime": "2013-10-11"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:aacdd6bd-98e2-4ad9-9b90-13d95206ab4a",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "aacdd6bd-98e2-4ad9-9b90-13d95206ab4a",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationStatement-uv-ips"
+          ]
+        },
+        "status": "completed",
+        "subject": {
+          "reference": "urn:uuid:9bbeb92c-d7d2-4c22-a6f5-c126852ffe90"
+        },
+        "effectiveDateTime": "2024-01-01",
+        "dosage": [
+          {
+            "text": "Subcutaneous route",
+            "route": {
+              "coding": [
+                {
+                  "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
+                  "code": "C38200",
+                  "display": "Subcutaneous route"
+                }
+              ]
+            }
+          }
+        ],
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.whocc.no/atc",
+              "code": "A10AE04"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:0c347627-a407-4af6-a335-5263b248aabb",
+      "resource": {
+        "resourceType": "Provenance",
+        "id": "0c347627-a407-4af6-a335-5263b248aabb",
+        "target": [
+          {
+            "reference": "urn:uuid:893c6961-eb7c-4480-aa89-312c4a56789c"
+          }
+        ],
+        "recorded": "2020-01-21T00:00:00Z",
+        "activity": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-DataOperation",
+              "code": "UPDATE",
+              "display": "Update"
+            }
+          ]
+        },
+        "agent": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                  "code": "author",
+                  "display": "Author"
+                }
+              ]
+            },
+            "who": {
+              "reference": "urn:uuid:b5d69749-bc7a-4ca3-8d06-7bd20a15bed4"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
