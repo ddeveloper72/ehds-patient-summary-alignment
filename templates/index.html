@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Patient Summary Viewer</title>
+    {% if export_mode %}
+      <style>{{ utility_css|safe }}</style>
+      <style>{{ dashboard_css|safe }}</style>
+    {% else %}
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    {% endif %}
+  </head>
+  <body>
+    <main class="mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-5 px-4 py-5 sm:px-6 lg:px-8">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">EHDS Patient Summary Alignment</p>
+          <h1>{{ variants.ips.patient.name if variants.ips else "Patient Summary" }}</h1>
+          <p class="header-copy">Review the complete patient summary and switch differential views across IPS, EHDS, and the Irish fully enhanced bundle.</p>
+        </div>
+        <div class="header-actions">
+          {% if export_mode %}
+            <div class="source-pill">Exported {{ export_generated_at }}</div>
+          {% else %}
+            <label class="select-control">
+              <span>Patient</span>
+              <select data-patient-select>
+                {% for patient in patients %}
+                  <option value="{{ patient.slug }}" {{ "selected" if patient.slug == patient_slug else "" }}>{{ patient.label }}</option>
+                {% endfor %}
+              </select>
+            </label>
+            <a class="action-link" href="{{ url_for('api_summary', patient=patient_slug) }}" target="_blank" rel="noopener noreferrer">View JSON</a>
+            <a class="action-link primary" href="{{ url_for('export_interactive_report', patient=patient_slug) }}">Export HTML</a>
+          {% endif %}
+        </div>
+      </header>
+
+      <section class="control-bar" aria-label="Patient summary controls">
+        <div class="segmented-control" role="tablist" aria-label="Primary view">
+          <button class="segment-button" type="button" aria-selected="true" data-view-button="summary">Full Summary</button>
+          <button class="segment-button" type="button" aria-selected="false" data-view-button="diff">Differential View</button>
+        </div>
+        <div class="toolbar-row" data-summary-toolbar>
+          <label class="select-control">
+            <span>Summary</span>
+            <select data-variant-select>
+              {% for option in variant_options %}
+                <option value="{{ option.key }}">{{ option.label }}</option>
+              {% endfor %}
+            </select>
+          </label>
+        </div>
+        <div class="toolbar-row" data-diff-toolbar hidden>
+          <label class="select-control">
+            <span>Compare</span>
+            <select data-diff-select>
+              {% for option in diff_options %}
+                <option value="{{ option.key }}">{{ option.label }}</option>
+              {% endfor %}
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section data-view-panel="summary">
+        {% for key, summary in variants.items() %}
+          <article class="summary-panel" data-summary-panel="{{ key }}" {{ "hidden" if not loop.first else "" }}>
+            <div class="summary-heading">
+              <div>
+                <p class="eyebrow">{{ summary.variant_label }}</p>
+                <h2>{{ summary.composition_title }}</h2>
+                <p>{{ summary.variant_description }}</p>
+              </div>
+              <div class="source-pill">{{ summary.source_file }}</div>
+            </div>
+
+            <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              <article class="metric-panel">
+                <span class="metric-label">Identifier</span>
+                <strong class="metric-value compact">{{ summary.patient.identifier }}</strong>
+              </article>
+              <article class="metric-panel">
+                <span class="metric-label">Birth Date</span>
+                <strong class="metric-value compact">{{ summary.patient.birth_date }}</strong>
+              </article>
+              <article class="metric-panel">
+                <span class="metric-label">Sections</span>
+                <strong class="metric-value">{{ summary.summary.section_count }}</strong>
+              </article>
+              <article class="metric-panel">
+                <span class="metric-label">Resources</span>
+                <strong class="metric-value">{{ summary.summary.resource_count }}</strong>
+              </article>
+            </div>
+
+            <div class="resource-strip">
+              {% for type, count in summary.summary.resource_counts.items() %}
+                <span><strong>{{ count }}</strong> {{ type }}</span>
+              {% endfor %}
+            </div>
+
+            <div class="section-list">
+              {% for section in summary.sections %}
+                <section class="clinical-section">
+                  <div class="clinical-section-heading">
+                    <div>
+                      <h3>{{ section.title }}</h3>
+                      <p>LOINC {{ section.code }}{% if section.empty_reason %} · {{ section.empty_reason }}{% endif %}</p>
+                    </div>
+                    <span>{{ section.entry_count }} entries</span>
+                  </div>
+                  {% if section.narrative %}
+                    <div class="fhir-narrative">{{ section.narrative|safe }}</div>
+                  {% endif %}
+                  {% if section.entries %}
+                    <div class="entry-list">
+                      {% for entry in section.entries %}
+                        <span>{{ entry.label }}</span>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                </section>
+              {% endfor %}
+            </div>
+          </article>
+        {% endfor %}
+      </section>
+
+      <section data-view-panel="diff" hidden>
+        {% for key, diff in diffs.items() %}
+          <article class="diff-panel" data-diff-panel="{{ key }}" {{ "hidden" if not loop.first else "" }}>
+            <div class="summary-heading">
+              <div>
+                <p class="eyebrow">{{ diff.left }} to {{ diff.right }}</p>
+                <h2>{{ diff.label }}</h2>
+                <p>Section and resource-level comparison from the loaded FHIR bundles.</p>
+              </div>
+            </div>
+            <div class="grid gap-3 sm:grid-cols-3 lg:grid-cols-6">
+              <article class="metric-panel compact-card"><span class="metric-label">Sections Added</span><strong class="metric-value">{{ diff.summary.sections_added }}</strong></article>
+              <article class="metric-panel compact-card"><span class="metric-label">Sections Removed</span><strong class="metric-value">{{ diff.summary.sections_removed }}</strong></article>
+              <article class="metric-panel compact-card"><span class="metric-label">Sections Changed</span><strong class="metric-value">{{ diff.summary.sections_changed }}</strong></article>
+              <article class="metric-panel compact-card"><span class="metric-label">Resources Added</span><strong class="metric-value">{{ diff.summary.resources_added }}</strong></article>
+              <article class="metric-panel compact-card"><span class="metric-label">Resources Removed</span><strong class="metric-value">{{ diff.summary.resources_removed }}</strong></article>
+              <article class="metric-panel compact-card"><span class="metric-label">Resources Changed</span><strong class="metric-value">{{ diff.summary.resources_changed }}</strong></article>
+            </div>
+            <div class="diff-grid">
+              {% for title, group in [("Sections", diff.sections), ("Resources", diff.resources)] %}
+                <section class="diff-card">
+                  <h3>{{ title }}</h3>
+                  <div class="diff-columns">
+                    <div>
+                      <h4>Only in {{ diff.left }}</h4>
+                      {% for item in group.left_only %}
+                        <p>{{ item.label }}</p>
+                      {% else %}
+                        <p class="muted">No removals.</p>
+                      {% endfor %}
+                    </div>
+                    <div>
+                      <h4>Only in {{ diff.right }}</h4>
+                      {% for item in group.right_only %}
+                        <p>{{ item.label }}</p>
+                      {% else %}
+                        <p class="muted">No additions.</p>
+                      {% endfor %}
+                    </div>
+                    <div>
+                      <h4>Changed</h4>
+                      {% for item in group.changed %}
+                        <p>{{ item.left_label or item.key }}</p>
+                      {% else %}
+                        <p class="muted">No changed items.</p>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </section>
+              {% endfor %}
+            </div>
+          </article>
+        {% endfor %}
+      </section>
+
+      <footer>
+        Created with AI assistance. Review patient summary content and generated differentials before sharing externally.
+        {% if export_mode %}
+          <span>Export generated {{ export_generated_at }}.</span>
+        {% endif %}
+      </footer>
+    </main>
+    {% if export_mode %}
+      <script>{{ dashboard_js|safe }}</script>
+    {% else %}
+      <script src="{{ url_for('static', filename='summary.js') }}"></script>
+    {% endif %}
+  </body>
+</html>

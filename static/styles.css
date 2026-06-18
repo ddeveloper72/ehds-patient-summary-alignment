@@ -1,0 +1,348 @@
+:root {
+  color-scheme: light;
+  --page-bg: rgb(244 247 249);
+  --panel-bg: rgb(255 255 255);
+  --panel-subtle: rgb(248 250 252);
+  --border: rgb(203 213 225);
+  --border-strong: rgb(100 116 139);
+  --text: rgb(15 23 42);
+  --muted: rgb(71 85 105);
+  --accent: rgb(13 100 116);
+  --accent-dark: rgb(19 78 74);
+  --added: rgb(220 252 231);
+  --removed: rgb(254 226 226);
+  --changed: rgb(254 249 195);
+  --shadow: 0 10px 22px rgb(15 23 42 / 0.08);
+}
+
+body {
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 1.25rem 0;
+}
+
+footer span {
+  display: inline-block;
+  margin-left: 0.35rem;
+}
+
+.app-header {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.25rem;
+}
+
+.app-header h1,
+.summary-heading h2 {
+  margin: 0.15rem 0 0;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  line-height: 1.05;
+  font-weight: 750;
+  letter-spacing: 0;
+}
+
+.header-copy,
+.summary-heading p,
+.clinical-section-heading p,
+.muted {
+  color: var(--muted);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.header-actions,
+.control-bar,
+.toolbar-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.control-bar {
+  justify-content: space-between;
+  border: 1px solid var(--border-strong);
+  border-radius: 0.5rem;
+  background: var(--panel-bg);
+  padding: 0.75rem;
+  box-shadow: var(--shadow);
+}
+
+.segmented-control {
+  display: inline-flex;
+  min-height: 2.5rem;
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  border-radius: 0.5rem;
+  background: var(--panel-subtle);
+}
+
+.segment-button {
+  border: 0;
+  border-right: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0.55rem 0.9rem;
+}
+
+.segment-button:last-child {
+  border-right: 0;
+}
+
+.segment-button[aria-selected="true"] {
+  background: var(--accent-dark);
+  color: white;
+}
+
+.select-control {
+  display: grid;
+  gap: 0.2rem;
+  min-width: 12rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.select-control select {
+  min-height: 2.4rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 0.45rem;
+  background: white;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 650;
+  padding: 0.35rem 0.65rem;
+  text-transform: none;
+}
+
+.action-link,
+.source-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.4rem;
+  border: 1px solid var(--accent-dark);
+  border-radius: 0.45rem;
+  color: var(--accent-dark);
+  font-weight: 800;
+  padding: 0.35rem 0.7rem;
+  text-decoration: none;
+}
+
+.summary-panel,
+.diff-panel {
+  display: grid;
+  gap: 1rem;
+}
+
+.summary-heading {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  border: 1px solid var(--border-strong);
+  border-radius: 0.5rem;
+  background: var(--panel-bg);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.metric-panel {
+  min-height: 7rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 0.5rem;
+  background: var(--panel-bg);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.metric-panel.compact-card {
+  min-height: 5.5rem;
+}
+
+.metric-label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.metric-value {
+  display: block;
+  margin-top: 0.7rem;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.metric-value.compact {
+  font-size: 1.1rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.resource-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.resource-strip span,
+.entry-list span {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--panel-bg);
+  color: var(--muted);
+  font-size: 0.85rem;
+  padding: 0.3rem 0.65rem;
+}
+
+.section-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.clinical-section,
+.diff-card {
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  border-radius: 0.5rem;
+  background: var(--panel-bg);
+  box-shadow: var(--shadow);
+}
+
+.clinical-section-heading {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel-subtle);
+  padding: 0.85rem 1rem;
+}
+
+.clinical-section-heading h3,
+.diff-card h3,
+.diff-card h4 {
+  margin: 0;
+}
+
+.clinical-section-heading span {
+  flex: 0 0 auto;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 0.25rem 0.55rem;
+}
+
+.fhir-narrative {
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+.fhir-narrative p {
+  max-width: 78ch;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.fhir-narrative table {
+  width: 100%;
+  min-width: 42rem;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.fhir-narrative th,
+.fhir-narrative td {
+  border: 1px solid var(--border);
+  padding: 0.45rem 0.55rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.fhir-narrative th {
+  background: rgb(226 232 240);
+  font-weight: 800;
+}
+
+.entry-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  border-top: 1px solid var(--border);
+  padding: 0.75rem 1rem 1rem;
+}
+
+.diff-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.diff-card {
+  padding: 1rem;
+}
+
+.diff-columns {
+  display: grid;
+  gap: 1rem;
+  margin-top: 0.85rem;
+}
+
+.diff-columns > div {
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--panel-subtle);
+  padding: 0.8rem;
+}
+
+.diff-columns p {
+  margin: 0.45rem 0 0;
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 900px) {
+  .diff-columns {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .app-header,
+  .summary-heading,
+  .clinical-section-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .segmented-control {
+    width: 100%;
+  }
+
+  .segment-button {
+    flex: 1 1 0;
+  }
+}
