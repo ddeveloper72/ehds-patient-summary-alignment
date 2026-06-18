@@ -102,13 +102,108 @@
               {% endfor %}
             </div>
 
+            <section class="admin-panel" aria-labelledby="patient-details-heading-{{ key }}">
+              <div class="clinical-section-heading">
+                <div>
+                  <h3 id="patient-details-heading-{{ key }}">Patient details and contacts</h3>
+                  <p>Demographic, address, contact, next-of-kin, guardian, and care relationship information encoded in the Patient resource.</p>
+                </div>
+              </div>
+              <dl class="admin-grid patient-detail-grid">
+                <div>
+                  <dt>Gender</dt>
+                  <dd>{{ summary.patient.gender }}</dd>
+                </div>
+                <div>
+                  <dt>Address</dt>
+                  <dd>{{ summary.patient_details.address }}</dd>
+                </div>
+                <div>
+                  <dt>Contact Details</dt>
+                  <dd>{{ summary.patient_details.telecom }}</dd>
+                </div>
+                <div>
+                  <dt>General Practitioner</dt>
+                  <dd>{{ summary.patient_details.general_practitioner }}</dd>
+                </div>
+                <div>
+                  <dt>Managing Organisation</dt>
+                  <dd>{{ summary.patient_details.managing_organization }}</dd>
+                </div>
+                <div>
+                  <dt>Marital Status</dt>
+                  <dd>{{ summary.patient_details.marital_status }}</dd>
+                </div>
+                <div>
+                  <dt>Communication</dt>
+                  <dd>{{ summary.patient_details.communication }}</dd>
+                </div>
+              </dl>
+              <div class="contact-list">
+                <h4>Emergency contacts, next-of-kin, and guardianship</h4>
+                {% for contact in summary.patient_details.contacts %}
+                  <article>
+                    <strong>{{ contact.name }}</strong>
+                    <span>{{ contact.relationship }}</span>
+                    <p>{{ contact.telecom }}</p>
+                    <p>{{ contact.address }}</p>
+                  </article>
+                {% else %}
+                  <p class="muted">No emergency contact, next-of-kin, or guardian details are recorded in this Patient resource.</p>
+                {% endfor %}
+              </div>
+            </section>
+
+            <section class="admin-panel" aria-labelledby="admin-heading-{{ key }}">
+              <div class="clinical-section-heading">
+                <div>
+                  <h3 id="admin-heading-{{ key }}">Document and administration</h3>
+                  <p>Organisational and administrative properties generated with the patient summary document.</p>
+                </div>
+              </div>
+              <dl class="admin-grid">
+                <div>
+                  <dt>Issued by / Custodian</dt>
+                  <dd>{{ summary.administration.custodian }}</dd>
+                </div>
+                <div>
+                  <dt>Custodian Identifier</dt>
+                  <dd>{{ summary.administration.custodian_identifier }}</dd>
+                </div>
+                <div>
+                  <dt>Author / GP</dt>
+                  <dd>{{ summary.administration.authors }}</dd>
+                </div>
+                <div>
+                  <dt>Document Type</dt>
+                  <dd>{{ summary.administration.document_type }}</dd>
+                </div>
+                <div>
+                  <dt>Document Status</dt>
+                  <dd>{{ summary.administration.document_status }}</dd>
+                </div>
+                <div>
+                  <dt>Document Date</dt>
+                  <dd>{{ summary.administration.document_date }}</dd>
+                </div>
+                <div>
+                  <dt>Bundle Identifier</dt>
+                  <dd>{{ summary.administration.bundle_identifier }}</dd>
+                </div>
+                <div>
+                  <dt>Bundle Timestamp</dt>
+                  <dd>{{ summary.administration.bundle_timestamp }}</dd>
+                </div>
+              </dl>
+            </section>
+
             <div class="section-list">
               {% for section in summary.sections %}
                 <section class="clinical-section">
                   <div class="clinical-section-heading">
                     <div>
                       <h3>{{ section.title }}</h3>
-                      <p>LOINC {{ section.code }}{% if section.empty_reason %} · {{ section.empty_reason }}{% endif %}</p>
+                      <p>LOINC {{ section.code }}{% if section.empty_reason %} &middot; {{ section.empty_reason }}{% endif %}</p>
                     </div>
                     <span>{{ section.entry_count }} entries</span>
                   </div>
@@ -198,3 +293,4 @@
     {% endif %}
   </body>
 </html>
+

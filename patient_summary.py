@@ -122,6 +122,21 @@ def human_name(patient: dict[str, Any] | None) -> str:
     return patient.get("id") or "Unknown patient"
 
 
+def human_resource_name(resource: dict[str, Any] | None) -> str:
+    """Return a display name for Patient, Practitioner, or Organization resources."""
+    if not resource:
+        return "Not recorded"
+    if resource.get("name") and isinstance(resource["name"], str):
+        return str(resource["name"])
+    if isinstance(resource.get("name"), list):
+        for name in resource["name"]:
+            parts = [*name.get("given", []), name.get("family")]
+            value = " ".join(str(part) for part in parts if part)
+            if value:
+                return value
+    return resource.get("id") or resource.get("resourceType") or "Not recorded"
+
+
 def patient_identifier(patient: dict[str, Any] | None) -> str:
     """Return the first available Patient.identifier value or a safe fallback."""
     if not patient:
@@ -130,6 +145,135 @@ def patient_identifier(patient: dict[str, Any] | None) -> str:
         if identifier.get("value"):
             return str(identifier["value"])
     return patient.get("id") or "Not recorded"
+
+
+def format_address(address: dict[str, Any] | None) -> str:
+    """Format a FHIR Address into a compact single-line display value."""
+    if not isinstance(address, dict):
+        return "Not recorded"
+    parts = [
+        *address.get("line", []),
+        address.get("city"),
+        address.get("state"),
+        address.get("postalCode"),
+        address.get("country"),
+    ]
+    return ", ".join(str(part) for part in parts if part) or "Not recorded"
+
+
+def format_telecom(items: list[dict[str, Any]] | None) -> str:
+    """Format FHIR ContactPoint values such as phone and email."""
+    if not isinstance(items, list):
+        return "Not recorded"
+    values = []
+    for item in items:
+        system = item.get("system")
+        value = item.get("value")
+        use = item.get("use")
+        if value:
+            prefix = f"{system}: " if system else ""
+            suffix = f" ({use})" if use else ""
+            values.append(f"{prefix}{value}{suffix}")
+    return "; ".join(values) if values else "Not recorded"
+
+
+def codeable_list(values: list[dict[str, Any]] | None) -> str:
+    """Format a list of CodeableConcept values as display text."""
+    if not isinstance(values, list):
+        return "Not recorded"
+    labels = [display_from_codeable(value) for value in values]
+    labels = [label for label in labels if label]
+    return ", ".join(labels) if labels else "Not recorded"
+
+
+def patient_contacts(patient: dict[str, Any] | None) -> list[dict[str, str]]:
+    """Return emergency contact, next-of-kin, or guardian details from Patient.contact."""
+    if not patient:
+        return []
+    contacts = []
+    for contact in patient.get("contact", []):
+        contacts.append(
+            {
+                "name": human_resource_name({"name": [contact.get("name", {})]}),
+                "relationship": codeable_list(contact.get("relationship")),
+                "telecom": format_telecom(contact.get("telecom")),
+                "address": format_address(contact.get("address")),
+            }
+        )
+    return contacts
+
+
+def patient_details(
+    patient: dict[str, Any] | None, resource_index: dict[str, dict[str, Any]]
+) -> dict[str, Any]:
+    """Build patient demographic, contact, and relationship metadata for display."""
+    if not patient:
+        return {
+            "address": "Not recorded",
+            "telecom": "Not recorded",
+            "marital_status": "Not recorded",
+            "communication": "Not recorded",
+            "managing_organization": "Not recorded",
+            "general_practitioner": "Not recorded",
+            "contacts": [],
+        }
+    addresses = [format_address(address) for address in patient.get("address", [])]
+    languages = []
+    for communication in patient.get("communication", []):
+        language = display_from_codeable(communication.get("language"))
+        if language:
+            preferred = " preferred" if communication.get("preferred") else ""
+            languages.append(f"{language}{preferred}")
+    gps = [
+        reference_display(reference, resource_index)
+        for reference in patient.get("generalPractitioner", [])
+        if isinstance(reference, dict)
+    ]
+    return {
+        "address": "; ".join(addresses) if addresses else "Not recorded",
+        "telecom": format_telecom(patient.get("telecom")),
+        "marital_status": display_from_codeable(patient.get("maritalStatus")) or "Not recorded",
+        "communication": ", ".join(languages) if languages else "Not recorded",
+        "managing_organization": reference_display(
+            patient.get("managingOrganization"), resource_index
+        ),
+        "general_practitioner": ", ".join(gps) if gps else "Not recorded",
+        "contacts": patient_contacts(patient),
+    }
+
+
+def first_identifier(resource: dict[str, Any] | None) -> str:
+    """Return the first identifier value on any FHIR resource."""
+    if not resource:
+        return "Not recorded"
+    identifier = resource.get("identifier")
+    if isinstance(identifier, dict):
+        return str(identifier.get("value") or identifier.get("system") or "Not recorded")
+    if isinstance(identifier, list):
+        for item in identifier:
+            if item.get("value"):
+                return str(item["value"])
+    return str(resource.get("id") or "Not recorded")
+
+
+def resolve_reference(
+    reference: dict[str, Any] | None, resource_index: dict[str, dict[str, Any]]
+) -> dict[str, Any] | None:
+    """Resolve a FHIR Reference object against the bundle index."""
+    if not isinstance(reference, dict):
+        return None
+    return resource_index.get(str(reference.get("reference")))
+
+
+def reference_display(
+    reference: dict[str, Any] | None, resource_index: dict[str, dict[str, Any]]
+) -> str:
+    """Return the display text or resolved resource name for a FHIR reference."""
+    if not isinstance(reference, dict):
+        return "Not recorded"
+    if reference.get("display"):
+        return str(reference["display"])
+    return human_resource_name(resolve_reference(reference, resource_index))
 
 
 def clean_xhtml(div: str) -> str:
@@ -197,6 +341,12 @@ def bundle_model(path: Path, variant: str) -> dict[str, Any]:
     resources = bundle_resources(bundle)
     index = reference_index(bundle)
     sections = []
+    custodian = resolve_reference(composition.get("custodian"), index)
+    authors = [
+        reference_display(author, index)
+        for author in composition.get("author", [])
+        if isinstance(author, dict)
+    ]
 
     for section in composition.get("section", []):
         entries = summarize_section_entries(section, index)
@@ -227,6 +377,18 @@ def bundle_model(path: Path, variant: str) -> dict[str, Any]:
             "identifier": patient_identifier(patient),
             "gender": patient.get("gender", "Not recorded") if patient else "Not recorded",
             "birth_date": patient.get("birthDate", "Not recorded") if patient else "Not recorded",
+        },
+        "patient_details": patient_details(patient, index),
+        "administration": {
+            "document_status": composition.get("status") or "Not recorded",
+            "document_type": display_from_codeable(composition.get("type")) or "Not recorded",
+            "document_date": composition.get("date") or "Not recorded",
+            "bundle_timestamp": bundle.get("timestamp") or "Not recorded",
+            "bundle_identifier": first_identifier(bundle),
+            "bundle_type": bundle.get("type") or "Not recorded",
+            "custodian": human_resource_name(custodian),
+            "custodian_identifier": first_identifier(custodian),
+            "authors": ", ".join(authors) if authors else "Not recorded",
         },
         "summary": {
             "resource_count": len(resources),

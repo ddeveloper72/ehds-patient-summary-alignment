@@ -223,6 +223,76 @@ footer span {
   gap: 1rem;
 }
 
+.admin-panel {
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  border-radius: 0.5rem;
+  background: var(--panel-bg);
+  box-shadow: var(--shadow);
+}
+
+.admin-grid {
+  display: grid;
+  gap: 0;
+  margin: 0;
+}
+
+.admin-grid > div {
+  border-top: 1px solid var(--border);
+  padding: 0.85rem 1rem;
+}
+
+.admin-grid dt {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.admin-grid dd {
+  margin: 0.25rem 0 0;
+  color: var(--text);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.contact-list {
+  border-top: 1px solid var(--border);
+  padding: 1rem;
+}
+
+.contact-list h4 {
+  margin: 0 0 0.75rem;
+}
+
+.contact-list article {
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--panel-subtle);
+  margin-top: 0.6rem;
+  padding: 0.75rem;
+}
+
+.contact-list article:first-of-type {
+  margin-top: 0;
+}
+
+.contact-list article strong,
+.contact-list article span {
+  display: block;
+}
+
+.contact-list article span {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.contact-list p {
+  margin: 0.35rem 0 0;
+  overflow-wrap: anywhere;
+}
+
 .clinical-section,
 .diff-card {
   overflow: hidden;
@@ -325,6 +395,18 @@ footer span {
 }
 
 @media (min-width: 900px) {
+  .admin-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .patient-detail-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .admin-grid > div {
+    border-right: 1px solid var(--border);
+  }
+
   .diff-columns {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }

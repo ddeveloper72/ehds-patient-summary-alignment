@@ -22,6 +22,8 @@ This project was created to make patient-summary alignment review easier and mor
 
 - Render full FHIR Patient Summary content in a clean HTML view.
 - Preserve the FHIR Composition section narrative where available, including XHTML tables.
+- Surface Patient resource demographics and contact information, including address, telecoms, emergency contacts, next-of-kin, guardianship relationships, GP references, and managing organisation where encoded.
+- Surface automatically generated organisational and administrative metadata, including custodian/issuer, author/legal authenticator, document status, document dates, and bundle identifiers.
 - Let reviewers switch between IPS, EHDS, and Irish enhanced summary variants.
 - Provide differential views for:
   - IPS vs EHDS
@@ -56,6 +58,16 @@ The project treats the source files as three variants of the same patient summar
 | Irish Fully Enhanced | EHDS-aligned Irish enhanced bundle in `EHDS_aligned_FHIR_resouces/` |
 
 The Flask route builds a dashboard model from those files, then renders either the live browser view or a standalone export. The comparison logic hashes sections and resources to identify added, removed, and changed items.
+
+Each summary view also includes a **Document and administration** panel. This is populated from FHIR administrative resources and Composition metadata, for example:
+
+- `Composition.custodian` resolved to the issuing/custodian `Organization`.
+- `Composition.author` resolved to the author, GP, or legal authenticator resource present in the bundle.
+- document type, status, date, Bundle timestamp, and Bundle identifier.
+
+The application displays only values present in the FHIR Bundle; it does not invent missing GP or issuer details.
+
+The **Patient details and contacts** panel is populated from the FHIR `Patient` resource. It displays demographics, address, telecoms, communication preferences, GP references, managing organisation, and `Patient.contact` relationships such as emergency contacts, next-of-kin, or guardianship where those values are present.
 
 ```mermaid
 flowchart LR
@@ -98,6 +110,8 @@ mindmap
       Bundle loading
       Composition sections
       Patient metadata
+      Patient contacts
+      Administration metadata
       Differential hashes
     UI
       templates/index.html
