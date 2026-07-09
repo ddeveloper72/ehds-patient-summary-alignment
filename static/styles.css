@@ -484,6 +484,224 @@ footer span {
   margin-top: 0.35rem;
 }
 
+.smart-hero,
+.smart-panel,
+.smart-index,
+.smart-resource {
+  border: 1px solid var(--border-strong);
+  border-radius: 0.5rem;
+  background: var(--panel-bg);
+  box-shadow: var(--shadow);
+}
+
+.smart-hero {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.smart-hero h2 {
+  margin: 0.15rem 0 0;
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  line-height: 1.08;
+}
+
+.smart-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(5rem, 1fr));
+  gap: 0.65rem;
+  margin: 0;
+  min-width: min(100%, 24rem);
+}
+
+.smart-stats div {
+  border: 1px solid var(--border);
+  border-radius: 0.45rem;
+  background: var(--panel-subtle);
+  padding: 0.75rem;
+}
+
+.smart-stats dt {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.smart-stats dd {
+  margin: 0.35rem 0 0;
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.smart-layout {
+  display: grid;
+  gap: 1rem;
+}
+
+.smart-index {
+  display: grid;
+  gap: 0.45rem;
+  align-self: start;
+  padding: 1rem;
+}
+
+.smart-index h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+
+.smart-index a {
+  display: grid;
+  gap: 0.15rem;
+  border: 1px solid var(--border);
+  border-radius: 0.45rem;
+  color: var(--text);
+  padding: 0.55rem 0.65rem;
+  text-decoration: none;
+}
+
+.smart-index a span,
+.smart-resource-heading span,
+.smart-resource-heading p,
+.coding-card span,
+.coding-card small {
+  color: var(--muted);
+  font-size: 0.78rem;
+  overflow-wrap: anywhere;
+}
+
+.smart-sections {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.smart-section-body {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.trace-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: flex-end;
+}
+
+.trace-badge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgb(20 184 166);
+  border-radius: 999px;
+  background: rgb(240 253 250);
+  color: var(--accent-dark);
+  font-size: 0.75rem;
+  font-weight: 800;
+  margin: 0.1rem;
+  padding: 0.2rem 0.5rem;
+  white-space: nowrap;
+}
+
+.trace-badge.neutral {
+  border-color: var(--border);
+  background: var(--panel-subtle);
+  color: var(--muted);
+}
+
+.coding-grid,
+.trace-list,
+.smart-resource-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.coding-grid {
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+}
+
+.coding-card,
+.trace-list article {
+  border: 1px solid var(--border);
+  border-radius: 0.45rem;
+  background: var(--panel-subtle);
+  padding: 0.7rem;
+}
+
+.coding-card strong {
+  display: block;
+  margin-top: 0.2rem;
+  overflow-wrap: anywhere;
+}
+
+.coding-card p,
+.trace-list p {
+  margin: 0.25rem 0 0;
+  overflow-wrap: anywhere;
+}
+
+.smart-details {
+  border: 1px solid var(--border);
+  border-radius: 0.45rem;
+  overflow: hidden;
+}
+
+.smart-details summary {
+  cursor: pointer;
+  background: var(--panel-subtle);
+  font-weight: 800;
+  padding: 0.75rem 1rem;
+}
+
+.smart-resource {
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.smart-resource-heading {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel-subtle);
+  padding: 0.85rem 1rem;
+}
+
+.smart-resource-heading h4 {
+  margin: 0.15rem 0 0;
+  overflow-wrap: anywhere;
+}
+
+.smart-resource .coding-grid,
+.smart-resource .trace-list {
+  padding: 0.85rem 1rem;
+}
+
+.smart-resource .trace-list {
+  border-top: 1px solid var(--border);
+}
+
+.candidate {
+  border-left: 3px solid rgb(20 184 166);
+  padding-left: 0.5rem;
+}
+
+.json-block {
+  max-height: 36rem;
+  margin: 0;
+  overflow: auto;
+  background: rgb(15 23 42);
+  color: rgb(226 232 240);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  padding: 1rem;
+}
+
 @media (min-width: 900px) {
   .admin-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -500,11 +718,22 @@ footer span {
   .diff-columns {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .smart-layout {
+    grid-template-columns: minmax(15rem, 0.28fr) minmax(0, 1fr);
+  }
+
+  .smart-index {
+    position: sticky;
+    top: 1rem;
+  }
 }
 
 @media (max-width: 760px) {
   .app-header,
   .summary-heading,
+  .smart-hero,
+  .smart-resource-heading,
   .clinical-section-heading {
     align-items: stretch;
     flex-direction: column;
@@ -516,6 +745,14 @@ footer span {
 
   .segment-button {
     flex: 1 1 0;
+  }
+
+  .smart-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .trace-badge-row {
+    justify-content: flex-start;
   }
 }
 

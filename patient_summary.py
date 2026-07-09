@@ -298,6 +298,134 @@ def resource_label(resource: dict[str, Any]) -> str:
     return f"{resource_type}: {detail}" if detail else str(resource_type)
 
 
+def value_from_extension(extension: dict[str, Any]) -> str:
+    """Return the primitive value carried by a FHIR extension."""
+    for key, value in extension.items():
+        if key.startswith("value") and key != "value":
+            return str(value)
+    return ""
+
+
+def extension_label(url: str) -> str:
+    """Return the compact final segment from an extension URL."""
+    return url.rstrip("/").rsplit("/", 1)[-1]
+
+
+def trace_service(url: str) -> str:
+    """Classify local traceability extensions for display."""
+    lowered = url.casefold()
+    if "nmpc" in lowered:
+        return "NMPC API"
+    if "cts" in lowered or "datastandards.hse.ie" in lowered:
+        return "CTS"
+    return "FHIR"
+
+
+def extension_children(extension: dict[str, Any]) -> dict[str, list[str]]:
+    """Group child extension values by their local extension name."""
+    grouped: dict[str, list[str]] = {}
+    for child in extension.get("extension", []):
+        if not isinstance(child, dict):
+            continue
+        label = extension_label(str(child.get("url", "value")))
+        value = value_from_extension(child)
+        if value:
+            grouped.setdefault(label, []).append(value)
+        elif child.get("extension"):
+            nested = extension_children(child)
+            nested_value = " / ".join(
+                ", ".join(values) for values in nested.values() if values
+            )
+            if nested_value:
+                grouped.setdefault(label, []).append(nested_value)
+    return grouped
+
+
+def trace_from_extension(extension: dict[str, Any]) -> dict[str, Any] | None:
+    """Build a show-and-tell trace card from a CTS or NMPC extension."""
+    url = str(extension.get("url", ""))
+    if not any(token in url.casefold() for token in ("cts", "nmpc", "datastandards.hse.ie")):
+        return None
+    children = extension_children(extension)
+    candidates = children.get("candidate", [])
+    return {
+        "service": trace_service(url),
+        "label": extension_label(url),
+        "server": ", ".join(children.get("server", [])),
+        "operation": ", ".join(children.get("operation", [])),
+        "source": " ".join(
+            part
+            for part in [
+                ", ".join(children.get("sourceSystem", [])),
+                ", ".join(children.get("sourceCode", [])),
+            ]
+            if part
+        ),
+        "total_candidates": ", ".join(children.get("totalCandidates", [])),
+        "candidates": candidates[:3],
+        "candidate_overflow": max(0, len(candidates) - 3),
+    }
+
+
+def collect_trace_extensions(value: Any) -> list[dict[str, Any]]:
+    """Recursively collect local CTS/NMPC traceability extensions."""
+    traces = []
+    if isinstance(value, dict):
+        trace = trace_from_extension(value)
+        if trace:
+            traces.append(trace)
+        for child in value.values():
+            traces.extend(collect_trace_extensions(child))
+    elif isinstance(value, list):
+        for item in value:
+            traces.extend(collect_trace_extensions(item))
+    return traces
+
+
+def collect_codings(value: Any, path: str = "resource") -> list[dict[str, str]]:
+    """Recursively collect Coding-like objects from a FHIR resource."""
+    rows = []
+    if isinstance(value, dict):
+        if value.get("system") or value.get("code") or value.get("display"):
+            traces = collect_trace_extensions(value.get("extension", []))
+            rows.append(
+                {
+                    "path": path,
+                    "system": str(value.get("system") or "No system"),
+                    "code": str(value.get("code") or "No code"),
+                    "display": str(value.get("display") or "No display supplied"),
+                    "services": ", ".join(sorted({trace["service"] for trace in traces})),
+                }
+            )
+        for key, child in value.items():
+            if key == "extension":
+                continue
+            rows.extend(collect_codings(child, f"{path}.{key}"))
+    elif isinstance(value, list):
+        for index, item in enumerate(value, start=1):
+            rows.extend(collect_codings(item, f"{path}[{index}]"))
+    return rows
+
+
+def smart_resource_row(
+    reference: str, resource: dict[str, Any] | None
+) -> dict[str, Any] | None:
+    """Create a display row for a Composition-referenced resource."""
+    if not resource:
+        return None
+    traces = collect_trace_extensions(resource)
+    return {
+        "reference": reference,
+        "type": resource.get("resourceType", "Resource"),
+        "id": resource.get("id", "No id"),
+        "label": resource_label(resource),
+        "codings": collect_codings(resource)[:12],
+        "traces": traces[:8],
+        "trace_count": len(traces),
+        "services": sorted({trace["service"] for trace in traces}),
+    }
+
+
 def reference_index(bundle: dict[str, Any]) -> dict[str, dict[str, Any]]:
     """Index bundle resources by fullUrl and ResourceType/id references."""
     index: dict[str, dict[str, Any]] = {}
@@ -398,6 +526,76 @@ def bundle_model(path: Path, variant: str) -> dict[str, Any]:
         },
         "sections": sections,
         "raw": bundle,
+    }
+
+
+def smart_bundle_model(slug: str, variant: str) -> dict[str, Any]:
+    """Build a smart-document view over one selected Patient Summary bundle."""
+    source_path = source_path_for(slug)
+    if variant not in SUMMARY_VARIANTS:
+        variant = "ehds"
+    path = variant_path(source_path, variant) or variant_path(source_path, "ehds") or source_path
+    variant = next(
+        (
+            key
+            for key in SUMMARY_VARIANTS
+            if variant_path(source_path, key) == path
+        ),
+        variant,
+    )
+    summary = bundle_model(path, variant)
+    bundle = summary["raw"]
+    composition = find_composition(bundle) or {}
+    index = reference_index(bundle)
+    sections = []
+
+    for section in composition.get("section", []):
+        section_codings = collect_codings(section.get("code", {}), "Composition.section.code")
+        rows = []
+        for entry in section.get("entry", []):
+            reference = str(entry.get("reference") or "")
+            row = smart_resource_row(reference, index.get(reference))
+            if row:
+                rows.append(row)
+        section_traces = collect_trace_extensions(section)
+        entry_trace_count = sum(row["trace_count"] for row in rows)
+        sections.append(
+            {
+                "title": section.get("title") or section_code(section) or "Untitled section",
+                "code": section_code(section) or "No code",
+                "narrative": clean_xhtml(section.get("text", {}).get("div", "")),
+                "empty_reason": display_from_codeable(section.get("emptyReason")),
+                "codings": section_codings,
+                "entries": rows,
+                "trace_count": len(section_traces) + entry_trace_count,
+                "services": sorted(
+                    {
+                        service
+                        for row in rows
+                        for service in row["services"]
+                    }
+                    | {trace["service"] for trace in section_traces}
+                ),
+            }
+        )
+
+    traces = collect_trace_extensions(bundle)
+    raw_json = json.dumps(bundle, indent=2, ensure_ascii=False)
+    return {
+        "patient_slug": patient_slug(source_path),
+        "patients": available_patients(),
+        "variant": variant,
+        "variant_options": [
+            {"key": key, **details}
+            for key, details in SUMMARY_VARIANTS.items()
+            if variant_path(source_path, key)
+        ],
+        "summary": summary,
+        "sections": sections,
+        "source_file": path.name,
+        "service_counts": dict(Counter(trace["service"] for trace in traces)),
+        "trace_count": len(traces),
+        "raw_json": raw_json,
     }
 
 

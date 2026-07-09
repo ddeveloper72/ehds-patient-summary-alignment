@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ summary.patient.name }} - FHIR Bundle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <main class="mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-5 px-4 py-5 sm:px-6 lg:px-8">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">FHIR Patient Summary Resource</p>
+          <h1>{{ summary.patient.name }}</h1>
+          <p class="header-copy">Smart document view of {{ source_file }}, organised by the Composition sections that make up the Patient Summary.</p>
+        </div>
+        <div class="header-actions">
+          <label class="select-control">
+            <span>Bundle</span>
+            <select data-bundle-variant-select data-patient-slug="{{ patient_slug }}">
+              {% for option in variant_options %}
+                <option value="{{ option.key }}" {{ "selected" if option.key == variant else "" }}>{{ option.label }}</option>
+              {% endfor %}
+            </select>
+          </label>
+          <a class="action-link" href="{{ url_for('index', patient=patient_slug) }}">Back to summary</a>
+        </div>
+      </header>
+
+      <section class="smart-hero">
+        <div>
+          <p class="eyebrow">{{ summary.variant_label }}</p>
+          <h2>{{ summary.composition_title }}</h2>
+          <p>{{ summary.variant_description }}</p>
+        </div>
+        <dl class="smart-stats">
+          <div>
+            <dt>Sections</dt>
+            <dd>{{ summary.summary.section_count }}</dd>
+          </div>
+          <div>
+            <dt>Resources</dt>
+            <dd>{{ summary.summary.resource_count }}</dd>
+          </div>
+          <div>
+            <dt>CTS/NMPC Traces</dt>
+            <dd>{{ trace_count }}</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="smart-panel">
+        <div class="clinical-section-heading">
+          <div>
+            <h3>Document metadata</h3>
+            <p>FHIR Bundle and Composition properties that identify the Patient Summary document.</p>
+          </div>
+        </div>
+        <dl class="admin-grid">
+          <div><dt>Source File</dt><dd>{{ source_file }}</dd></div>
+          <div><dt>Bundle Identifier</dt><dd>{{ summary.administration.bundle_identifier }}</dd></div>
+          <div><dt>Bundle Timestamp</dt><dd>{{ summary.administration.bundle_timestamp }}</dd></div>
+          <div><dt>Document Type</dt><dd>{{ summary.administration.document_type }}</dd></div>
+          <div><dt>Custodian</dt><dd>{{ summary.administration.custodian }}</dd></div>
+          <div><dt>Author</dt><dd>{{ summary.administration.authors }}</dd></div>
+          <div><dt>Patient Identifier</dt><dd>{{ summary.patient.identifier }}</dd></div>
+          <div><dt>Services Used</dt><dd>{% for service, count in service_counts.items() %}<span class="trace-badge">{{ service }} {{ count }}</span>{% else %}No local CTS/NMPC trace extensions in this bundle.{% endfor %}</dd></div>
+        </dl>
+      </section>
+
+      <section class="smart-layout">
+        <aside class="smart-index" aria-label="Patient Summary sections">
+          <h2>Composition sections</h2>
+          {% for section in sections %}
+            <a href="#section-{{ loop.index }}">
+              <strong>{{ section.title }}</strong>
+              <span>LOINC {{ section.code }}{% if section.trace_count %} · {{ section.trace_count }} traces{% endif %}</span>
+            </a>
+          {% endfor %}
+        </aside>
+
+        <div class="smart-sections">
+          {% for section in sections %}
+            <article class="smart-panel" id="section-{{ loop.index }}">
+              <div class="clinical-section-heading">
+                <div>
+                  <h3>{{ section.title }}</h3>
+                  <p>LOINC {{ section.code }}{% if section.empty_reason %} · {{ section.empty_reason }}{% endif %}</p>
+                </div>
+                <div class="trace-badge-row">
+                  {% for service in section.services %}
+                    <span class="trace-badge">{{ service }}</span>
+                  {% else %}
+                    <span class="trace-badge neutral">FHIR coded</span>
+                  {% endfor %}
+                </div>
+              </div>
+
+              <div class="smart-section-body">
+                {% if section.codings %}
+                  <div class="coding-grid">
+                    {% for coding in section.codings %}
+                      <article class="coding-card">
+                        <span>{{ coding.system }}</span>
+                        <strong>{{ coding.code }}</strong>
+                        <p>{{ coding.display }}</p>
+                      </article>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+
+                {% if section.narrative %}
+                  <details class="smart-details">
+                    <summary>Rendered FHIR narrative</summary>
+                    <div class="fhir-narrative">{{ section.narrative|safe }}</div>
+                  </details>
+                {% endif %}
+
+                <div class="smart-resource-list">
+                  {% for entry in section.entries %}
+                    <article class="smart-resource">
+                      <div class="smart-resource-heading">
+                        <div>
+                          <span>{{ entry.type }} / {{ entry.id }}</span>
+                          <h4>{{ entry.label }}</h4>
+                          <p>{{ entry.reference }}</p>
+                        </div>
+                        <div class="trace-badge-row">
+                          {% for service in entry.services %}
+                            <span class="trace-badge">{{ service }}</span>
+                          {% endfor %}
+                        </div>
+                      </div>
+
+                      {% if entry.codings %}
+                        <div class="coding-grid">
+                          {% for coding in entry.codings %}
+                            <article class="coding-card">
+                              <span>{{ coding.path }}</span>
+                              <strong>{{ coding.code }}</strong>
+                              <p>{{ coding.display }}</p>
+                              <small>{{ coding.system }}{% if coding.services %} · {{ coding.services }}{% endif %}</small>
+                            </article>
+                          {% endfor %}
+                        </div>
+                      {% endif %}
+
+                      {% if entry.traces %}
+                        <div class="trace-list">
+                          {% for trace in entry.traces %}
+                            <article>
+                              <span class="trace-badge">{{ trace.service }}</span>
+                              <strong>{{ trace.label }}</strong>
+                              <p>{{ trace.server }}{% if trace.operation %} · {{ trace.operation }}{% endif %}</p>
+                              {% if trace.source %}<p>Source: {{ trace.source }}</p>{% endif %}
+                              {% if trace.total_candidates %}<p>Total candidates: {{ trace.total_candidates }}</p>{% endif %}
+                              {% for candidate in trace.candidates %}
+                                <p class="candidate">{{ candidate }}</p>
+                              {% endfor %}
+                              {% if trace.candidate_overflow %}
+                                <p class="muted">+ {{ trace.candidate_overflow }} more candidates in the JSON.</p>
+                              {% endif %}
+                            </article>
+                          {% endfor %}
+                        </div>
+                      {% endif %}
+                    </article>
+                  {% else %}
+                    <p class="muted">This section has no referenced resources. The section coding and empty reason carry the meaning.</p>
+                  {% endfor %}
+                </div>
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="smart-panel">
+        <details class="smart-details">
+          <summary>Raw FHIR JSON</summary>
+          <pre class="json-block">{{ raw_json }}</pre>
+        </details>
+      </section>
+    </main>
+    <script src="{{ url_for('static', filename='summary.js') }}"></script>
+  </body>
+</html>

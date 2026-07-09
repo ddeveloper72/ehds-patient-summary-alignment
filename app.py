@@ -12,7 +12,7 @@ from pathlib import Path
 
 from flask import Flask, Response, jsonify, redirect, render_template, request, url_for
 
-from patient_summary import dashboard_model
+from patient_summary import dashboard_model, smart_bundle_model
 
 
 app = Flask(__name__)
@@ -64,6 +64,13 @@ def api_summary():
     """Return the same dashboard model used by the page as JSON."""
     model = dashboard_model(request.args.get("patient"))
     return jsonify(model)
+
+
+@app.route("/bundle/<patient_slug>/<variant>")
+def bundle_view(patient_slug: str, variant: str):
+    """Render a smart document view over one FHIR Patient Summary bundle."""
+    model = smart_bundle_model(patient_slug, variant)
+    return render_template("bundle.html", **model)
 
 
 if __name__ == "__main__":
