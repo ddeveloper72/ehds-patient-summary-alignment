@@ -149,8 +149,20 @@ footer span {
   text-decoration: none;
 }
 
+.print-button {
+  cursor: pointer;
+  font: inherit;
+}
+
+.action-link.primary,
+.print-button.primary {
+  background: var(--accent-dark);
+  color: white;
+}
+
 .summary-panel,
-.diff-panel {
+.diff-panel,
+.document-panel {
   display: grid;
   gap: 1rem;
 }
@@ -394,6 +406,84 @@ footer span {
   overflow-wrap: anywhere;
 }
 
+.document-panel {
+  max-width: 62rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 0.5rem;
+  background: var(--panel-bg);
+  box-shadow: var(--shadow);
+  line-height: 1.6;
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.document-heading {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+.document-heading h2 {
+  margin: 0.15rem 0 0;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.1;
+}
+
+.document-heading p,
+.document-panel p,
+.document-list {
+  max-width: 78ch;
+}
+
+.document-panel h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.document-panel section {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.document-panel section + section {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+.comparison-table-wrap {
+  overflow-x: auto;
+}
+
+.document-table {
+  width: 100%;
+  min-width: 48rem;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.document-table th,
+.document-table td {
+  border: 1px solid var(--border);
+  padding: 0.65rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.document-table th {
+  background: rgb(226 232 240);
+}
+
+.document-table td:first-child {
+  font-weight: 800;
+}
+
+.document-list {
+  margin: 0;
+  padding-left: 1.3rem;
+}
+
+.document-list li + li {
+  margin-top: 0.35rem;
+}
+
 @media (min-width: 900px) {
   .admin-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -426,5 +516,62 @@ footer span {
 
   .segment-button {
     flex: 1 1 0;
+  }
+}
+
+@media print {
+  @page {
+    margin: 16mm;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  [data-printable-document],
+  [data-printable-document] * {
+    visibility: visible;
+  }
+
+  main,
+  [data-view-panel="document"] {
+    display: block !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+  }
+
+  [data-printable-document] {
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    max-width: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .document-heading {
+    break-after: avoid;
+  }
+
+  .document-panel section,
+  .document-table tr {
+    break-inside: avoid;
+  }
+
+  .comparison-table-wrap {
+    overflow: visible;
+  }
+
+  .document-table {
+    min-width: 0;
+    font-size: 0.86rem;
   }
 }

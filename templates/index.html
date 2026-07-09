@@ -42,6 +42,7 @@
         <div class="segmented-control" role="tablist" aria-label="Primary view">
           <button class="segment-button" type="button" aria-selected="true" data-view-button="summary">Full Summary</button>
           <button class="segment-button" type="button" aria-selected="false" data-view-button="diff">Differential View</button>
+          <button class="segment-button" type="button" aria-selected="false" data-view-button="document">IPS vs EHDS PS</button>
         </div>
         <div class="toolbar-row" data-summary-toolbar>
           <label class="select-control">
@@ -62,6 +63,9 @@
               {% endfor %}
             </select>
           </label>
+        </div>
+        <div class="toolbar-row" data-document-toolbar hidden>
+          <button class="action-link primary print-button" type="button" data-print-document>Print PDF</button>
         </div>
       </section>
 
@@ -277,6 +281,134 @@
             </div>
           </article>
         {% endfor %}
+      </section>
+
+      <section data-view-panel="document" hidden>
+        <article class="document-panel" data-printable-document>
+          <div class="document-heading">
+            <p class="eyebrow">Reference Document</p>
+            <h2>IPS and EHDS Patient Summary: Key Differences</h2>
+            <p>
+              This document explains how the International Patient Summary and the EHDS/eHDSI Patient Summary relate to each other,
+              and how those differences are represented in this dashboard.
+            </p>
+          </div>
+
+          <section>
+            <h3>Executive summary</h3>
+            <p>
+              The International Patient Summary (IPS) is a global, minimal and non-exhaustive patient summary intended to support
+              unscheduled or cross-border care. The EHDS Patient Summary builds on the same broad clinical idea, but applies the
+              European cross-border exchange context: eHDSI content expectations, EU validation rules, language and terminology
+              requirements, and national infrastructure obligations.
+            </p>
+            <p>
+              In practical implementation terms, IPS is the portable clinical baseline. EHDS PS is the European exchange target
+              that constrains, validates, and operationalises that baseline for use across Member States.
+            </p>
+          </section>
+
+          <section>
+            <h3>Purpose and operating context</h3>
+            <div class="comparison-table-wrap">
+              <table class="document-table">
+                <thead>
+                  <tr>
+                    <th>Area</th>
+                    <th>IPS</th>
+                    <th>EHDS Patient Summary</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Primary purpose</td>
+                    <td>Provide a compact, internationally understandable clinical summary for care.</td>
+                    <td>Enable regulated cross-border exchange of patient summaries within the European health data space.</td>
+                  </tr>
+                  <tr>
+                    <td>Governance context</td>
+                    <td>International standards community specification.</td>
+                    <td>European policy, eHealth Network/eHDSI practice, national contact points, and EU interoperability expectations.</td>
+                  </tr>
+                  <tr>
+                    <td>Implementation emphasis</td>
+                    <td>Common minimum data set and broad semantic interoperability.</td>
+                    <td>Conformance to European profiles, section rules, terminology handling, validation, and exchange workflow.</td>
+                  </tr>
+                  <tr>
+                    <td>National adaptation</td>
+                    <td>Usually implemented as a general baseline with local extensions where needed.</td>
+                    <td>Expected to align European requirements with national identifiers, catalogues, services, and governance.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section>
+            <h3>Content model</h3>
+            <p>
+              Both IPS and EHDS PS organise clinical information around the patient, a Composition, and clinically meaningful
+              sections such as allergies, problems, procedures, medication, immunisations, results, devices, and social history.
+              The difference is less about inventing a new kind of document and more about which sections are expected, how
+              absence is represented, and how tightly the document is checked for exchange readiness.
+            </p>
+            <p>
+              The local alignment process used by this dashboard preserves source clinical facts and adds explicit empty sections
+              only where the EHDS/eHDSI expectation requires a section to be present but the source bundle does not contain the
+              clinical facts. For example, a missing Medical Devices section may be represented with an unavailable empty reason
+              rather than inventing device data.
+            </p>
+          </section>
+
+          <section>
+            <h3>Terminology and localisation</h3>
+            <p>
+              IPS aims for internationally recognisable terminology so a receiving system can understand the summary even when it
+              originates elsewhere. EHDS PS keeps that goal but adds a European operating layer: validation against selected EU
+              profiles, controlled terminology expectations, translation/display needs, and national catalogue integration where
+              appropriate.
+            </p>
+            <p>
+              In this project, the Irish enhanced bundle may include local medication catalogue enrichment and mapping evidence
+              that is useful for Irish review. The Gazelle-facing EHDS copy is more conservative because validator profiles may
+              reject local audit extensions or national codings that are not part of the selected validation profile.
+            </p>
+          </section>
+
+          <section>
+            <h3>Validation and exchange readiness</h3>
+            <p>
+              An IPS bundle can be structurally valid and still need additional work before it is suitable for EHDS/eHDSI
+              exchange. EHDS readiness usually involves checking the selected European profiles, required or at-least-present
+              sections, terminology bindings, document metadata, provenance, and the packaging rules expected by the receiving
+              infrastructure.
+            </p>
+            <p>
+              The dashboard's differential view is therefore a review aid rather than a formal conformance statement. It shows
+              what changed between the IPS, the EHDS validator-facing output, and the Irish fully enhanced output so reviewers can
+              understand both clinical and technical changes before formal validation or sharing.
+            </p>
+          </section>
+
+          <section>
+            <h3>How to read this dashboard</h3>
+            <ul class="document-list">
+              <li><strong>IPS</strong> is the original patient summary bundle loaded from the source examples.</li>
+              <li><strong>EHDS</strong> is the validator-facing European patient summary copy used for profile-oriented review.</li>
+              <li><strong>Irish Fully Enhanced</strong> includes Irish alignment and enrichment evidence that may be useful for national review.</li>
+              <li><strong>Differential View</strong> highlights sections and resources added, removed, or changed between those variants.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Review note</h3>
+            <p>
+              Treat this document as implementation guidance for the sample dashboard. Formal sign-off should still cite the exact
+              IPS, EHDS/eHDSI, and national implementation guide versions used for validation.
+            </p>
+          </section>
+        </article>
       </section>
 
       <footer>
