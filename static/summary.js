@@ -18,8 +18,10 @@ viewButtons.forEach((button) => {
     setSelected(viewButtons, button);
     document.querySelector('[data-view-panel="summary"]').hidden = view !== "summary";
     document.querySelector('[data-view-panel="diff"]').hidden = view !== "diff";
+    document.querySelector('[data-view-panel="document"]').hidden = view !== "document";
     document.querySelector("[data-summary-toolbar]").hidden = view !== "summary";
     document.querySelector("[data-diff-toolbar]").hidden = view !== "diff";
+    document.querySelector("[data-document-toolbar]").hidden = view !== "document";
   });
 });
 
@@ -35,4 +37,8 @@ document.querySelector("[data-patient-select]")?.addEventListener("change", (eve
   const url = new URL(window.location.href);
   url.searchParams.set("patient", event.target.value);
   window.location.href = url.toString();
+});
+
+document.querySelector("[data-print-document]")?.addEventListener("click", () => {
+  window.print();
 });
