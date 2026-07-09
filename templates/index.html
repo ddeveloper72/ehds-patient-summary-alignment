@@ -78,7 +78,11 @@
                 <h2>{{ summary.composition_title }}</h2>
                 <p>{{ summary.variant_description }}</p>
               </div>
-              <div class="source-pill">{{ summary.source_file }}</div>
+              {% if export_mode %}
+                <div class="source-pill">{{ summary.source_file }}</div>
+              {% else %}
+                <a class="source-pill" href="{{ url_for('bundle_view', patient_slug=patient_slug, variant=key) }}" target="_blank" rel="noopener noreferrer">{{ summary.source_file }}</a>
+              {% endif %}
             </div>
 
             <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">

@@ -39,6 +39,11 @@ document.querySelector("[data-patient-select]")?.addEventListener("change", (eve
   window.location.href = url.toString();
 });
 
+document.querySelector("[data-bundle-variant-select]")?.addEventListener("change", (event) => {
+  const patientSlug = event.target.dataset.patientSlug;
+  window.location.href = `/bundle/${patientSlug}/${event.target.value}`;
+});
+
 document.querySelector("[data-print-document]")?.addEventListener("click", () => {
   window.print();
 });
