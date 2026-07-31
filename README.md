@@ -53,9 +53,9 @@ The project treats the source files as three variants of the same patient summar
 
 | Variant | Source |
 | --- | --- |
-| IPS | Original bundle in `Test_documents/` |
-| EHDS | Gazelle/EU validator-facing bundle in `EHDS_aligned_FHIR_resouces/gazelle/`, falling back to the aligned bundle if needed |
-| Irish Fully Enhanced | EHDS-aligned Irish enhanced bundle in `EHDS_aligned_FHIR_resouces/` |
+| IPS | Patient source bundle in `EHDS_aligned_FHIR_resouces/patients/<patient>/source/bundle.json`, using the IPS Gazelle copy when present |
+| EHDS | Gazelle/EU validator-facing bundle in `EHDS_aligned_FHIR_resouces/patients/<patient>/fhir/eu-eps-gazelle/bundle.json`, falling back to IPS Gazelle and then the aligned bundle if needed |
+| Irish Fully Enhanced | EHDS-aligned Irish enhanced bundle in `EHDS_aligned_FHIR_resouces/patients/<patient>/fhir/ehds-aligned/bundle.json` |
 
 The Flask route builds a dashboard model from those files, then renders either the live browser view or a standalone export. The comparison logic hashes sections and resources to identify added, removed, and changed items.
 
@@ -71,9 +71,9 @@ The **Patient details and contacts** panel is populated from the FHIR `Patient` 
 
 ```mermaid
 flowchart LR
-    A[Test_documents IPS Bundle] --> D[patient_summary.py]
-    B[EHDS Gazelle Bundle] --> D
-    C[Irish Enhanced Bundle] --> D
+    A[Patient source bundle] --> D[patient_summary.py]
+    B[EU-EPS Gazelle bundle] --> D
+    C[EHDS-aligned Irish bundle] --> D
     D --> E[Dashboard Model]
     E --> F[Flask HTML View]
     E --> G[JSON API]
@@ -119,9 +119,9 @@ mindmap
       static/summary.js
       static/export-utilities.css
     Data
-      Test_documents
-      EHDS_aligned_FHIR_resouces
-      Gazelle outputs
+      EHDS_aligned_FHIR_resouces/patients
+      source
+      fhir variants
 ```
 
 ## Key Files
@@ -132,8 +132,8 @@ mindmap
 - `static/styles.css` - Application styling.
 - `static/summary.js` - Browser-side view switching used by both live and exported HTML.
 - `static/export-utilities.css` - Minimal Tailwind utility subset embedded into standalone exports.
-- `Test_documents/` - Original IPS source bundles.
-- `EHDS_aligned_FHIR_resouces/` - EHDS-aligned and Gazelle-facing bundles.
+- `EHDS_aligned_FHIR_resouces/patients/` - Self-contained patient folders with source, EHDS-aligned, IPS Gazelle, and EU-EPS Gazelle bundles.
+- `Test_documents/` - Legacy original IPS source bundles retained for compatibility.
 
 ## Running Locally
 
@@ -147,7 +147,7 @@ Create or activate the virtual environment, install dependencies, and run Flask:
 Then open:
 
 ```text
-http://127.0.0.1:5000/
+http://127.0.0.1:5050/
 ```
 
 ## Exporting a Standalone Report
