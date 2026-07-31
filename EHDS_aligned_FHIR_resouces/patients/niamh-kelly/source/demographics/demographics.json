@@ -1,0 +1,28 @@
+{
+  "family": "Kelly",
+  "given": [
+    "Niamh"
+  ],
+  "gender": "female",
+  "birthDate": "1988-02-19",
+  "maritalStatus": {
+    "code": "M",
+    "display": "Married"
+  },
+  "language": {
+    "code": "en-IE",
+    "display": "English (Ireland)"
+  },
+  "ethnicity": {
+    "code": "irish",
+    "display": "Irish"
+  },
+  "address": {
+    "line": [
+      "16 Newcastle Road"
+    ],
+    "city": "Galway",
+    "postalCode": "H91 R7T2",
+    "country": "IE"
+  }
+}

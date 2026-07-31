@@ -1,0 +1,1159 @@
+{
+  "resourceType": "Bundle",
+  "id": "niamh-kelly-bundle-patient-summary",
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:758815c8-d529-5a08-b052-bfb52981cccd"
+  },
+  "type": "document",
+  "timestamp": "2026-06-30T09:45:00+01:00",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:6109b0f0-3b7f-572a-b279-eb8426a27cec",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "niamh-kelly-composition-summary",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "60591-5",
+              "display": "Patient summary Document"
+            }
+          ],
+          "text": "Patient summary Document"
+        },
+        "subject": {
+          "reference": "urn:uuid:a298ac06-d91b-5352-8886-bd6758c4108b"
+        },
+        "date": "2026-06-30T09:45:00+01:00",
+        "author": [
+          {
+            "reference": "urn:uuid:b1b13228-2bd7-5062-a1eb-dbbc772bfa90"
+          }
+        ],
+        "title": "Maternity and hypothyroidism Patient Summary",
+        "custodian": {
+          "reference": "urn:uuid:e45cde37-876f-5fd7-85ef-a9c72990d090"
+        },
+        "section": [
+          {
+            "title": "Allergies and Intolerances",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48765-2",
+                  "display": "Allergies and adverse reactions Document"
+                }
+              ],
+              "text": "Allergies and Intolerances"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>1 entry recorded for Allergies and Intolerances.</p><table><thead><tr><th>Allergy Type</th><th>Substance</th><th>Onset</th><th>Clinical Status</th><th>Verification Status</th><th>Reaction</th></tr></thead><tbody><tr><td>medication</td><td>Aspirin allergy</td><td>2012-02-19</td><td>Active</td><td>Confirmed</td><td>Wheal (moderate)</td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:a00a4d34-2dfa-5cc7-8289-14ba321d4e6e"
+              }
+            ]
+          },
+          {
+            "title": "Problem List",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "11450-4",
+                  "display": "Problem list - Reported"
+                }
+              ],
+              "text": "Problem List"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>2 entries recorded for Problem List.</p><table><thead><tr><th>Problem</th><th>Onset</th><th>Clinical Status</th><th>Verification Status</th><th>Severity</th></tr></thead><tbody><tr><td>Hypothyroidism</td><td>2017-02-19</td><td>Active</td><td>Confirmed</td><td></td></tr><tr><td>Pregnancy</td><td>2026-02-19</td><td>Active</td><td>Confirmed</td><td></td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:4b0bf63d-b524-577f-82e3-299497ab2739"
+              },
+              {
+                "reference": "urn:uuid:67a76d93-52a0-59c3-b112-a59c9b2fe8c8"
+              }
+            ]
+          },
+          {
+            "title": "Medication Summary",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "10160-0",
+                  "display": "History of Medication use Narrative"
+                }
+              ],
+              "text": "Medication Summary"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>2 entries recorded for Medication Summary.</p><table><thead><tr><th>Medication</th><th>Dates</th><th>Dosage-Timing</th><th>Status</th><th>Route</th></tr></thead><tbody><tr><td>Levothyroxine 100 micrograms tablet</td><td>since 2022-08-30</td><td>One tablet each morning</td><td>active</td><td></td></tr><tr><td>Folic acid 400 micrograms tablet</td><td>since 2022-08-30</td><td>One tablet daily</td><td>active</td><td></td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:f750466f-189c-5119-9c63-2f10284794c6"
+              },
+              {
+                "reference": "urn:uuid:36025909-7772-538d-8153-f75c23c0062e"
+              }
+            ]
+          },
+          {
+            "title": "Vital Signs",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8716-3",
+                  "display": "Vital signs note"
+                }
+              ],
+              "text": "Vital Signs"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>2 entries recorded for Vital Signs.</p><table><thead><tr><th>Vital Sign</th><th>Value</th><th>Date</th><th>Status</th></tr></thead><tbody><tr><td>Blood pressure panel with all children optional</td><td>Systolic blood pressure: 110 mm[Hg]; Diastolic blood pressure: 68 mm[Hg]</td><td>2026-06-23T10:00:00+01:00</td><td>final</td></tr><tr><td>Body mass index (BMI) [Ratio]</td><td>25.0 kg/m2</td><td>2026-06-23T10:00:00+01:00</td><td>final</td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:dfce3c4b-c293-5354-97c6-ff4290b8c125"
+              },
+              {
+                "reference": "urn:uuid:cb4df43f-be0a-54b8-af79-c805990f1f38"
+              }
+            ]
+          },
+          {
+            "title": "History of Pregnancies",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "10162-6",
+                  "display": "History of pregnancies Narrative"
+                }
+              ],
+              "text": "History of Pregnancies"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>1 entry recorded for History of Pregnancies.</p><table><thead><tr><th>Pregnancy Observation</th><th>Value</th><th>Date</th><th>Status</th></tr></thead><tbody><tr><td>Pregnancy status</td><td>Pregnancy</td><td>2026-06-23T10:00:00+01:00</td><td>final</td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:f35460ed-00cd-581b-a368-e013fa63d7a1"
+              }
+            ]
+          },
+          {
+            "title": "Social History",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "29762-2",
+                  "display": "Social history note"
+                }
+              ],
+              "text": "Social History"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>2 entries recorded for Social History.</p><table><thead><tr><th>Social History Observation</th><th>Value</th><th>Date</th><th>Status</th></tr></thead><tbody><tr><td>Tobacco smoking status</td><td>Never smoked tobacco</td><td>2026-06-23T10:00:00+01:00</td><td>final</td></tr><tr><td>Alcoholic drinks per day</td><td>0 /d</td><td>2026-06-23T10:00:00+01:00</td><td>final</td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:02da361f-419b-5fa9-a730-329c0decae25"
+              },
+              {
+                "reference": "urn:uuid:da8063f6-6f17-5c33-9e27-ef96d0bea258"
+              }
+            ]
+          },
+          {
+            "title": "Functional Status",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "47420-5",
+                  "display": "Functional status assessment note"
+                }
+              ],
+              "text": "Functional Status"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>1 entry recorded for Functional Status.</p><table><thead><tr><th>Assessment</th><th>Summary</th><th>Time</th><th>Status</th></tr></thead><tbody><tr><td>Cognitive function [Interpretation]</td><td>Independent with activities of daily living during current pregnancy.</td><td>2026-06-23</td><td>completed</td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:2f1e2033-1059-5158-8a0d-9da8a1529cfd"
+              }
+            ]
+          },
+          {
+            "title": "History of Procedures",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "47519-4",
+                  "display": "History of Procedures Document"
+                }
+              ],
+              "text": "History of Procedures"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>No information available in source scenario</p></div>"
+            },
+            "emptyReason": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+                  "code": "unavailable",
+                  "display": "Unavailable"
+                }
+              ],
+              "text": "No information available in source scenario"
+            }
+          },
+          {
+            "title": "History of Immunizations",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "11369-6",
+                  "display": "History of Immunization note"
+                }
+              ],
+              "text": "History of Immunizations"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>2 entries recorded for History of Immunizations.</p><table><thead><tr><th>Vaccine</th><th>Date</th><th>Status</th><th>Lot Number</th></tr></thead><tbody><tr><td>Influenza, split virus, trivalent, PF</td><td>2026-03-02</td><td>completed</td><td></td></tr><tr><td>SARS-CoV-2 mRNA vaccine</td><td>2026-03-02</td><td>completed</td><td></td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:c2d8b9ef-6279-59f3-a387-0af1acc2e76a"
+              },
+              {
+                "reference": "urn:uuid:5ad13461-1d33-5b49-9bd9-3c2adf5666de"
+              }
+            ]
+          },
+          {
+            "title": "Medical Devices",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "46264-8",
+                  "display": "History of medical device use"
+                }
+              ],
+              "text": "Medical Devices"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>No information available in source scenario</p></div>"
+            },
+            "emptyReason": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+                  "code": "unavailable",
+                  "display": "Unavailable"
+                }
+              ],
+              "text": "No information available in source scenario"
+            }
+          },
+          {
+            "title": "Advance Directives",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "42348-3",
+                  "display": "Advance healthcare directives"
+                }
+              ],
+              "text": "Advance Directives"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>No information available in source scenario</p></div>"
+            },
+            "emptyReason": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+                  "code": "unavailable",
+                  "display": "Unavailable"
+                }
+              ],
+              "text": "No information available in source scenario"
+            }
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Composition-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a298ac06-d91b-5352-8886-bd6758c4108b",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "niamh-kelly-patient-main",
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.372.999.1.1",
+            "value": "niamh-kelly"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Kelly",
+            "given": [
+              "Niamh"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1988-02-19",
+        "address": [
+          {
+            "line": [
+              "16 Newcastle Road"
+            ],
+            "city": "Galway",
+            "postalCode": "H91 R7T2",
+            "country": "IE"
+          }
+        ],
+        "communication": [
+          {
+            "language": {
+              "coding": [
+                {
+                  "system": "urn:ietf:bcp:47",
+                  "code": "en-IE",
+                  "display": "English (Ireland)"
+                }
+              ],
+              "text": "English (Ireland)"
+            },
+            "preferred": true
+          }
+        ],
+        "generalPractitioner": [
+          {
+            "reference": "urn:uuid:b1b13228-2bd7-5062-a1eb-dbbc772bfa90"
+          }
+        ],
+        "managingOrganization": {
+          "reference": "urn:uuid:c1395503-73ef-57f0-8c84-c1712499c124"
+        },
+        "maritalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
+              "code": "M",
+              "display": "Married"
+            }
+          ],
+          "text": "Married"
+        },
+        "contact": [
+          {
+            "relationship": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+                    "code": "N",
+                    "display": "Next-of-Kin"
+                  }
+                ],
+                "text": "Spouse"
+              }
+            ],
+            "name": {
+              "family": "Kelly",
+              "given": [
+                "Ronan"
+              ]
+            },
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "+353 87 000 3001",
+                "use": "mobile"
+              }
+            ],
+            "address": {
+              "line": [
+                "16 Newcastle Road"
+              ],
+              "city": "Galway",
+              "postalCode": "H91 R7T2",
+              "country": "IE"
+            }
+          },
+          {
+            "relationship": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+                    "code": "C",
+                    "display": "Emergency Contact"
+                  }
+                ],
+                "text": "Mother"
+              }
+            ],
+            "name": {
+              "family": "Murphy",
+              "given": [
+                "Bríd"
+              ]
+            },
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "+353 86 000 3002",
+                "use": "mobile"
+              }
+            ]
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Patient-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:b1b13228-2bd7-5062-a1eb-dbbc772bfa90",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "niamh-kelly-practitioner-dr-ciara-nolan",
+        "name": [
+          {
+            "family": "Nolan",
+            "given": [
+              "Ciara"
+            ],
+            "prefix": [
+              "Dr"
+            ]
+          }
+        ],
+        "qualification": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "62247001",
+                  "display": "General practitioner"
+                }
+              ],
+              "text": "General practitioner"
+            },
+            "issuer": {
+              "reference": "urn:uuid:10610396-b383-53ae-b53d-e52369859dd7"
+            }
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Practitioner-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:10610396-b383-53ae-b53d-e52369859dd7",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "niamh-kelly-org-galway-gp",
+        "name": "Corrib Primary Care",
+        "address": [
+          {
+            "line": [
+              "8 Newcastle Road"
+            ],
+            "city": "Galway",
+            "postalCode": "H91 E6F7",
+            "country": "IE"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Organization-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c1395503-73ef-57f0-8c84-c1712499c124",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "ireland-org-hse",
+        "name": "Health Service Executive",
+        "address": [
+          {
+            "line": [
+              "Dr Steevens' Hospital"
+            ],
+            "city": "Dublin",
+            "postalCode": "D08 W2A8",
+            "country": "IE"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.372.980010.1.10",
+            "value": "hse"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Organization-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:e45cde37-876f-5fd7-85ef-a9c72990d090",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "ireland-org-department-of-health",
+        "name": "Department of Health",
+        "address": [
+          {
+            "line": [
+              "Miesian Plaza",
+              "50-58 Lower Baggot Street"
+            ],
+            "city": "Dublin",
+            "postalCode": "D02 XW14",
+            "country": "IE"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.372.980010.1.11",
+            "value": "department-of-health"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Organization-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a00a4d34-2dfa-5cc7-8289-14ba321d4e6e",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "niamh-kelly-allergy-nsaid-intolerance",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "type": "allergy",
+        "category": [
+          "medication"
+        ],
+        "criticality": "high",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "293586001",
+              "display": "Aspirin allergy"
+            }
+          ],
+          "text": "Aspirin allergy"
+        },
+        "patient": {
+          "reference": "urn:uuid:a298ac06-d91b-5352-8886-bd6758c4108b"
+        },
+        "recordedDate": "2012-02-19",
+        "reaction": [
+          {
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "247472004",
+                    "display": "Wheal"
+                  }
+                ],
+                "text": "Wheal"
+              }
+            ],
+            "severity": "moderate"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:4b0bf63d-b524-577f-82e3-299497ab2739",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "niamh-kelly-condition-hypothyroidism",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "40930008",
+              "display": "Hypothyroidism"
+            }
+          ],
+          "text": "Hypothyroidism"
+        },
+        "subject": {
+          "reference": "urn:uuid:a298ac06-d91b-5352-8886-bd6758c4108b"
+        },
+        "onsetDateTime": "2017-02-19",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:67a76d93-52a0-59c3-b112-a59c9b2fe8c8",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "niamh-kelly-condition-pregnancy",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "77386006",
+              "display": "Pregnancy"
+            }
+          ],
+          "text": "Pregnancy"
+        },
+        "subject": {
+          "reference": "urn:uuid:a298ac06-d91b-5352-8886-bd6758c4108b"
+        },
+        "onsetDateTime": "2026-02-19",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f750466f-189c-5119-9c63-2f10284794c6",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "niamh-kelly-medication-levothyroxine",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Levothyroxine 100 micrograms tablet"
+        },
+        "subject": {
+          "reference": "urn:uuid:a298ac06-d91b-5352-8886-bd6758c4108b"
+        },
+        "effectivePeriod": {
+          "start": "2022-08-30"
+        },
+        "dateAsserted": "2026-06-30",
+        "dosage": [
+          {
+            "text": "One tablet each morning"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationStatement-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:36025909-7772-538d-8153-f75c23c0062e",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "niamh-kelly-medication-folic-acid",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Folic acid 400 micrograms tablet"
+        },
+        "subject": {
+          "reference": "urn:uuid:a298ac06-d91b-5352-8886-bd6758c4108b"
+        },
+        "effectivePeriod": {
+          "start": "2022-08-30"
+        },
+        "dateAsserted": "2026-06-30",
+        "dosage": [
+          {
+            "text": "One tablet daily"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationStatement-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f35460ed-00cd-581b-a368-e013fa63d7a1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "niamh-kelly-observation-pregnancy-status",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey",
+                "display": "Survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "82810-3",
+              "display": "Pregnancy status"
+            }
+          ],
+          "text": "Pregnancy status"
+        },
+        "subject": {
+          "reference": "urn:uuid:a298ac06-d91b-5352-8886-bd6758c4108b"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:b1b13228-2bd7-5062-a1eb-dbbc772bfa90"
+          }
+        ],
+        "effectiveDateTime": "2026-06-23T10:00:00+01:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "77386006",
+              "display": "Pregnancy"
+            }
+          ],
+          "text": "Pregnancy"
+        },
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-pregnancy-status-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:dfce3c4b-c293-5354-97c6-ff4290b8c125",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "niamh-kelly-observation-blood-pressure",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure panel with all children optional"
+            }
+          ],
+          "text": "Blood pressure panel with all children optional"
+        },
+        "subject": {
+          "reference": "urn:uuid:a298ac06-d91b-5352-8886-bd6758c4108b"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:b1b13228-2bd7-5062-a1eb-dbbc772bfa90"
+          }
+        ],
+        "effectiveDateTime": "2026-06-23T10:00:00+01:00",
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic blood pressure"
+                }
+              ],
+              "text": "Systolic blood pressure"
+            },
+            "valueQuantity": {
+              "value": 110,
+              "unit": "mm[Hg]",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic blood pressure"
+                }
+              ],
+              "text": "Diastolic blood pressure"
+            },
+            "valueQuantity": {
+              "value": 68,
+              "unit": "mm[Hg]",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/bp"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cb4df43f-be0a-54b8-af79-c805990f1f38",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "niamh-kelly-observation-bmi",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5",
+              "display": "Body mass index (BMI) [Ratio]"
+            }
+          ],
+          "text": "Body mass index (BMI) [Ratio]"
+        },
+        "subject": {
+          "reference": "urn:uuid:a298ac06-d91b-5352-8886-bd6758c4108b"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:b1b13228-2bd7-5062-a1eb-dbbc772bfa90"
+          }
+        ],
+        "effectiveDateTime": "2026-06-23T10:00:00+01:00",
+        "valueQuantity": {
+          "value": 25.0,
+          "unit": "kg/m2",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg/m2"
+        },
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/bmi"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:02da361f-419b-5fa9-a730-329c0decae25",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "niamh-kelly-observation-smoking-status-never",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "social-history",
+                "display": "Social History"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72166-2",
+              "display": "Tobacco smoking status"
+            }
+          ],
+          "text": "Tobacco smoking status"
+        },
+        "subject": {
+          "reference": "urn:uuid:a298ac06-d91b-5352-8886-bd6758c4108b"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:b1b13228-2bd7-5062-a1eb-dbbc772bfa90"
+          }
+        ],
+        "effectiveDateTime": "2026-06-23T10:00:00+01:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "266919005",
+              "display": "Never smoked tobacco"
+            }
+          ],
+          "text": "Never smoked tobacco"
+        },
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-tobaccouse-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:da8063f6-6f17-5c33-9e27-ef96d0bea258",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "niamh-kelly-observation-alcohol-drinks-day",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "social-history",
+                "display": "Social History"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "74013-4",
+              "display": "Alcoholic drinks per day"
+            }
+          ],
+          "text": "Alcoholic drinks per day"
+        },
+        "subject": {
+          "reference": "urn:uuid:a298ac06-d91b-5352-8886-bd6758c4108b"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:b1b13228-2bd7-5062-a1eb-dbbc772bfa90"
+          }
+        ],
+        "effectiveDateTime": "2026-06-23T10:00:00+01:00",
+        "valueQuantity": {
+          "value": 0,
+          "unit": "/d",
+          "system": "http://unitsofmeasure.org",
+          "code": "/d"
+        },
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-alcoholuse-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2f1e2033-1059-5158-8a0d-9da8a1529cfd",
+      "resource": {
+        "resourceType": "ClinicalImpression",
+        "id": "niamh-kelly-functional-pregnancy-usual-activities",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75275-8",
+              "display": "Cognitive function [Interpretation]"
+            }
+          ],
+          "text": "Cognitive function [Interpretation]"
+        },
+        "subject": {
+          "reference": "urn:uuid:a298ac06-d91b-5352-8886-bd6758c4108b"
+        },
+        "effectiveDateTime": "2026-06-23",
+        "summary": "Independent with activities of daily living during current pregnancy."
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c2d8b9ef-6279-59f3-a387-0af1acc2e76a",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "niamh-kelly-immunization-influenza",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/cvx",
+              "code": "140",
+              "display": "Influenza, split virus, trivalent, PF"
+            }
+          ],
+          "text": "Influenza, split virus, trivalent, PF"
+        },
+        "patient": {
+          "reference": "urn:uuid:a298ac06-d91b-5352-8886-bd6758c4108b"
+        },
+        "occurrenceDateTime": "2026-03-02",
+        "primarySource": true,
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Immunization-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5ad13461-1d33-5b49-9bd9-3c2adf5666de",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "niamh-kelly-immunization-covid-19",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "1119349007",
+              "display": "SARS-CoV-2 mRNA vaccine"
+            }
+          ],
+          "text": "SARS-CoV-2 mRNA vaccine"
+        },
+        "patient": {
+          "reference": "urn:uuid:a298ac06-d91b-5352-8886-bd6758c4108b"
+        },
+        "occurrenceDateTime": "2026-03-02",
+        "primarySource": true,
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Immunization-uv-ips"
+          ]
+        }
+      }
+    }
+  ],
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/ips/StructureDefinition/Bundle-uv-ips|2.0.0"
+    ]
+  }
+}

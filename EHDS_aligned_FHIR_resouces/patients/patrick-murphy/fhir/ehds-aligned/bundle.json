@@ -39,12 +39,12 @@
         "date": "2025-11-02T23:08:13.789616Z",
         "author": [
           {
-            "reference": "urn:uuid:b5d69749-bc7a-4ca3-8d06-7bd20a15bed4"
+            "reference": "urn:uuid:4f0a976d-03b4-4f12-9dd7-4bbf07efc3fb"
           }
         ],
         "title": "Patient Summary",
         "custodian": {
-          "reference": "urn:uuid:80ad3e93-312f-4a14-a8b6-5b4041885f83"
+          "reference": "urn:uuid:7fa730ce-fd7c-4f6b-9c1e-852da3d85ee5"
         },
         "section": [
           {
@@ -129,7 +129,7 @@
             },
             "text": {
               "status": "additional",
-              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>\n                            Lantus Solostar: Insulin Glargine 100mg/ml, Pre-filled pen : 1 unit, 1\n                            per day : 2024-01-01 to 2025-01-01 : Type 2 diabetes mellitus\n                            (injection)\n                        </p>\n                        <table width=\"100%\">\n                            <thead>\n                                <tr>\n                                    <th>Name (Class)</th>\n                                    <th>Active Ingredient [Strength]</th>\n                                    <th>Dose Form [Package]</th>\n                                    <th>Units per Intake</th>\n                                    <th>Dosage Frequency</th>\n                                    <th>Route of Administration</th>\n                                    <th>Duration of Treatment</th>\n                                    <th>Medication Reason</th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr>\n                                    <td valign=\"top\">Lantus Solostar</td>\n                                    <td valign=\"top\">\n                                        <span>Insulin\n                                        Glargine</span> 100mg/ml <br></br>\n                                    </td>\n                                    <td>\n                                        <span>Pre-filled\n                                            pen</span>\n                                    </td>\n                                    <td>1 unit</td>\n                                    <td>1 per day</td>\n                                    <td>\n                                        <span>Injection</span>\n                                        <br></br>\n                                    </td>\n                                    <td>2024-01-01 to 2025-01-01</td>\n                                    <td>\n                                        <span>Type 2\n                                            diabetes\n                                            mellitus</span>\n                                        <br></br>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table></div>"
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>\n                            Lantus SoloStar: insulin glargine 100 units/1 mL, pre-filled pen: 1 unit,\n                            once daily: 2024-01-01 to 2025-01-01: type 2 diabetes mellitus\n                            (subcutaneous injection)\n                        </p>\n                        <table width=\"100%\">\n                            <thead>\n                                <tr>\n                                    <th>Name (Class)</th>\n                                    <th>Active Ingredient [Strength]</th>\n                                    <th>Dose Form [Package]</th>\n                                    <th>Units per Intake</th>\n                                    <th>Dosage Frequency</th>\n                                    <th>Route of Administration</th>\n                                    <th>Duration of Treatment</th>\n                                    <th>Medication Reason</th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr>\n                                    <td valign=\"top\">Lantus SoloStar</td>\n                                    <td valign=\"top\">\n                                        <span>Insulin\n                                        glargine</span> 100 units/1 mL <br></br>\n                                    </td>\n                                    <td>\n                                        <span>Pre-filled\n                                            pen</span>\n                                    </td>\n                                    <td>1 unit</td>\n                                    <td>Once daily</td>\n                                    <td>\n                                        <span>Subcutaneous injection</span>\n                                        <br></br>\n                                    </td>\n                                    <td>2024-01-01 to 2025-01-01</td>\n                                    <td>\n                                        <span>Type 2\n                                            diabetes\n                                            mellitus</span>\n                                        <br></br>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table></div>"
             },
             "entry": [
               {
@@ -169,10 +169,10 @@
             "mode": "legal",
             "time": "2023-10-20T13:30:45Z",
             "party": {
-              "reference": "urn:uuid:b5d69749-bc7a-4ca3-8d06-7bd20a15bed4"
-            }
+            "reference": "urn:uuid:4f0a976d-03b4-4f12-9dd7-4bbf07efc3fb"
           }
-        ]
+        }
+      ]
       }
     },
     {
@@ -201,6 +201,18 @@
         ],
         "gender": "male",
         "birthDate": "1977-08-07",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+353 87 000 4001",
+            "use": "mobile"
+          },
+          {
+            "system": "email",
+            "value": "patrick.murphy.synthetic@example.ie",
+            "use": "home"
+          }
+        ],
         "address": [
           {
             "line": [
@@ -210,20 +222,155 @@
             "postalCode": "W91 XP83",
             "country": "IE"
           }
+        ],
+        "communication": [
+          {
+            "language": {
+              "coding": [
+                {
+                  "system": "urn:ietf:bcp:47",
+                  "code": "en-IE",
+                  "display": "English (Ireland)"
+                }
+              ],
+              "text": "English (Ireland)"
+            },
+            "preferred": true
+          }
+        ],
+        "generalPractitioner": [
+          {
+            "reference": "urn:uuid:4f0a976d-03b4-4f12-9dd7-4bbf07efc3fb"
+          }
+        ],
+        "managingOrganization": {
+          "reference": "urn:uuid:80ad3e93-312f-4a14-a8b6-5b4041885f83"
+        },
+        "maritalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
+              "code": "M",
+              "display": "Married"
+            }
+          ],
+          "text": "Married"
+        },
+        "contact": [
+          {
+            "relationship": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+                    "code": "N",
+                    "display": "Next-of-Kin"
+                  }
+                ],
+                "text": "Spouse"
+              }
+            ],
+            "name": {
+              "family": "Murphy",
+              "given": [
+                "Siobhan"
+              ]
+            },
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "+353 87 000 4002",
+                "use": "mobile"
+              }
+            ],
+            "address": {
+              "line": [
+                "New Vista, Prosperous Road"
+              ],
+              "city": "Clane",
+              "postalCode": "W91 XP83",
+              "country": "IE"
+            }
+          },
+          {
+            "relationship": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+                    "code": "C",
+                    "display": "Emergency Contact"
+                  }
+                ],
+                "text": "Brother"
+              }
+            ],
+            "name": {
+              "family": "Murphy",
+              "given": [
+                "Michael"
+              ]
+            },
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "+353 86 000 4003",
+                "use": "mobile"
+              }
+            ]
+          }
         ]
       }
     },
     {
-      "fullUrl": "urn:uuid:b5d69749-bc7a-4ca3-8d06-7bd20a15bed4",
+      "fullUrl": "urn:uuid:4f0a976d-03b4-4f12-9dd7-4bbf07efc3fb",
       "resource": {
         "resourceType": "Practitioner",
-        "id": "legal.authenticator.gov.ie",
+        "id": "patrick-murphy-practitioner-dr-siobhan-ryan",
         "name": [
           {
-            "family": "MacNeill",
+            "family": "Ryan",
             "given": [
-              "Minister Carroll"
+              "Siobhan"
+            ],
+            "prefix": [
+              "Dr"
             ]
+          }
+        ],
+        "qualification": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "62247001",
+                  "display": "General practitioner"
+                }
+              ],
+              "text": "General practitioner"
+            },
+            "issuer": {
+              "reference": "urn:uuid:f0174f7c-f73c-4ff5-a7a2-cfce2d8e2bf6"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f0174f7c-f73c-4ff5-a7a2-cfce2d8e2bf6",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "patrick-murphy-org-kildare-gp",
+        "name": "Kildare Family Practice",
+        "address": [
+          {
+            "line": [
+              "18 Main Street"
+            ],
+            "city": "Naas",
+            "postalCode": "W91 C2D3",
+            "country": "IE"
           }
         ]
       }
@@ -232,8 +379,49 @@
       "fullUrl": "urn:uuid:80ad3e93-312f-4a14-a8b6-5b4041885f83",
       "resource": {
         "resourceType": "Organization",
-        "id": "mhec.gov.ie",
-        "name": "Health Service Executive"
+        "id": "ireland-org-hse",
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.372.980010.1.10",
+            "value": "hse"
+          }
+        ],
+        "name": "Health Service Executive",
+        "address": [
+          {
+            "line": [
+              "Dr Steevens' Hospital"
+            ],
+            "city": "Dublin",
+            "postalCode": "D08 W2A8",
+            "country": "IE"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7fa730ce-fd7c-4f6b-9c1e-852da3d85ee5",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "ireland-org-department-of-health",
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.372.980010.1.11",
+            "value": "department-of-health"
+          }
+        ],
+        "name": "Department of Health",
+        "address": [
+          {
+            "line": [
+              "Miesian Plaza",
+              "50-58 Lower Baggot Street"
+            ],
+            "city": "Dublin",
+            "postalCode": "D02 XW14",
+            "country": "IE"
+          }
+        ]
       }
     },
     {
@@ -265,8 +453,8 @@
         "code": {
           "coding": [
             {
-              "system": "http://www.whocc.no/atc",
-              "code": "A10BH01",
+              "system": "http://snomed.info/sct",
+              "code": "423307000",
               "display": "Sitagliptin"
             }
           ],
@@ -352,11 +540,11 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "55561003",
-              "display": "Active"
+              "code": "44054006",
+              "display": "Diabetes mellitus type 2"
             }
           ],
-          "text": "Active"
+          "text": "Type 2 diabetes mellitus"
         },
         "subject": {
           "reference": "urn:uuid:9bbeb92c-d7d2-4c22-a6f5-c126852ffe90"
@@ -431,28 +619,70 @@
         "subject": {
           "reference": "urn:uuid:9bbeb92c-d7d2-4c22-a6f5-c126852ffe90"
         },
-        "effectiveDateTime": "2024-01-01",
+        "effectivePeriod": {
+          "start": "2024-01-01",
+          "end": "2025-01-01"
+        },
+        "reasonReference": [
+          {
+            "reference": "urn:uuid:7a4d22a5-a81a-41da-9836-6920ff3f3733",
+            "display": "Type 2 diabetes mellitus"
+          }
+        ],
         "dosage": [
           {
-            "text": "Subcutaneous route",
+            "text": "1 unit subcutaneously once daily",
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
             "route": {
               "coding": [
                 {
-                  "system": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl",
-                  "code": "C38200",
+                  "system": "http://snomed.info/sct",
+                  "code": "34206005",
                   "display": "Subcutaneous route"
                 }
               ]
-            }
+            },
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 1,
+                  "unit": "international unit",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "[iU]"
+                }
+              }
+            ]
           }
         ],
         "medicationCodeableConcept": {
           "coding": [
             {
-              "system": "http://www.whocc.no/atc",
-              "code": "A10AE04"
+              "system": "http://snomed.info/sct",
+              "code": "126212009",
+              "display": "Insulin glargine-containing product"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "version": "http://snomed.info/sct/1601000220105/version/20260721",
+              "code": "557431000220104",
+              "display": "Lantus SoloStar 100 units/1 mL solution for injection 3 mL pre-filled pen (5 pre-filled pens)"
+            },
+            {
+              "system": "https://nmpc.hse.ie/HPRA",
+              "code": "7487"
+            },
+            {
+              "system": "https://nmpc.hse.ie/PCRS",
+              "code": "69252"
             }
-          ]
+          ],
+          "text": "Lantus SoloStar 100 units/1 mL solution for injection, 3 mL pre-filled pen (pack of 5)"
         }
       }
     },
@@ -488,7 +718,7 @@
               ]
             },
             "who": {
-              "reference": "urn:uuid:b5d69749-bc7a-4ca3-8d06-7bd20a15bed4"
+              "reference": "urn:uuid:4f0a976d-03b4-4f12-9dd7-4bbf07efc3fb"
             }
           }
         ]

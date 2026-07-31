@@ -9,7 +9,7 @@ Help validate a Patient Summary FHIR Bundle, inspect its resources, identify gap
 When working in this repository:
 
 - Treat the original test bundle as source material. Do not overwrite it unless explicitly asked.
-- Create amended or aligned outputs under `EHDS_aligned_FHIR_resouces/`.
+- Create amended or aligned outputs under `EHDS_aligned_FHIR_resouces/patients/<patient>/`.
 - Prefer small, traceable changes that preserve valid FHIR JSON structure.
 - Document alignment decisions, assumptions, and any unresolved issues.
 - Use the existing Python virtual environment in `.venv/` for local scripts and validation work.
@@ -72,13 +72,24 @@ EHDS_PS_Alignment/
 +-- Test_documents/
 |   +-- patient_summary_bundle.json
 +-- EHDS_aligned_FHIR_resouces/
+|   +-- patients/
+|       +-- <patient-slug>/
+|           +-- source/
+|           |   +-- bundle.json
+|           +-- fhir/
+|               +-- ehds-aligned/
+|               |   +-- bundle.json
+|               +-- ips-gazelle/
+|               |   +-- bundle.json
+|               +-- eu-eps-gazelle/
+|                   +-- bundle.json
 ```
 
 ## Coding Guidance
 
 - Use Python for validation, transformation, and reporting scripts.
 - Read and write JSON with structured parsers rather than manual string manipulation.
-- Keep generated files clearly named, for example `patient_summary_bundle_ehds_aligned.json`.
+- Keep generated files in the patient variant folders, using `bundle.json` inside each variant.
 - Avoid making broad unrelated changes to the repository.
 - Where validation cannot be fully automated, provide a human-readable checklist or report.
 - Keep CTS credentials in local environment variables or local `.env` files only. Do not commit credentials, access tokens, or exported terminology datasets.

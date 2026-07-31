@@ -1,0 +1,28 @@
+{
+  "family": "O'Reilly",
+  "given": [
+    "Seamus"
+  ],
+  "gender": "male",
+  "birthDate": "1968-11-03",
+  "maritalStatus": {
+    "code": "M",
+    "display": "Married"
+  },
+  "language": {
+    "code": "en-IE",
+    "display": "English (Ireland)"
+  },
+  "ethnicity": {
+    "code": "irish",
+    "display": "Irish"
+  },
+  "address": {
+    "line": [
+      "7 Shandon Street"
+    ],
+    "city": "Cork",
+    "postalCode": "T23 K8P1",
+    "country": "IE"
+  }
+}

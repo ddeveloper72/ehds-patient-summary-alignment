@@ -2,7 +2,8 @@
 
 The viewer compares three representations of the same source patient summary:
 
-* ``ips``: the original local IPS source bundle from ``Test_documents``.
+* ``ips``: the validator-facing IPS copy when present, otherwise the local
+  source bundle from ``Test_documents``.
 * ``ehds``: the validator-facing EHDS/EU bundle when present, falling back to
   the aligned bundle if no Gazelle copy exists.
 * ``irish``: the internally useful EHDS-aligned Irish enhanced bundle.
@@ -26,12 +27,12 @@ from typing import Any
 ROOT = Path(__file__).resolve().parent
 SOURCE_DIR = ROOT / "Test_documents"
 ALIGNED_DIR = ROOT / "EHDS_aligned_FHIR_resouces"
-GAZELLE_DIR = ALIGNED_DIR / "gazelle"
+PATIENTS_DIR = ALIGNED_DIR / "patients"
 
 SUMMARY_VARIANTS = {
     "ips": {
         "label": "IPS",
-        "description": "Original International Patient Summary source bundle.",
+        "description": "IPS validator-facing patient summary bundle where available.",
     },
     "ehds": {
         "label": "EHDS",
@@ -288,9 +289,10 @@ def resource_label(resource: dict[str, Any]) -> str:
     resource_type = resource.get("resourceType", "Resource")
     candidates = [
         display_from_codeable(resource.get("code")),
+        display_from_codeable(resource.get("type")),
         display_from_codeable(resource.get("medicationCodeableConcept")),
         display_from_codeable(resource.get("vaccineCode")),
-        display_from_codeable(resource.get("type")),
+        resource.get("device", {}).get("display") if isinstance(resource.get("device"), dict) else "",
         resource.get("status"),
         resource.get("id"),
     ]
@@ -601,7 +603,34 @@ def smart_bundle_model(slug: str, variant: str) -> dict[str, Any]:
 
 def patient_slug(path: Path) -> str:
     """Convert a source bundle filename into a URL-friendly patient slug."""
+    patient_dir = patient_dir_for(path)
+    if patient_dir:
+        return patient_dir.name
     return path.stem.removesuffix("_bundle").replace("_", "-").casefold()
+
+
+def patient_dir_for(path: Path) -> Path | None:
+    """Return the patient workspace folder for a path inside ``patients/``."""
+    try:
+        relative = path.resolve().relative_to(PATIENTS_DIR.resolve())
+    except ValueError:
+        return None
+    if not relative.parts:
+        return None
+    return PATIENTS_DIR / relative.parts[0]
+
+
+def patient_default_bundle_path(patient_dir: Path) -> Path | None:
+    """Return the best available bundle path for a patient workspace."""
+    for candidate in (
+        patient_dir / "source" / "bundle.json",
+        patient_dir / "fhir" / "ips-gazelle" / "bundle.json",
+        patient_dir / "fhir" / "ehds-aligned" / "bundle.json",
+        patient_dir / "fhir" / "eu-eps-gazelle" / "bundle.json",
+    ):
+        if candidate.exists():
+            return candidate
+    return None
 
 
 def patient_label(path: Path) -> str:
@@ -618,15 +647,29 @@ def variant_path(source_path: Path, variant: str) -> Path | None:
     copy and then the internal aligned bundle are acceptable fallbacks for the
     browser comparison.
     """
+    patient_dir = patient_dir_for(source_path)
+
     if variant == "ips":
-        return source_path
+        if patient_dir:
+            ips_candidate = patient_dir / "fhir" / "ips-gazelle" / "bundle.json"
+        else:
+            ips_candidate = ALIGNED_DIR / "gazelle" / f"{source_path.stem}_ips_gazelle.json"
+        return ips_candidate if ips_candidate.exists() else source_path
     if variant == "irish":
-        candidate = ALIGNED_DIR / f"{source_path.stem}_ehds_aligned.json"
+        if patient_dir:
+            candidate = patient_dir / "fhir" / "ehds-aligned" / "bundle.json"
+        else:
+            candidate = ALIGNED_DIR / f"{source_path.stem}_ehds_aligned.json"
         return candidate if candidate.exists() else None
     if variant == "ehds":
-        eps_candidate = GAZELLE_DIR / f"{source_path.stem}_eps_gazelle.json"
-        ips_candidate = GAZELLE_DIR / f"{source_path.stem}_ips_gazelle.json"
-        aligned_candidate = ALIGNED_DIR / f"{source_path.stem}_ehds_aligned.json"
+        if patient_dir:
+            eps_candidate = patient_dir / "fhir" / "eu-eps-gazelle" / "bundle.json"
+            ips_candidate = patient_dir / "fhir" / "ips-gazelle" / "bundle.json"
+            aligned_candidate = patient_dir / "fhir" / "ehds-aligned" / "bundle.json"
+        else:
+            eps_candidate = ALIGNED_DIR / "gazelle" / f"{source_path.stem}_eps_gazelle.json"
+            ips_candidate = ALIGNED_DIR / "gazelle" / f"{source_path.stem}_ips_gazelle.json"
+            aligned_candidate = ALIGNED_DIR / f"{source_path.stem}_ehds_aligned.json"
         for candidate in (eps_candidate, ips_candidate, aligned_candidate):
             if candidate.exists():
                 return candidate
@@ -636,6 +679,13 @@ def variant_path(source_path: Path, variant: str) -> Path | None:
 def available_patients() -> list[dict[str, str]]:
     """List all source bundles that can be selected in the UI."""
     patients = []
+    if PATIENTS_DIR.exists():
+        for patient_dir in sorted(path for path in PATIENTS_DIR.iterdir() if path.is_dir()):
+            path = patient_default_bundle_path(patient_dir)
+            if path:
+                patients.append({"slug": patient_dir.name, "label": patient_label(path)})
+    if patients:
+        return patients
     for path in sorted(SOURCE_DIR.glob("*_bundle.json")):
         patients.append({"slug": patient_slug(path), "label": patient_label(path)})
     return patients
@@ -644,6 +694,16 @@ def available_patients() -> list[dict[str, str]]:
 def source_path_for(slug: str) -> Path:
     """Resolve a patient slug to a source IPS bundle, falling back to the first."""
     fallback: Path | None = None
+    if PATIENTS_DIR.exists():
+        for patient_dir in sorted(path for path in PATIENTS_DIR.iterdir() if path.is_dir()):
+            path = patient_default_bundle_path(patient_dir)
+            if not path:
+                continue
+            fallback = fallback or path
+            if patient_dir.name == slug:
+                return path
+        if fallback:
+            return fallback
     for path in sorted(SOURCE_DIR.glob("*_bundle.json")):
         fallback = fallback or path
         if patient_slug(path) == slug:

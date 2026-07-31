@@ -13,12 +13,12 @@ The project now contains two types of output:
 
 Rich EHDS-aligned bundle:
 
-- `EHDS_aligned_FHIR_resouces/Diana_Ferreira_bundle_ehds_aligned.json`
+- `EHDS_aligned_FHIR_resouces/patients/diana-ferreira/fhir/ehds-aligned/bundle.json`
 
 Gazelle validator-facing bundles:
 
-- `EHDS_aligned_FHIR_resouces/gazelle/Diana_Ferreira_bundle_ips_gazelle.json`
-- `EHDS_aligned_FHIR_resouces/gazelle/Diana_Ferreira_bundle_eps_gazelle.json`
+- `EHDS_aligned_FHIR_resouces/patients/diana-ferreira/fhir/ips-gazelle/bundle.json`
+- `EHDS_aligned_FHIR_resouces/patients/diana-ferreira/fhir/eu-eps-gazelle/bundle.json`
 
 Validation evidence:
 
@@ -34,12 +34,12 @@ Result:
 
 Rich EHDS-aligned bundle:
 
-- `EHDS_aligned_FHIR_resouces/Patrick_Murphy_bundle_ehds_aligned.json`
+- `EHDS_aligned_FHIR_resouces/patients/patrick-murphy/fhir/ehds-aligned/bundle.json`
 
 Gazelle validator-facing bundles:
 
-- `EHDS_aligned_FHIR_resouces/gazelle/Patrick_Murphy_bundle_ips_gazelle.json`
-- `EHDS_aligned_FHIR_resouces/gazelle/Patrick_Murphy_bundle_eps_gazelle.json`
+- `EHDS_aligned_FHIR_resouces/patients/patrick-murphy/fhir/ips-gazelle/bundle.json`
+- `EHDS_aligned_FHIR_resouces/patients/patrick-murphy/fhir/eu-eps-gazelle/bundle.json`
 
 Validation evidence:
 
@@ -74,4 +74,3 @@ In short:
 - The rich bundles are better for clinical and terminology review.
 - The Gazelle bundles are better for validation evidence.
 - Both Diana and Patrick now have passing IPS and EU-EPS Gazelle validation reports.
-

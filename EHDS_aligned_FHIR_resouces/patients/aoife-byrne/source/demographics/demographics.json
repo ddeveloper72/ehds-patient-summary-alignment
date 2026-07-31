@@ -1,0 +1,28 @@
+{
+  "family": "Byrne",
+  "given": [
+    "Aoife"
+  ],
+  "gender": "female",
+  "birthDate": "1991-04-12",
+  "maritalStatus": {
+    "code": "S",
+    "display": "Never Married"
+  },
+  "language": {
+    "code": "en-IE",
+    "display": "English (Ireland)"
+  },
+  "ethnicity": {
+    "code": "irish",
+    "display": "Irish"
+  },
+  "address": {
+    "line": [
+      "24 Rathmines Road Lower"
+    ],
+    "city": "Dublin",
+    "postalCode": "D06 X2Y4",
+    "country": "IE"
+  }
+}

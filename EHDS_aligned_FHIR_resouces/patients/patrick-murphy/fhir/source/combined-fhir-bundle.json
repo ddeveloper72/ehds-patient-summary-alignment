@@ -1,0 +1,954 @@
+{
+  "resourceType": "Bundle",
+  "timestamp": "2024-06-20T00:00:00Z",
+  "identifier": {
+    "system": "http://example.org/bundle-identifier",
+    "value": "bundle-001"
+  },
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "http://Composition/6afe0b93-89f1-494a-b270-a567bbd77d7d",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "6afe0b93-89f1-494a-b270-a567bbd77d7d",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "60591-5",
+              "display": "Patient Summary Document"
+            }
+          ]
+        },
+        "title": "Patient Summary",
+        "date": "2024-01-25T17:30:45Z",
+        "subject": {
+          "reference": "Patient/66b404e7-6769-41f3-be7a-a5253d0f1afd"
+        },
+        "author": [
+          {
+            "reference": "Practitioner/ab4763e2-669f-4ff9-a8a8-98f24ce72c26"
+          }
+        ],
+        "custodian": {
+          "reference": "Organization/a7c45450-105a-43aa-985c-ea8bd5b0b1cc"
+        },
+        "section": [
+          {
+            "title": "History of Medication use Narrative",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "10160-0",
+                  "display": "History of Medication use Narrative"
+                }
+              ]
+            },
+            "mode": "snapshot",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">History of Medication use Narrative section</div>"
+            },
+            "entry": [
+              {
+                "reference": "MedicationStatement/21ce4629-c51a-4b9c-8e3f-39f629cccd3b",
+                "display": "LANTUS Solostar INJ.SOL 100 IU/ML"
+              }
+            ]
+          },
+          {
+            "title": "Allergies and other adverse reactions",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48765-2",
+                  "display": "Allergies and adverse reactions Document"
+                }
+              ]
+            },
+            "mode": "snapshot",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Allergies and other adverse reactions section</div>"
+            },
+            "entry": [
+              {
+                "reference": "AllergyIntolerance/c4f082a5-7c68-4bb9-aaaf-d6e17c93903f",
+                "display": "Propensity to adverse reactions"
+              },
+              {
+                "reference": "AllergyIntolerance/04f8ef48-ce62-438a-8509-8a89123bc112",
+                "display": "Propensity to adverse reactions"
+              },
+              {
+                "reference": "AllergyIntolerance/b48254be-2b92-43c8-85f5-3c07d27c34e4",
+                "display": "Sitagliptin"
+              },
+              {
+                "reference": "AllergyIntolerance/fa29558d-5c3d-4239-8ece-10764a654f3a",
+                "display": "Latex"
+              }
+            ]
+          },
+          {
+            "title": "History of Procedures",
+            "code": {
+              "coding": [
+                {
+                  "system": "https://loinc.org",
+                  "code": "47519-4",
+                  "display": "History of Procedures"
+                }
+              ]
+            },
+            "mode": "snapshot",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">History of Procedures section</div>"
+            },
+            "entry": [
+              {
+                "reference": "Procedure/818944bd-f397-403f-a571-8e9aca5f3119",
+                "display": "Operative procedure on hand"
+              },
+              {
+                "reference": "Procedure/ab95d227-92d9-4a68-a43f-6fc99224d6c3",
+                "display": "Biopsy"
+              }
+            ]
+          },
+          {
+            "id": "sectionProblems",
+            "title": "Problem list",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "11450-4",
+                  "display": "Problem list"
+                }
+              ]
+            },
+            "mode": "snapshot",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Problem list section</div>"
+            },
+            "entry": [
+              {
+                "reference": "Condition/5ac17b78-0ef1-4619-b33c-cf4ace34e1ce",
+                "display": "Active"
+              }
+            ]
+          },
+          {
+            "title": "History of medical device use",
+            "code": {
+              "coding": [
+                {
+                  "system": "https://loinc.org",
+                  "code": "46264-8",
+                  "display": "History of medical device use"
+                }
+              ]
+            },
+            "mode": "snapshot",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">History of medical device use section</div>"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://AllergyIntolerance/04f8ef48-ce62-438a-8509-8a89123bc112",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "04f8ef48-ce62-438a-8509-8a89123bc112",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://allergy.2.obs.1",
+            "value": "2.16.17.710.813.1000.990.1.9"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "111088007",
+              "display": "Latex"
+            }
+          ],
+          "text": "Latex"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "resolved",
+              "display": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed",
+              "display": "confirmed"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "Patient/66b404e7-6769-41f3-be7a-a5253d0f1afd",
+          "display": "Patrick Murphy"
+        },
+        "recordedDate": "1990-01-01",
+        "reaction": [
+          {
+            "substance": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "111088007",
+                  "display": "Latex"
+                }
+              ],
+              "text": "Latex"
+            },
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "271807003",
+                    "display": "Rash"
+                  }
+                ],
+                "text": "Rash"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://AllergyIntolerance/b48254be-2b92-43c8-85f5-3c07d27c34e4",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "b48254be-2b92-43c8-85f5-3c07d27c34e4",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://allergy.1.obs.1",
+            "value": "2.16.17.710.813.1000.990.1.9"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "372687004",
+              "display": "Sitagliptin"
+            }
+          ],
+          "text": "Sitagliptin"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "resolved",
+              "display": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed",
+              "display": "confirmed"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "Patient/66b404e7-6769-41f3-be7a-a5253d0f1afd",
+          "display": "Patrick Murphy"
+        },
+        "recordedDate": "1994-10-03",
+        "reaction": [
+          {
+            "substance": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "372687004",
+                  "display": "Sitagliptin"
+                }
+              ],
+              "text": "Sitagliptin"
+            },
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "39579001",
+                    "display": "Anaphylaxis"
+                  }
+                ],
+                "text": "Anaphylaxis"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://AllergyIntolerance/f7d33c59-7ad7-472a-a951-9400d03f9dca",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "f7d33c59-7ad7-472a-a951-9400d03f9dca",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://allergy.1.obs.1",
+            "value": "2.16.17.710.813.1000.990.1.9"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "372687004",
+              "display": "Sitagliptin"
+            }
+          ],
+          "text": "Sitagliptin"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "resolved",
+              "display": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed",
+              "display": "confirmed"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "Patient/66b404e7-6769-41f3-be7a-a5253d0f1afd",
+          "display": "Patrick Murphy"
+        },
+        "recordedDate": "1994-10-03",
+        "reaction": [
+          {
+            "substance": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "372687004",
+                  "display": "Sitagliptin"
+                }
+              ],
+              "text": "Sitagliptin"
+            },
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "422587007",
+                    "display": "Nausea"
+                  }
+                ],
+                "text": "Nausea"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://AllergyIntolerance/fa29558d-5c3d-4239-8ece-10764a654f3a",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "fa29558d-5c3d-4239-8ece-10764a654f3a",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://allergy.2.obs.1",
+            "value": "2.16.17.710.813.1000.990.1.9"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "111088007",
+              "display": "Latex"
+            }
+          ],
+          "text": "#allergy.2.agent"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "resolved",
+              "display": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed",
+              "display": "confirmed"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "Patient/66b404e7-6769-41f3-be7a-a5253d0f1afd",
+          "display": "Patrick Murphy"
+        },
+        "recordedDate": "1990-01-01",
+        "reaction": [
+          {
+            "substance": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "111088007",
+                  "display": "Latex"
+                }
+              ],
+              "text": "Latex"
+            },
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "126485001",
+                    "display": "Urticaria"
+                  }
+                ],
+                "text": "Urticaria"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://Condition/5ac17b78-0ef1-4619-b33c-cf4ace34e1ce",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "5ac17b78-0ef1-4619-b33c-cf4ace34e1ce",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://problem.1.obs.1",
+            "value": "2.16.17.710.813.1000.990.1.7"
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "E11",
+              "display": "Type 2 diabetes mellitus"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/66b404e7-6769-41f3-be7a-a5253d0f1afd",
+          "display": "Patrick Murphy"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://Condition/c2c59d06-56b4-4d53-928d-0f305081b099",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "c2c59d06-56b4-4d53-928d-0f305081b099",
+        "identifier": [
+          {
+            "use": "official",
+            "value": "c2c59d06-56b4-4d53-928d-0f305081b099"
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "E11",
+              "display": "Type 2 diabetes mellitus"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/66b404e7-6769-41f3-be7a-a5253d0f1afd",
+          "display": "Patrick Murphy"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://Condition/ca5d45a8-97d1-4f68-9ce4-ae19c31873c5",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "ca5d45a8-97d1-4f68-9ce4-ae19c31873c5",
+        "identifier": [
+          {
+            "use": "official",
+            "value": "ca5d45a8-97d1-4f68-9ce4-ae19c31873c5"
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "E11",
+              "display": "Type 2 diabetes mellitus"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/66b404e7-6769-41f3-be7a-a5253d0f1afd",
+          "display": "Patrick Murphy"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://MedicationStatement/619d61cf-e6c0-4b76-924e-50fab5afcef6",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "619d61cf-e6c0-4b76-924e-50fab5afcef6",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://medication.1",
+            "value": "2.16.17.710.813.1000.990.1.8"
+          }
+        ],
+        "status": "active",
+        "effectiveDateTime": "2024-06-01T00:00:00Z",
+        "medicationReference": {
+          "reference": "Medication/005705ff-3592-425e-9c72-d987ec2c454b",
+          "display": "LANTUS Solostar INJ.SOL 100 IU/ML "
+        },
+        "subject": {
+          "reference": "Patient/66b404e7-6769-41f3-be7a-a5253d0f1afd",
+          "display": "Patrick Murphy"
+        },
+        "dosage": [
+          {
+            "timing": {
+              "repeat": {
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "unit": "1",
+                  "system": "http://unitsofmeasure.org/ucum.html"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://Organization/a7c45450-105a-43aa-985c-ea8bd5b0b1cc",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "a7c45450-105a-43aa-985c-ea8bd5b0b1cc",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://mhec.gov.ie",
+            "value": "2.16.17.710.813.1000.990.1.5"
+          }
+        ],
+        "name": "Health Service Executive",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "email",
+                "value": "tel:0",
+                "use": "work"
+              }
+            ],
+            "address": {
+              "line": ["Dr. Steeven's Hospital, Steeven's Lane"],
+              "city": "Dublin 8",
+              "postalCode": "W91 XP83",
+              "country": "GR"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://Patient/66b404e7-6769-41f3-be7a-a5253d0f1afd",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "66b404e7-6769-41f3-be7a-a5253d0f1afd",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://legal.authenticator.gov.ie",
+            "value": "1.2.372.980010.1.2"
+          }
+        ],
+        "name": [
+          {
+            "family": "Murphy",
+            "given": ["Patrick"]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "tel:+353-87-34376462",
+            "use": "home"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1977-08-07",
+        "address": [
+          {
+            "line": ["New Vista, Prosperous Road"],
+            "city": "Clane",
+            "postalCode": "W91 XP83",
+            "country": "IE"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://Practitioner/ab4763e2-669f-4ff9-a8a8-98f24ce72c26",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "ab4763e2-669f-4ff9-a8a8-98f24ce72c26",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://legal.authenticator.gov.ie",
+            "value": "2.16.17.710.813.1000.990.1.4"
+          }
+        ],
+        "name": [
+          {
+            "family": "MacNeill",
+            "given": ["Minister Carroll"]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "email",
+            "value": "tel:0"
+          }
+        ],
+        "address": [
+          {
+            "line": ["Block 1, Miesian Plaza, 50 - 58 Lower Baggot Street"],
+            "city": "Dublin 2",
+            "postalCode": "D02 XW14",
+            "country": "GR"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://Procedure/818944bd-f397-403f-a571-8e9aca5f3119",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "818944bd-f397-403f-a571-8e9aca5f3119",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Biopsy procedure performed on Patrick Murphy on 2023-01-01.</div>"
+        },
+        "identifier": [
+          {
+            "use": "official",
+            "system": "urn:oid:2.16.17.710.813.1000.990.1.6",
+            "value": "procedure"
+          }
+        ],
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "86273004",
+              "display": "Biopsy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/66b404e7-6769-41f3-be7a-a5253d0f1afd",
+          "display": "Patrick Murphy"
+        },
+        "performedDateTime": "2023-01-01T10:00:00Z"
+      }
+    },
+    {
+      "fullUrl": "http://Procedure/ab95d227-92d9-4a68-a43f-6fc99224d6c3",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "ab95d227-92d9-4a68-a43f-6fc99224d6c3",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Operative procedure on hand performed for patient Patrick Murphy on 2023-01-01.</div>"
+        },
+        "identifier": [
+          {
+            "use": "official",
+            "system": "urn:oid:2.16.17.710.813.1000.990.1.6",
+            "value": "procedure"
+          }
+        ],
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "S62.3",
+              "display": "Fracture of other metacarpal bone"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/66b404e7-6769-41f3-be7a-a5253d0f1afd",
+          "display": "Patrick Murphy"
+        },
+        "performedDateTime": "2023-01-01T10:00:00Z"
+      }
+    },
+    {
+      "fullUrl": "http://MedicationStatement/21ce4629-c51a-4b9c-8e3f-39f629cccd3b",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "21ce4629-c51a-4b9c-8e3f-39f629cccd3b",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://medication.2",
+            "value": "2.16.17.710.813.1000.990.1.10"
+          }
+        ],
+        "status": "active",
+        "effectiveDateTime": "2024-06-01T00:00:00Z",
+        "medicationReference": {
+          "reference": "Medication/005705ff-3592-425e-9c72-d987ec2c454b",
+          "display": "LANTUS Solostar INJ.SOL 100 IU/ML"
+        },
+        "subject": {
+          "reference": "Patient/66b404e7-6769-41f3-be7a-a5253d0f1afd",
+          "display": "Patrick Murphy"
+        },
+        "dosage": [
+          {
+            "timing": {
+              "repeat": {
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "unit": "1",
+                  "system": "http://unitsofmeasure.org/ucum.html"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://AllergyIntolerance/c4f082a5-7c68-4bb9-aaaf-d6e17c93903f",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "c4f082a5-7c68-4bb9-aaaf-d6e17c93903f",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://allergy.3.obs.1",
+            "value": "2.16.17.710.813.1000.990.1.11"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "91936005",
+              "display": "Allergy to penicillin"
+            }
+          ],
+          "text": "Penicillin"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed",
+              "display": "confirmed"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "Patient/66b404e7-6769-41f3-be7a-a5253d0f1afd",
+          "display": "Patrick Murphy"
+        },
+        "recordedDate": "2000-01-01",
+        "reaction": [
+          {
+            "substance": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "91936005",
+                  "display": "Penicillin"
+                }
+              ],
+              "text": "Penicillin"
+            },
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "271807003",
+                    "display": "Rash"
+                  }
+                ],
+                "text": "Rash"
+              }
+            ]
+          }
+        ]
+      }
+    }
+    
+  ]
+}

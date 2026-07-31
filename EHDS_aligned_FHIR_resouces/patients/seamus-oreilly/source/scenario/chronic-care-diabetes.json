@@ -1,0 +1,150 @@
+{
+  "slug": "seamus-oreilly",
+  "title": "Moderate chronic-care Patient Summary",
+  "summaryDate": "2026-06-24T14:30:00+01:00",
+  "patient": {
+    "family": "O'Reilly",
+    "given": [
+      "Seamus"
+    ],
+    "gender": "male",
+    "birthDate": "1968-11-03",
+    "maritalStatus": {
+      "code": "M",
+      "display": "Married"
+    },
+    "language": {
+      "code": "en-IE",
+      "display": "English (Ireland)"
+    },
+    "ethnicity": {
+      "code": "irish",
+      "display": "Irish"
+    },
+    "address": {
+      "line": [
+        "7 Shandon Street"
+      ],
+      "city": "Cork",
+      "postalCode": "T23 K8P1",
+      "country": "IE"
+    }
+  },
+  "author": "dr-brian-walsh",
+  "organization": "cork-gp",
+  "serviceAuthority": "hse",
+  "custodianOrganization": "department-of-health",
+  "contacts": [
+    {
+      "role": "next-of-kin",
+      "relationship": "Spouse",
+      "family": "O'Reilly",
+      "given": [
+        "Eileen"
+      ],
+      "phone": "+353 87 000 2001",
+      "address": {
+        "line": [
+          "7 Shandon Street"
+        ],
+        "city": "Cork",
+        "postalCode": "T23 K8P1",
+        "country": "IE"
+      }
+    },
+    {
+      "role": "dependant",
+      "relationship": "Son",
+      "family": "O'Reilly",
+      "given": [
+        "Cian"
+      ],
+      "birthDate": "2009-05-21"
+    },
+    {
+      "role": "emergency-contact",
+      "relationship": "Brother",
+      "family": "O'Reilly",
+      "given": [
+        "Patrick"
+      ],
+      "phone": "+353 86 000 2002"
+    }
+  ],
+  "consent": {
+    "status": "active",
+    "decision": "permit",
+    "scope": "patient-privacy",
+    "category": "patient summary sharing",
+    "policyText": "Synthetic consent for sharing Patient Summary data for cross-border care and validation testing."
+  },
+  "timeline": {
+    "gpEncounterOffsetDays": -14,
+    "allergyAssertedAge": 34,
+    "conditionOnsetAges": {
+      "type-2-diabetes": 47,
+      "hypertension": 50,
+      "hyperlipidaemia": 51
+    },
+    "medicationStartOffsetDays": -1000,
+    "observationOffsetDays": -14,
+    "procedureAge": 22,
+    "immunizationOffsetDays": -210
+  },
+  "blocks": {
+    "allergies": [
+      "penicillin"
+    ],
+    "conditions": [
+      "type-2-diabetes",
+      "hypertension",
+      "hyperlipidaemia"
+    ],
+    "medications": [
+      "metformin",
+      "ramipril",
+      "atorvastatin"
+    ],
+    "observations": [
+      {
+        "id": "hba1c",
+        "value": 7.2
+      },
+      {
+        "id": "egfr",
+        "value": 82
+      },
+      {
+        "id": "blood-pressure",
+        "components": [
+          132,
+          82
+        ]
+      },
+      {
+        "id": "bmi",
+        "value": 29.1
+      }
+    ],
+    "socialHistory": [
+      {
+        "id": "smoking-status-former"
+      },
+      {
+        "id": "alcohol-drinks-day",
+        "value": 0.9
+      }
+    ],
+    "functionalStatus": [
+      "independent-mobility",
+      "independent-activities"
+    ],
+    "procedures": [
+      "appendicectomy"
+    ],
+    "immunizations": [
+      "influenza",
+      "covid-19"
+    ]
+  }
+}

@@ -136,32 +136,6 @@
                 "reference": "urn:uuid:aacdd6bd-98e2-4ad9-9b90-13d95206ab4a"
               }
             ]
-          },
-          {
-            "title": "Medical Devices",
-            "code": {
-              "coding": [
-                {
-                  "system": "http://loinc.org",
-                  "code": "46264-8",
-                  "display": "History of medical device use"
-                }
-              ]
-            },
-            "text": {
-              "status": "additional",
-              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>No medical devices information was available in the source bundle.</p></div>"
-            },
-            "emptyReason": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
-                  "code": "unavailable",
-                  "display": "Unavailable"
-                }
-              ],
-              "text": "No information available in source bundle"
-            }
           }
         ],
         "attester": [
@@ -451,59 +425,6 @@
             {
               "system": "http://www.whocc.no/atc",
               "code": "A10AE04"
-            }
-          ],
-          "extension": [
-            {
-              "url": "https://nmpc.hse.ie/fhir/StructureDefinition/nmpc-candidate-match",
-              "extension": [
-                {
-                  "url": "sourceSystem",
-                  "valueUri": "http://www.whocc.no/atc"
-                },
-                {
-                  "url": "sourceCode",
-                  "valueCode": "A10AE04"
-                },
-                {
-                  "url": "totalCandidates",
-                  "valueInteger": 2
-                },
-                {
-                  "url": "candidate",
-                  "extension": [
-                    {
-                      "url": "system",
-                      "valueUri": "http://snomed.info/sct"
-                    },
-                    {
-                      "url": "code",
-                      "valueCode": "557431000220104"
-                    },
-                    {
-                      "url": "display",
-                      "valueString": "Lantus SoloStar 100 units/1 mL solution for injection 3 mL pre-filled pen (5 pre-filled pens)"
-                    }
-                  ]
-                },
-                {
-                  "url": "candidate",
-                  "extension": [
-                    {
-                      "url": "system",
-                      "valueUri": "http://snomed.info/sct"
-                    },
-                    {
-                      "url": "code",
-                      "valueCode": "557711000220104"
-                    },
-                    {
-                      "url": "display",
-                      "valueString": "Toujeo SoloStar 300 units/1 mL solution for injection 1.5 mL pre-filled pen (5 pre-filled pens)"
-                    }
-                  ]
-                }
-              ]
             }
           ]
         }

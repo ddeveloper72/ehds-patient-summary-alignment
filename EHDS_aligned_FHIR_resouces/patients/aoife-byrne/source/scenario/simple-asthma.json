@@ -1,0 +1,122 @@
+{
+  "slug": "aoife-byrne",
+  "title": "Simple adult asthma Patient Summary",
+  "summaryDate": "2026-06-18T10:15:00+01:00",
+  "patient": {
+    "family": "Byrne",
+    "given": [
+      "Aoife"
+    ],
+    "gender": "female",
+    "birthDate": "1991-04-12",
+    "maritalStatus": {
+      "code": "S",
+      "display": "Never Married"
+    },
+    "language": {
+      "code": "en-IE",
+      "display": "English (Ireland)"
+    },
+    "ethnicity": {
+      "code": "irish",
+      "display": "Irish"
+    },
+    "address": {
+      "line": [
+        "24 Rathmines Road Lower"
+      ],
+      "city": "Dublin",
+      "postalCode": "D06 X2Y4",
+      "country": "IE"
+    }
+  },
+  "author": "dr-aoife-kennedy",
+  "organization": "dublin-gp",
+  "serviceAuthority": "hse",
+  "custodianOrganization": "department-of-health",
+  "contacts": [
+    {
+      "role": "next-of-kin",
+      "relationship": "Sister",
+      "family": "Byrne",
+      "given": [
+        "Maeve"
+      ],
+      "phone": "+353 87 000 1001",
+      "address": {
+        "line": [
+          "42 Clanbrassil Street"
+        ],
+        "city": "Dublin",
+        "postalCode": "D08 A1B2",
+        "country": "IE"
+      }
+    },
+    {
+      "role": "emergency-contact",
+      "relationship": "Friend",
+      "family": "Ryan",
+      "given": [
+        "Clodagh"
+      ],
+      "phone": "+353 86 000 1002"
+    }
+  ],
+  "consent": {
+    "status": "active",
+    "decision": "permit",
+    "scope": "patient-privacy",
+    "category": "patient summary sharing",
+    "policyText": "Synthetic consent for sharing Patient Summary data for cross-border care and validation testing."
+  },
+  "timeline": {
+    "gpEncounterOffsetDays": -21,
+    "allergyAssertedAge": 20,
+    "conditionOnsetAge": 16,
+    "medicationStartOffsetDays": -730,
+    "observationOffsetDays": -21,
+    "immunizationOffsetDays": -250
+  },
+  "blocks": {
+    "allergies": [
+      "no-known-allergies"
+    ],
+    "conditions": [
+      "asthma"
+    ],
+    "medications": [
+      "salbutamol-inhaler",
+      "beclometasone-inhaler"
+    ],
+    "observations": [
+      {
+        "id": "bmi",
+        "value": 23.4
+      },
+      {
+        "id": "blood-pressure",
+        "components": [
+          118,
+          74
+        ]
+      }
+    ],
+    "socialHistory": [
+      {
+        "id": "smoking-status-never"
+      },
+      {
+        "id": "alcohol-drinks-day",
+        "value": 0.3
+      }
+    ],
+    "functionalStatus": [
+      "independent-mobility",
+      "independent-activities"
+    ],
+    "procedures": [],
+    "immunizations": [
+      "influenza"
+    ]
+  }
+}

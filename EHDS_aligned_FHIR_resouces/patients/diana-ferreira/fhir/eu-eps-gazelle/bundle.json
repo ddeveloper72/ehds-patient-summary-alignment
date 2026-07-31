@@ -90,7 +90,7 @@
             },
             "text": {
               "status": "additional",
-              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>Predominantly allergic asthma since 1994-10-03</p><p>Postprocedural hypothyroidism since 1997-10-06</p><p>Other specified cardiac arrhythmias since 2013-01-09</p><p>Type 2 diabetes mellitus since 2013-01-09</p><p>Severe pre-eclampsia since 2017-05-06 active</p><p>Acute tubulo-interstitial nephritis (Moderate to severe) since 2017-05-07</p><p>Rare disease: Cornelia de Lange syndrome (199) since 2017-05-07</p>\n                        <table><colgroup><col width=\"20%\"></col><col width=\"20%\"></col><col width=\"20%\"></col><col width=\"20%\"></col></colgroup><thead>\n                            <tr><th>Active Problem</th><th>Problem Type</th><th>Time</th><th>Problem Status</th><th>Severity</th></tr></thead>\n                            <tbody>\n                                <tr><td><span><span>Predominantly allergic asthma</span><br></br></span></td><td><span>Clinical finding</span><br></br></td><td>since 1994-10-03</td><td>active</td><td></td></tr>\n                                <tr><td><span><span>Postprocedural hypothyroidism</span><br></br></span></td><td><span>Clinical finding</span><br></br></td><td>since 1997-10-06</td><td>active</td><td></td></tr>\n                                <tr><td><span><span>Other specified cardiac arrhythmias</span><br></br></span></td><td><span>Clinical finding</span><br></br></td><td>since 2013-01-09</td><td>active</td><td></td></tr>\n                                <tr><td><span><span>Type 2 diabetes mellitus</span><br></br></span></td><td><span>Clinical finding</span><br></br></td><td>since 2013-01-09</td><td>active</td><td></td></tr>\n                                <tr><td><span><span>Severe pre-eclampsia</span><br></br></span></td><td><span>Problem</span><br></br></td><td>since 2017-05-06</td><td>active</td><td><span><span>Severe</span></span></td></tr>\n                                <tr><td><span><span>Acute tubulo-interstitial nephritis</span><br></br></span></td><td><span>Problem</span><br></br></td><td>since 2017-05-07</td><td>active</td><td><span><span>Moderate to severe</span></span></td></tr>\n                            </tbody>\n                        </table></div>"
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>Predominantly allergic asthma since 1994-10-03</p><p>Postprocedural hypothyroidism since 1997-10-06</p><p>Other specified cardiac arrhythmias since 2013-01-09</p><p>Type 2 diabetes mellitus since 2013-01-09</p><p>Severe pre-eclampsia since 2017-05-06 active</p><p>Acute tubulo-interstitial nephritis (Moderate to severe) since 2017-05-07</p><p>Rare disease: Cornelia de Lange syndrome since 2017-05-07</p>\n                        <table><colgroup><col width=\"20%\"></col><col width=\"20%\"></col><col width=\"20%\"></col><col width=\"20%\"></col></colgroup><thead>\n                            <tr><th>Active Problem</th><th>Problem Type</th><th>Time</th><th>Problem Status</th><th>Severity</th></tr></thead>\n                            <tbody>\n                                <tr><td><span><span>Predominantly allergic asthma</span><br></br></span></td><td><span>Clinical finding</span><br></br></td><td>since 1994-10-03</td><td>active</td><td></td></tr>\n                                <tr><td><span><span>Postprocedural hypothyroidism</span><br></br></span></td><td><span>Clinical finding</span><br></br></td><td>since 1997-10-06</td><td>active</td><td></td></tr>\n                                <tr><td><span><span>Other specified cardiac arrhythmias</span><br></br></span></td><td><span>Clinical finding</span><br></br></td><td>since 2013-01-09</td><td>active</td><td></td></tr>\n                                <tr><td><span><span>Type 2 diabetes mellitus</span><br></br></span></td><td><span>Clinical finding</span><br></br></td><td>since 2013-01-09</td><td>active</td><td></td></tr>\n                                <tr><td><span><span>Severe pre-eclampsia</span><br></br></span></td><td><span>Problem</span><br></br></td><td>since 2017-05-06</td><td>active</td><td><span><span>Severe</span></span></td></tr>\n                                <tr><td><span><span>Acute tubulo-interstitial nephritis</span><br></br></span></td><td><span>Problem</span><br></br></td><td>since 2017-05-07</td><td>active</td><td><span><span>Moderate to severe</span></span></td></tr>\n                            <tr><td><span><span>Cornelia de Lange syndrome</span><br></br></span></td><td><span>Rare disease</span><br></br></td><td>since 2017-05-07</td><td>active</td><td></td></tr>\n                            </tbody>\n                        </table></div>"
             },
             "entry": [
               {
@@ -110,30 +110,6 @@
               },
               {
                 "reference": "urn:uuid:ed389c36-72ff-4c2d-8bfd-e180558d00c5"
-              }
-            ]
-          },
-          {
-            "title": "History of Past Illness",
-            "code": {
-              "coding": [
-                {
-                  "system": "http://loinc.org",
-                  "code": "11348-0",
-                  "display": "History of Past illness note"
-                }
-              ]
-            },
-            "text": {
-              "status": "additional",
-              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>Health Status</p>\n                        <p>Carcinoma in situ: Thyroid and other endocrine glands, between 1997-10-01 and 1997-10-06, Disorder in remission.</p>\n                        <p>Diabetes mellitus arising in pregnancy, between 2011-10-12 and 2012-04-30, Disorder in remission.</p>\n                        <table><colgroup><col width=\"20%\"></col><col width=\"20%\"></col><col width=\"20%\"></col><col width=\"20%\"></col></colgroup>\n                            <thead>\n                                <tr><th>Closed/Inactive Problem</th><th>Problem Type</th><th>Time</th><th>Problem Status</th><th>Health Status</th></tr>\n                            </thead>\n                            <tbody>\n                                <tr><td><span><span>Carcinoma in situ: Thyroid and other endocrine glands</span><br></br></span></td><td><span>Problem</span><br></br></td><td>between 1997-10-01 and 1997-10-06</td><td>completed</td><td><span><span>Disorder in remission</span></span></td></tr>\n                                <tr><td><span><span>Diabetes mellitus arising in pregnancy</span><br></br></span></td><td><span>Problem</span><br></br></td><td>between 2011-10-12 and 2012-04-30</td><td>completed</td><td><span><span>Disorder in remission</span></span></td></tr>\n                            </tbody>\n                        </table></div>"
-            },
-            "entry": [
-              {
-                "reference": "urn:uuid:789a6162-74ca-476a-a2b0-d8d5777f2249"
-              },
-              {
-                "reference": "urn:uuid:013867ca-4cd7-4cc8-9e22-5b24620b4c06"
               }
             ]
           },
@@ -219,60 +195,6 @@
             ]
           },
           {
-            "title": "History of Immunizations",
-            "code": {
-              "coding": [
-                {
-                  "system": "http://loinc.org",
-                  "code": "11369-6",
-                  "display": "History of Immunization note"
-                }
-              ]
-            },
-            "text": {
-              "status": "additional",
-              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>Hepatitis B virus vaccine Engerix B (2294189) 1983-01-02</p><p>Diphtheria + tetanus + pertussis + poliomyelitis vaccine Tetravac (2782480) 1983-01-02</p><p>Haemophilus influenzae Type b vaccine Hiberix (2751881) 1983-01-02</p><p>Human papillomavirus vaccine Cervarix (5055173) 1994-05-20</p>\n                        <table>\n                            <colgroup>\n                                <col width=\"8%\"></col><col width=\"8%\"></col><col width=\"8%\"></col><col width=\"8%\"></col><col width=\"8%\"></col><col width=\"8%\"></col><col width=\"8%\"></col><col width=\"8%\"></col><col width=\"8%\"></col><col width=\"8%\"></col><col width=\"8%\"></col>\n                            </colgroup>\n                            <thead>\n                                <tr><th>Vaccination</th><th>Brand Name</th><th>Vaccination Date</th><th>Agent</th><th>Marketing Authorization Holder</th><th>Dose number in series</th><th>Batch/lot number</th><th>Administering Center</th><th>Health Professional Identification</th><th>Country of Vaccination</th><th>Annotations</th></tr>\n                            </thead>\n                            <tbody>\n                                <tr><td><span>Hepatitis B virus\n                                    vaccine</span><br></br></td><td>Engerix B (2294189)</td><td>1983-01-02</td><td>Acute Hepatitis B</td><td>SmithKline Beecham Biologicals S.A</td><td>12</td><td>1</td><td>Brussels vaccination center</td><td>Gregory House</td><td>BE</td><td></td></tr>\n                                <tr><td><span>Diphtheria + tetanus\n                                    + pertussis + poliomyelitis vaccine</span><br></br></td><td>Tetravac (2782480)</td><td>1983-01-02</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n                                <tr><td><span>Haemophilus\n                                    influenzae Type b vaccine</span><br></br></td><td>Hiberix (2751881)</td><td>1983-01-02</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n                                <tr><td><span>Human papillomavirus\n                                    vaccine</span><br></br></td><td>Cervarix (5055173)</td><td>1994-05-20</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n                            </tbody>\n                        </table></div>"
-            },
-            "entry": [
-              {
-                "reference": "urn:uuid:e0c9b98d-d51f-49a0-8774-e4c76b48e07c"
-              },
-              {
-                "reference": "urn:uuid:5bd03c2a-07d8-48ea-aabb-26db1cd19d51"
-              },
-              {
-                "reference": "urn:uuid:cd1eb243-bb65-4439-ab09-528a2813f3af"
-              },
-              {
-                "reference": "urn:uuid:df0b8c69-658d-4231-a720-bc4cb47d244e"
-              }
-            ]
-          },
-          {
-            "title": "Social History",
-            "code": {
-              "coding": [
-                {
-                  "system": "http://loinc.org",
-                  "code": "29762-2",
-                  "display": "Social history note"
-                }
-              ]
-            },
-            "text": {
-              "status": "additional",
-              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>Tobacco use and exposure: 0.5 {pack}/d since 2017-04-15</p>\n                        <p>Alcohol intake: 4 {glass}/d since 2016-04-15</p>\n                        <table><colgroup><col width=\"20%\"></col><col width=\"20%\"></col><col width=\"20%\"></col></colgroup>\n                            <thead>\n                                <tr><th>Observation Type</th><th>Observation Value</th><th>Observation Time</th></tr>\n                            </thead>\n                            <tbody>\n                                <tr><td><span>Tobacco use and exposure</span><br></br></td><td>0.5 {pack}/d</td><td>since 2017-04-15</td></tr>\n                                <tr><td><span>Alcohol intake</span><br></br></td><td>4 {glass}/d</td><td>since 2016-04-15</td></tr>\n                            </tbody>\n                        </table></div>"
-            },
-            "entry": [
-              {
-                "reference": "urn:uuid:5b42ef79-74d5-45a3-ac8e-9f617f5782d0"
-              },
-              {
-                "reference": "urn:uuid:cc2a1dc6-da26-4f05-b885-17c2166a62c2"
-              }
-            ]
-          },
-          {
             "title": "Laboratory Results",
             "code": {
               "coding": [
@@ -290,48 +212,6 @@
             "entry": [
               {
                 "reference": "urn:uuid:c69497a3-c2b4-4830-8d87-b49613ceb375"
-              }
-            ]
-          },
-          {
-            "title": "History of Pregnancies",
-            "code": {
-              "coding": [
-                {
-                  "system": "http://loinc.org",
-                  "code": "10162-6",
-                  "display": "History of pregnancies Narrative"
-                }
-              ]
-            },
-            "text": {
-              "status": "additional",
-              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>Current Pregnancy status</p>\n                        <table><colgroup><col width=\"20%\"></col><col width=\"20%\"></col><col width=\"20%\"></col></colgroup>\n                            <thead>\n                                <tr><th>Observation Date</th><th>Pregnancy status</th><th>Delivery Date Estimated</th></tr>\n                            </thead>\n                            <tbody>\n                                <tr><td><span>2022-06-15</span><br></br></td><td>pregnant</td><td>2023-02-15</td></tr>\n                            </tbody>\n                        </table>\n                        <p>History of previous pregnancies</p>\n                        <table><colgroup><col width=\"40%\"></col><col width=\"30%\"></col><col width=\"30%\"></col></colgroup>\n                            <thead>\n                                <tr><th>Outcome</th><th>Date</th><th>SNOMED Code</th></tr>\n                            </thead>\n                            <tbody>\n                                <tr><td><span>Livebirth</span></td><td>2020-02-05</td><td>281050002</td></tr>\n                                <tr><td><span>Livebirth</span></td><td>2021-09-08</td><td>281050002</td></tr>\n                                <tr><td><span>Termination of pregnancy</span></td><td>2010-07-03</td><td>57797005</td></tr>\n                            </tbody>\n                        </table>\n                        <p>Previous pregnancies overview</p>\n                        <table><colgroup><col width=\"40%\"></col><col width=\"20%\"></col><col width=\"40%\"></col></colgroup>\n                            <thead>\n                                <tr><th>Outcome Type</th><th>Count</th><th>Outcome date(s)</th></tr>\n                            </thead>\n                            <tbody>\n                                <tr><td><span>Livebirth</span></td><td>2</td><td>2020-02-05, 2021-09-08</td></tr>\n                                <tr><td><span>Termination of pregnancy</span></td><td>1</td><td>2010-07-03</td></tr>\n                            </tbody>\n                        </table></div>"
-            },
-            "entry": [
-              {
-                "reference": "urn:uuid:2f7adc3e-45e5-4a24-9d5a-c19af5923777"
-              },
-              {
-                "reference": "urn:uuid:d49db308-a7e1-4efa-86bd-1f35861fb9a9"
-              },
-              {
-                "reference": "urn:uuid:2febee79-3a89-47f3-b71d-2ce0827f8e43"
-              },
-              {
-                "reference": "urn:uuid:0a4ab19f-0156-441f-96f6-1b994d0857b1"
-              },
-              {
-                "reference": "urn:uuid:a94a3d1e-3407-4844-a749-26c6cc2da91a"
-              },
-              {
-                "reference": "urn:uuid:8eb796d7-99ce-4c7a-b1cb-01bf9b547a72"
-              },
-              {
-                "reference": "urn:uuid:7fff11bc-b31f-4c0d-a325-75a954843f6e"
-              },
-              {
-                "reference": "urn:uuid:adc39bfe-f1d8-43de-af87-8fefa8237a40"
               }
             ]
           },
@@ -360,27 +240,6 @@
             ]
           },
           {
-            "title": "Advance Directives",
-            "code": {
-              "coding": [
-                {
-                  "system": "http://loinc.org",
-                  "code": "42348-3",
-                  "display": "Advance healthcare directives"
-                }
-              ]
-            },
-            "text": {
-              "status": "generated",
-              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>1 advance directive(s)</p></div>"
-            },
-            "entry": [
-              {
-                "reference": "urn:uuid:847c1d11-39b5-4bdb-a3fd-544403879c3b"
-              }
-            ]
-          },
-          {
             "title": "Medical Devices",
             "code": {
               "coding": [
@@ -393,18 +252,13 @@
             },
             "text": {
               "status": "additional",
-              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>No medical devices information was available in the source bundle.</p></div>"
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Heart assist system implant, implanted 2014-10-20</p><table><thead><tr><th>Device</th><th>Implant date</th><th>Source procedure</th></tr></thead><tbody><tr><td>Heart assist system</td><td>2014-10-20</td><td>Implantation of heart assist system</td></tr></tbody></table></div>"
             },
-            "emptyReason": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
-                  "code": "unavailable",
-                  "display": "Unavailable"
-                }
-              ],
-              "text": "No information available in source bundle"
-            }
+            "entry": [
+              {
+                "reference": "urn:uuid:930b00e1-8671-5481-a930-7b5722f55b49"
+              }
+            ]
           }
         ],
         "attester": [
@@ -1070,121 +924,19 @@
           ]
         },
         "code": {
+          "text": "Cornelia de Lange syndrome",
           "coding": [
             {
-              "system": "urn:oid:1.3.6.1.4.1.12559.11.10.1.3.1.44.5",
-              "code": "199",
-              "display": "Past illness (epSOS code 199)"
+              "system": "http://snomed.info/sct",
+              "code": "40354009",
+              "display": "Cornelia de Lange syndrome"
             }
-          ],
-          "text": "Past illness (epSOS code 199)"
+          ]
         },
         "subject": {
           "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
         },
         "onsetDateTime": "2020-01-01"
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:789a6162-74ca-476a-a2b0-d8d5777f2249",
-      "resource": {
-        "resourceType": "Condition",
-        "id": "789a6162-74ca-476a-a2b0-d8d5777f2249",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "resolved",
-              "display": "Resolved"
-            }
-          ]
-        },
-        "verificationStatus": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-              "code": "confirmed",
-              "display": "Confirmed"
-            }
-          ]
-        },
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "problem-list-item",
-                "display": "Problem List Item"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/sid/icd-10",
-              "code": "D09",
-              "display": "Carcinoma in situ of other and unspecified sites"
-            }
-          ],
-          "text": "Unknown condition"
-        },
-        "subject": {
-          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
-        },
-        "onsetDateTime": "1997-10-01",
-        "abatementDateTime": "1997-10-06"
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:013867ca-4cd7-4cc8-9e22-5b24620b4c06",
-      "resource": {
-        "resourceType": "Condition",
-        "id": "013867ca-4cd7-4cc8-9e22-5b24620b4c06",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "resolved",
-              "display": "Resolved"
-            }
-          ]
-        },
-        "verificationStatus": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-              "code": "confirmed",
-              "display": "Confirmed"
-            }
-          ]
-        },
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "problem-list-item",
-                "display": "Problem List Item"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/sid/icd-10",
-              "code": "O24",
-              "display": "Diabetes mellitus in pregnancy"
-            }
-          ],
-          "text": "Unknown condition"
-        },
-        "subject": {
-          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
-        },
-        "onsetDateTime": "2011-10-12",
-        "abatementDateTime": "2012-04-30"
       }
     },
     {
@@ -1216,7 +968,7 @@
         "subject": {
           "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
         },
-        "performedDateTime": "2000-01-01T00:00:00Z"
+        "performedDateTime": "2014-10-20"
       }
     },
     {
@@ -1518,183 +1270,6 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:e0c9b98d-d51f-49a0-8774-e4c76b48e07c",
-      "resource": {
-        "resourceType": "Immunization",
-        "id": "e0c9b98d-d51f-49a0-8774-e4c76b48e07c",
-        "status": "completed",
-        "vaccineCode": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "836374004",
-              "display": "Hepatitis B virus antigen-containing vaccine product"
-            }
-          ],
-          "text": "Engerix B (2294189)"
-        },
-        "lotNumber": "1",
-        "patient": {
-          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
-        },
-        "occurrenceDateTime": "1983-01-02"
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:5bd03c2a-07d8-48ea-aabb-26db1cd19d51",
-      "resource": {
-        "resourceType": "Immunization",
-        "id": "5bd03c2a-07d8-48ea-aabb-26db1cd19d51",
-        "status": "completed",
-        "vaccineCode": {
-          "coding": [
-            {
-              "system": "http://www.whocc.no/atc",
-              "code": "J07AM",
-              "display": "Tetanus vaccines"
-            }
-          ],
-          "text": "Tetravac (2782480)"
-        },
-        "patient": {
-          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
-        },
-        "occurrenceDateTime": "1983-01-02"
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:cd1eb243-bb65-4439-ab09-528a2813f3af",
-      "resource": {
-        "resourceType": "Immunization",
-        "id": "cd1eb243-bb65-4439-ab09-528a2813f3af",
-        "status": "completed",
-        "vaccineCode": {
-          "coding": [
-            {
-              "system": "http://www.whocc.no/atc",
-              "code": "J07AG",
-              "display": "Haemophilus influenzae B vaccines"
-            }
-          ],
-          "text": "Hiberix (2751881)"
-        },
-        "patient": {
-          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
-        },
-        "occurrenceDateTime": "1983-01-02"
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:df0b8c69-658d-4231-a720-bc4cb47d244e",
-      "resource": {
-        "resourceType": "Immunization",
-        "id": "df0b8c69-658d-4231-a720-bc4cb47d244e",
-        "status": "completed",
-        "vaccineCode": {
-          "coding": [
-            {
-              "system": "http://www.whocc.no/atc",
-              "code": "J07BM02",
-              "display": "papillomavirus (human types 16, 18)"
-            }
-          ],
-          "text": "Cervarix (5055173)"
-        },
-        "patient": {
-          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
-        },
-        "occurrenceString": "Unknown date"
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:5b42ef79-74d5-45a3-ac8e-9f617f5782d0",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "5b42ef79-74d5-45a3-ac8e-9f617f5782d0",
-        "status": "final",
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "social-history",
-                "display": "Social History"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
-              "code": "72166-2",
-              "display": "Tobacco smoking status"
-            }
-          ],
-          "text": "Social history observation"
-        },
-        "subject": {
-          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
-        },
-        "effectiveDateTime": "2017-04-15",
-        "performer": [
-          {
-            "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
-          }
-        ],
-        "valueQuantity": {
-          "value": 0.5,
-          "unit": "/d",
-          "system": "http://unitsofmeasure.org",
-          "code": "/d"
-        }
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:cc2a1dc6-da26-4f05-b885-17c2166a62c2",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "cc2a1dc6-da26-4f05-b885-17c2166a62c2",
-        "status": "final",
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "social-history",
-                "display": "Social History"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
-              "code": "74013-4",
-              "display": "Alcoholic drinks per day"
-            }
-          ],
-          "text": "Social history observation"
-        },
-        "subject": {
-          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
-        },
-        "effectiveDateTime": "2016-04-15",
-        "performer": [
-          {
-            "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
-          }
-        ],
-        "valueQuantity": {
-          "value": 4.0,
-          "unit": "/d",
-          "system": "http://unitsofmeasure.org",
-          "code": "/d"
-        }
-      }
-    },
-    {
       "fullUrl": "urn:uuid:c69497a3-c2b4-4830-8d87-b49613ceb375",
       "resource": {
         "resourceType": "Observation",
@@ -1740,364 +1315,6 @@
           ],
           "text": "Blood group O Rh(D) positive"
         }
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:2f7adc3e-45e5-4a24-9d5a-c19af5923777",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "2f7adc3e-45e5-4a24-9d5a-c19af5923777",
-        "status": "final",
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "survey",
-                "display": "Survey"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
-              "code": "82810-3",
-              "display": "Pregnancy status"
-            }
-          ],
-          "text": "Pregnancy observation"
-        },
-        "subject": {
-          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
-        },
-        "effectiveDateTime": "2022-06-15",
-        "performer": [
-          {
-            "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
-          }
-        ],
-        "valueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "77386006",
-              "display": "Pregnant"
-            }
-          ],
-          "text": "Pregnant"
-        }
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:d49db308-a7e1-4efa-86bd-1f35861fb9a9",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "d49db308-a7e1-4efa-86bd-1f35861fb9a9",
-        "status": "final",
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "survey",
-                "display": "Survey"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "281050002",
-              "display": "Livebirth"
-            }
-          ],
-          "text": "Livebirth"
-        },
-        "subject": {
-          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
-        },
-        "effectiveDateTime": "2022-06-08T10:49:00Z",
-        "performer": [
-          {
-            "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
-          }
-        ],
-        "valueQuantity": {
-          "value": 2.0,
-          "unit": "1",
-          "system": "http://unitsofmeasure.org",
-          "code": "1"
-        }
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:2febee79-3a89-47f3-b71d-2ce0827f8e43",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "2febee79-3a89-47f3-b71d-2ce0827f8e43",
-        "status": "final",
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "survey",
-                "display": "Survey"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "57797005",
-              "display": "Termination of pregnancy"
-            }
-          ],
-          "text": "Termination of pregnancy"
-        },
-        "subject": {
-          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
-        },
-        "effectiveDateTime": "2022-06-08T10:49:00Z",
-        "performer": [
-          {
-            "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
-          }
-        ],
-        "valueQuantity": {
-          "value": 1.0,
-          "unit": "1",
-          "system": "http://unitsofmeasure.org",
-          "code": "1"
-        }
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:0a4ab19f-0156-441f-96f6-1b994d0857b1",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "0a4ab19f-0156-441f-96f6-1b994d0857b1",
-        "status": "final",
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "survey",
-                "display": "Survey"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
-              "code": "93857-1",
-              "display": "Date and time of obstetric delivery"
-            }
-          ],
-          "text": "Pregnancy outcome"
-        },
-        "subject": {
-          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
-        },
-        "effectiveDateTime": "2020-02-05",
-        "performer": [
-          {
-            "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
-          }
-        ],
-        "valueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "281050002",
-              "display": "Livebirth"
-            }
-          ],
-          "text": "Livebirth"
-        }
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:a94a3d1e-3407-4844-a749-26c6cc2da91a",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "a94a3d1e-3407-4844-a749-26c6cc2da91a",
-        "status": "final",
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "survey",
-                "display": "Survey"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
-              "code": "93857-1",
-              "display": "Date and time of obstetric delivery"
-            }
-          ],
-          "text": "Pregnancy outcome"
-        },
-        "subject": {
-          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
-        },
-        "effectiveDateTime": "2021-09-08",
-        "performer": [
-          {
-            "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
-          }
-        ],
-        "valueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "281050002",
-              "display": "Livebirth"
-            }
-          ],
-          "text": "Livebirth"
-        }
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:8eb796d7-99ce-4c7a-b1cb-01bf9b547a72",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "8eb796d7-99ce-4c7a-b1cb-01bf9b547a72",
-        "status": "final",
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "survey",
-                "display": "Survey"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
-              "code": "93857-1",
-              "display": "Date and time of obstetric delivery"
-            }
-          ],
-          "text": "Pregnancy outcome"
-        },
-        "subject": {
-          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
-        },
-        "effectiveDateTime": "2010-07-03",
-        "performer": [
-          {
-            "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
-          }
-        ],
-        "valueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "57797005",
-              "display": "Termination of pregnancy"
-            }
-          ],
-          "text": "Termination of pregnancy"
-        }
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:7fff11bc-b31f-4c0d-a325-75a954843f6e",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "7fff11bc-b31f-4c0d-a325-75a954843f6e",
-        "status": "final",
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "survey",
-                "display": "Survey"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
-              "code": "93857-1",
-              "display": "Date and time of obstetric delivery"
-            }
-          ],
-          "text": "Pregnancy observation"
-        },
-        "subject": {
-          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
-        },
-        "effectiveDateTime": "2022-06-16",
-        "performer": [
-          {
-            "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
-          }
-        ],
-        "valueDateTime": "2020-02-05"
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:adc39bfe-f1d8-43de-af87-8fefa8237a40",
-      "resource": {
-        "resourceType": "Observation",
-        "id": "adc39bfe-f1d8-43de-af87-8fefa8237a40",
-        "status": "final",
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "survey",
-                "display": "Survey"
-              }
-            ]
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
-              "code": "93857-1",
-              "display": "Date and time of obstetric delivery"
-            }
-          ],
-          "text": "Pregnancy observation"
-        },
-        "subject": {
-          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
-        },
-        "effectiveDateTime": "2022-06-16",
-        "performer": [
-          {
-            "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
-          }
-        ],
-        "valueDateTime": "2021-09-08"
       }
     },
     {
@@ -2173,43 +1390,62 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:847c1d11-39b5-4bdb-a3fd-544403879c3b",
+      "fullUrl": "urn:uuid:d870d732-b649-5c0e-a785-663cc2410407",
       "resource": {
-        "resourceType": "Consent",
-        "id": "847c1d11-39b5-4bdb-a3fd-544403879c3b",
-        "status": "active",
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-                "code": "IDSCL",
-                "display": "information disclosure"
-              }
-            ]
-          }
-        ],
-        "scope": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/consentscope",
-              "code": "adr",
-              "display": "Advanced Care Directive"
-            }
+        "resourceType": "Device",
+        "id": "d870d732-b649-5c0e-a785-663cc2410407",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Device-uv-ips"
           ]
+        },
+        "status": "active",
+        "type": {
+          "text": "Heart assist system"
         },
         "patient": {
           "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
         },
-        "policyRule": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/consentpolicycodes",
-              "code": "cric",
-              "display": "Common Rule Informed Consent"
-            }
+        "note": [
+          {
+            "text": "Derived from the source implantation Procedure. The source bundle did not include device serial number, UDI, manufacturer, model, or implant-location details."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:930b00e1-8671-5481-a930-7b5722f55b49",
+      "resource": {
+        "resourceType": "DeviceUseStatement",
+        "id": "930b00e1-8671-5481-a930-7b5722f55b49",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/DeviceUseStatement-uv-ips"
           ]
-        }
+        },
+        "status": "active",
+        "device": {
+          "reference": "urn:uuid:d870d732-b649-5c0e-a785-663cc2410407",
+          "display": "Heart assist system"
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "timingDateTime": "2014-10-20",
+        "derivedFrom": [
+          {
+            "reference": "urn:uuid:bd39b363-0202-469e-bd93-d71c852439ca",
+            "display": "Implantation of heart assist system"
+          }
+        ],
+        "bodySite": {
+          "text": "Heart"
+        },
+        "note": [
+          {
+            "text": "Derived from source Procedure evidence. Device identifiers, serial number, UDI, manufacturer, model, and more specific implant site/laterality were not present in the source bundle."
+          }
+        ]
       }
     },
     {

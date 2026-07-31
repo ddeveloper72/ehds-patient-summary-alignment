@@ -90,7 +90,7 @@
             },
             "text": {
               "status": "additional",
-              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>Predominantly allergic asthma since 1994-10-03</p><p>Postprocedural hypothyroidism since 1997-10-06</p><p>Other specified cardiac arrhythmias since 2013-01-09</p><p>Type 2 diabetes mellitus since 2013-01-09</p><p>Severe pre-eclampsia since 2017-05-06 active</p><p>Acute tubulo-interstitial nephritis (Moderate to severe) since 2017-05-07</p><p>Rare disease: Cornelia de Lange syndrome (199) since 2017-05-07</p>\n                        <table><colgroup><col width=\"20%\"></col><col width=\"20%\"></col><col width=\"20%\"></col><col width=\"20%\"></col></colgroup><thead>\n                            <tr><th>Active Problem</th><th>Problem Type</th><th>Time</th><th>Problem Status</th><th>Severity</th></tr></thead>\n                            <tbody>\n                                <tr><td><span><span>Predominantly allergic asthma</span><br></br></span></td><td><span>Clinical finding</span><br></br></td><td>since 1994-10-03</td><td>active</td><td></td></tr>\n                                <tr><td><span><span>Postprocedural hypothyroidism</span><br></br></span></td><td><span>Clinical finding</span><br></br></td><td>since 1997-10-06</td><td>active</td><td></td></tr>\n                                <tr><td><span><span>Other specified cardiac arrhythmias</span><br></br></span></td><td><span>Clinical finding</span><br></br></td><td>since 2013-01-09</td><td>active</td><td></td></tr>\n                                <tr><td><span><span>Type 2 diabetes mellitus</span><br></br></span></td><td><span>Clinical finding</span><br></br></td><td>since 2013-01-09</td><td>active</td><td></td></tr>\n                                <tr><td><span><span>Severe pre-eclampsia</span><br></br></span></td><td><span>Problem</span><br></br></td><td>since 2017-05-06</td><td>active</td><td><span><span>Severe</span></span></td></tr>\n                                <tr><td><span><span>Acute tubulo-interstitial nephritis</span><br></br></span></td><td><span>Problem</span><br></br></td><td>since 2017-05-07</td><td>active</td><td><span><span>Moderate to severe</span></span></td></tr>\n                            </tbody>\n                        </table></div>"
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>Predominantly allergic asthma since 1994-10-03</p><p>Postprocedural hypothyroidism since 1997-10-06</p><p>Other specified cardiac arrhythmias since 2013-01-09</p><p>Type 2 diabetes mellitus since 2013-01-09</p><p>Severe pre-eclampsia since 2017-05-06 active</p><p>Acute tubulo-interstitial nephritis (Moderate to severe) since 2017-05-07</p><p>Rare disease: Cornelia de Lange syndrome since 2017-05-07</p>\n                        <table><colgroup><col width=\"20%\"></col><col width=\"20%\"></col><col width=\"20%\"></col><col width=\"20%\"></col></colgroup><thead>\n                            <tr><th>Active Problem</th><th>Problem Type</th><th>Time</th><th>Problem Status</th><th>Severity</th></tr></thead>\n                            <tbody>\n                                <tr><td><span><span>Predominantly allergic asthma</span><br></br></span></td><td><span>Clinical finding</span><br></br></td><td>since 1994-10-03</td><td>active</td><td></td></tr>\n                                <tr><td><span><span>Postprocedural hypothyroidism</span><br></br></span></td><td><span>Clinical finding</span><br></br></td><td>since 1997-10-06</td><td>active</td><td></td></tr>\n                                <tr><td><span><span>Other specified cardiac arrhythmias</span><br></br></span></td><td><span>Clinical finding</span><br></br></td><td>since 2013-01-09</td><td>active</td><td></td></tr>\n                                <tr><td><span><span>Type 2 diabetes mellitus</span><br></br></span></td><td><span>Clinical finding</span><br></br></td><td>since 2013-01-09</td><td>active</td><td></td></tr>\n                                <tr><td><span><span>Severe pre-eclampsia</span><br></br></span></td><td><span>Problem</span><br></br></td><td>since 2017-05-06</td><td>active</td><td><span><span>Severe</span></span></td></tr>\n                                <tr><td><span><span>Acute tubulo-interstitial nephritis</span><br></br></span></td><td><span>Problem</span><br></br></td><td>since 2017-05-07</td><td>active</td><td><span><span>Moderate to severe</span></span></td></tr>\n                            <tr><td><span><span>Cornelia de Lange syndrome</span><br></br></span></td><td><span>Rare disease</span><br></br></td><td>since 2017-05-07</td><td>active</td><td></td></tr>\n                            </tbody>\n                        </table></div>"
             },
             "entry": [
               {
@@ -393,18 +393,13 @@
             },
             "text": {
               "status": "additional",
-              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>No medical devices information was available in the source bundle.</p></div>"
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Heart assist system implant, implanted 2014-10-20</p><table><thead><tr><th>Device</th><th>Implant date</th><th>Source procedure</th></tr></thead><tbody><tr><td>Heart assist system</td><td>2014-10-20</td><td>Implantation of heart assist system</td></tr></tbody></table></div>"
             },
-            "emptyReason": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
-                  "code": "unavailable",
-                  "display": "Unavailable"
-                }
-              ],
-              "text": "No information available in source bundle"
-            }
+            "entry": [
+              {
+                "reference": "urn:uuid:930b00e1-8671-5481-a930-7b5722f55b49"
+              }
+            ]
           }
         ],
         "attester": [
@@ -655,22 +650,7 @@
             {
               "system": "http://snomed.info/sct",
               "code": "260176001",
-              "display": "Kiwi fruit",
-              "extension": [
-                {
-                  "url": "https://datastandards.hse.ie/fhir/StructureDefinition/cts-enrichment-source",
-                  "extension": [
-                    {
-                      "url": "server",
-                      "valueUrl": "https://datastandards.hse.ie/fhir"
-                    },
-                    {
-                      "url": "operation",
-                      "valueCode": "CodeSystem/$lookup"
-                    }
-                  ]
-                }
-              ]
+              "display": "Kiwi fruit"
             }
           ]
         },
@@ -718,22 +698,7 @@
             {
               "system": "http://snomed.info/sct",
               "code": "47703008",
-              "display": "Lactose",
-              "extension": [
-                {
-                  "url": "https://datastandards.hse.ie/fhir/StructureDefinition/cts-enrichment-source",
-                  "extension": [
-                    {
-                      "url": "server",
-                      "valueUrl": "https://datastandards.hse.ie/fhir"
-                    },
-                    {
-                      "url": "operation",
-                      "valueCode": "CodeSystem/$lookup"
-                    }
-                  ]
-                }
-              ]
+              "display": "Lactose"
             }
           ]
         },
@@ -826,22 +791,7 @@
             {
               "system": "http://snomed.info/sct",
               "code": "111088007",
-              "display": "Latex",
-              "extension": [
-                {
-                  "url": "https://datastandards.hse.ie/fhir/StructureDefinition/cts-enrichment-source",
-                  "extension": [
-                    {
-                      "url": "server",
-                      "valueUrl": "https://datastandards.hse.ie/fhir"
-                    },
-                    {
-                      "url": "operation",
-                      "valueCode": "CodeSystem/$lookup"
-                    }
-                  ]
-                }
-              ]
+              "display": "Latex"
             }
           ]
         },
@@ -1115,14 +1065,14 @@
           ]
         },
         "code": {
+          "text": "Cornelia de Lange syndrome",
           "coding": [
             {
-              "system": "urn:oid:1.3.6.1.4.1.12559.11.10.1.3.1.44.5",
-              "code": "199",
-              "display": "Past illness (epSOS code 199)"
+              "system": "http://snomed.info/sct",
+              "code": "40354009",
+              "display": "Cornelia de Lange syndrome"
             }
-          ],
-          "text": "Past illness (epSOS code 199)"
+          ]
         },
         "subject": {
           "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
@@ -1254,29 +1204,14 @@
             {
               "system": "http://snomed.info/sct",
               "code": "64253000",
-              "display": "Implantation of heart assist system",
-              "extension": [
-                {
-                  "url": "https://datastandards.hse.ie/fhir/StructureDefinition/cts-enrichment-source",
-                  "extension": [
-                    {
-                      "url": "server",
-                      "valueUrl": "https://datastandards.hse.ie/fhir"
-                    },
-                    {
-                      "url": "operation",
-                      "valueCode": "CodeSystem/$lookup"
-                    }
-                  ]
-                }
-              ]
+              "display": "Implantation of heart assist system"
             }
           ]
         },
         "subject": {
           "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
         },
-        "performedDateTime": "2000-01-01T00:00:00Z"
+        "performedDateTime": "2014-10-20"
       }
     },
     {
@@ -1301,22 +1236,7 @@
             {
               "system": "http://snomed.info/sct",
               "code": "11466000",
-              "display": "Caesarean section",
-              "extension": [
-                {
-                  "url": "https://datastandards.hse.ie/fhir/StructureDefinition/cts-enrichment-source",
-                  "extension": [
-                    {
-                      "url": "server",
-                      "valueUrl": "https://datastandards.hse.ie/fhir"
-                    },
-                    {
-                      "url": "operation",
-                      "valueCode": "CodeSystem/$lookup"
-                    }
-                  ]
-                }
-              ]
+              "display": "Caesarean section"
             }
           ]
         },
@@ -1348,22 +1268,7 @@
             {
               "system": "http://snomed.info/sct",
               "code": "13619001",
-              "display": "Thyroidectomy",
-              "extension": [
-                {
-                  "url": "https://datastandards.hse.ie/fhir/StructureDefinition/cts-enrichment-source",
-                  "extension": [
-                    {
-                      "url": "server",
-                      "valueUrl": "https://datastandards.hse.ie/fhir"
-                    },
-                    {
-                      "url": "operation",
-                      "valueCode": "CodeSystem/$lookup"
-                    }
-                  ]
-                }
-              ]
+              "display": "Thyroidectomy"
             }
           ]
         },
@@ -1400,110 +1305,6 @@
               "system": "http://www.whocc.no/atc",
               "code": "H03AA01"
             }
-          ],
-          "extension": [
-            {
-              "url": "https://nmpc.hse.ie/fhir/StructureDefinition/nmpc-candidate-match",
-              "extension": [
-                {
-                  "url": "sourceSystem",
-                  "valueUri": "http://www.whocc.no/atc"
-                },
-                {
-                  "url": "sourceCode",
-                  "valueCode": "H03AA01"
-                },
-                {
-                  "url": "totalCandidates",
-                  "valueInteger": 10
-                },
-                {
-                  "url": "candidate",
-                  "extension": [
-                    {
-                      "url": "system",
-                      "valueUri": "http://snomed.info/sct"
-                    },
-                    {
-                      "url": "code",
-                      "valueCode": "282611000220106"
-                    },
-                    {
-                      "url": "display",
-                      "valueString": "Eltroxin 100 microgram tablet (28 tablets)"
-                    }
-                  ]
-                },
-                {
-                  "url": "candidate",
-                  "extension": [
-                    {
-                      "url": "system",
-                      "valueUri": "http://snomed.info/sct"
-                    },
-                    {
-                      "url": "code",
-                      "valueCode": "282631000220101"
-                    },
-                    {
-                      "url": "display",
-                      "valueString": "Eltroxin 25 microgram tablet (28 tablets)"
-                    }
-                  ]
-                },
-                {
-                  "url": "candidate",
-                  "extension": [
-                    {
-                      "url": "system",
-                      "valueUri": "http://snomed.info/sct"
-                    },
-                    {
-                      "url": "code",
-                      "valueCode": "282621000220104"
-                    },
-                    {
-                      "url": "display",
-                      "valueString": "Eltroxin 50 microgram tablet (28 tablets)"
-                    }
-                  ]
-                },
-                {
-                  "url": "candidate",
-                  "extension": [
-                    {
-                      "url": "system",
-                      "valueUri": "http://snomed.info/sct"
-                    },
-                    {
-                      "url": "code",
-                      "valueCode": "282681000220100"
-                    },
-                    {
-                      "url": "display",
-                      "valueString": "Levothyroxine Sodium Aristo 100 microgram tablet (30 tablets)"
-                    }
-                  ]
-                },
-                {
-                  "url": "candidate",
-                  "extension": [
-                    {
-                      "url": "system",
-                      "valueUri": "http://snomed.info/sct"
-                    },
-                    {
-                      "url": "code",
-                      "valueCode": "894441000220106"
-                    },
-                    {
-                      "url": "display",
-                      "valueString": "Levothyroxine Sodium Aristo 125 microgram tablet (30 tablets)"
-                    }
-                  ]
-                }
-              ]
-            }
           ]
         }
       }
@@ -1535,76 +1336,6 @@
               "system": "http://www.whocc.no/atc",
               "code": "C09BB05"
             }
-          ],
-          "extension": [
-            {
-              "url": "https://nmpc.hse.ie/fhir/StructureDefinition/nmpc-candidate-match",
-              "extension": [
-                {
-                  "url": "sourceSystem",
-                  "valueUri": "http://www.whocc.no/atc"
-                },
-                {
-                  "url": "sourceCode",
-                  "valueCode": "C09BB05"
-                },
-                {
-                  "url": "totalCandidates",
-                  "valueInteger": 3
-                },
-                {
-                  "url": "candidate",
-                  "extension": [
-                    {
-                      "url": "system",
-                      "valueUri": "http://snomed.info/sct"
-                    },
-                    {
-                      "url": "code",
-                      "valueCode": "433141000220104"
-                    },
-                    {
-                      "url": "display",
-                      "valueString": "Triapin 2.5 mg/2.5 mg prolonged-release tablet (28 tablets)"
-                    }
-                  ]
-                },
-                {
-                  "url": "candidate",
-                  "extension": [
-                    {
-                      "url": "system",
-                      "valueUri": "http://snomed.info/sct"
-                    },
-                    {
-                      "url": "code",
-                      "valueCode": "433151000220102"
-                    },
-                    {
-                      "url": "display",
-                      "valueString": "Triapin 5 mg/5 mg prolonged-release tablet (28 tablets)"
-                    }
-                  ]
-                },
-                {
-                  "url": "candidate",
-                  "extension": [
-                    {
-                      "url": "system",
-                      "valueUri": "http://snomed.info/sct"
-                    },
-                    {
-                      "url": "code",
-                      "valueCode": "433191000220107"
-                    },
-                    {
-                      "url": "display",
-                      "valueString": "Triapin IMED 5 mg/5 mg prolonged-release tablet (28 tablets)"
-                    }
-                  ]
-                }
-              ]
-            }
           ]
         }
       }
@@ -1635,64 +1366,6 @@
             {
               "system": "http://www.whocc.no/atc",
               "code": "A10AE06"
-            },
-            {
-              "system": "http://snomed.info/sct",
-              "code": "531361000220107",
-              "display": "Tresiba FlexTouch 200 units/1 mL solution for injection 3 mL pre-filled pen (3 pre-filled pens)",
-              "extension": [
-                {
-                  "url": "https://nmpc.hse.ie/fhir/StructureDefinition/nmpc-enrichment-source",
-                  "extension": [
-                    {
-                      "url": "server",
-                      "valueUrl": "https://nmpc.hse.ie/production1/fhir"
-                    },
-                    {
-                      "url": "operation",
-                      "valueCode": "ValueSet/$expand"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "system": "https://nmpc.hse.ie/HPRA",
-              "code": "9676",
-              "extension": [
-                {
-                  "url": "https://nmpc.hse.ie/fhir/StructureDefinition/nmpc-enrichment-source",
-                  "extension": [
-                    {
-                      "url": "server",
-                      "valueUrl": "https://nmpc.hse.ie/production1/fhir"
-                    },
-                    {
-                      "url": "operation",
-                      "valueCode": "ConceptMap/$translate:hpra"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "system": "https://nmpc.hse.ie/PCRS",
-              "code": "72390",
-              "extension": [
-                {
-                  "url": "https://nmpc.hse.ie/fhir/StructureDefinition/nmpc-enrichment-source",
-                  "extension": [
-                    {
-                      "url": "server",
-                      "valueUrl": "https://nmpc.hse.ie/production1/fhir"
-                    },
-                    {
-                      "url": "operation",
-                      "valueCode": "ConceptMap/$translate:pcrs"
-                    }
-                  ]
-                }
-              ]
             }
           ]
         }
@@ -1725,110 +1398,6 @@
               "system": "http://www.whocc.no/atc",
               "code": "J01CR02"
             }
-          ],
-          "extension": [
-            {
-              "url": "https://nmpc.hse.ie/fhir/StructureDefinition/nmpc-candidate-match",
-              "extension": [
-                {
-                  "url": "sourceSystem",
-                  "valueUri": "http://www.whocc.no/atc"
-                },
-                {
-                  "url": "sourceCode",
-                  "valueCode": "J01CR02"
-                },
-                {
-                  "url": "totalCandidates",
-                  "valueInteger": 24
-                },
-                {
-                  "url": "candidate",
-                  "extension": [
-                    {
-                      "url": "system",
-                      "valueUri": "http://snomed.info/sct"
-                    },
-                    {
-                      "url": "code",
-                      "valueCode": "400011000220101"
-                    },
-                    {
-                      "url": "display",
-                      "valueString": "Amoclav 250 mg/125 mg film-coated tablet (21 tablets)"
-                    }
-                  ]
-                },
-                {
-                  "url": "candidate",
-                  "extension": [
-                    {
-                      "url": "system",
-                      "valueUri": "http://snomed.info/sct"
-                    },
-                    {
-                      "url": "code",
-                      "valueCode": "400081000220107"
-                    },
-                    {
-                      "url": "display",
-                      "valueString": "Augmentin 500 mg/125 mg film-coated tablet (21 tablets)"
-                    }
-                  ]
-                },
-                {
-                  "url": "candidate",
-                  "extension": [
-                    {
-                      "url": "system",
-                      "valueUri": "http://snomed.info/sct"
-                    },
-                    {
-                      "url": "code",
-                      "valueCode": "400041000220102"
-                    },
-                    {
-                      "url": "display",
-                      "valueString": "Augmentin 875 mg/125 mg film-coated tablet (14 tablets)"
-                    }
-                  ]
-                },
-                {
-                  "url": "candidate",
-                  "extension": [
-                    {
-                      "url": "system",
-                      "valueUri": "http://snomed.info/sct"
-                    },
-                    {
-                      "url": "code",
-                      "valueCode": "507371000220100"
-                    },
-                    {
-                      "url": "display",
-                      "valueString": "Augmentin Duo Mixed Fruit 400 mg/57 mg/5 mL powder for oral suspension (35 mL)"
-                    }
-                  ]
-                },
-                {
-                  "url": "candidate",
-                  "extension": [
-                    {
-                      "url": "system",
-                      "valueUri": "http://snomed.info/sct"
-                    },
-                    {
-                      "url": "code",
-                      "valueCode": "507391000220104"
-                    },
-                    {
-                      "url": "display",
-                      "valueString": "Augmentin Paediatric 125 mg/31.25 mg/5 mL powder for oral suspension (100 mL)"
-                    }
-                  ]
-                }
-              ]
-            }
           ]
         }
       }
@@ -1859,59 +1428,6 @@
             {
               "system": "http://www.whocc.no/atc",
               "code": "R03AL02"
-            }
-          ],
-          "extension": [
-            {
-              "url": "https://nmpc.hse.ie/fhir/StructureDefinition/nmpc-candidate-match",
-              "extension": [
-                {
-                  "url": "sourceSystem",
-                  "valueUri": "http://www.whocc.no/atc"
-                },
-                {
-                  "url": "sourceCode",
-                  "valueCode": "R03AL02"
-                },
-                {
-                  "url": "totalCandidates",
-                  "valueInteger": 2
-                },
-                {
-                  "url": "candidate",
-                  "extension": [
-                    {
-                      "url": "system",
-                      "valueUri": "http://snomed.info/sct"
-                    },
-                    {
-                      "url": "code",
-                      "valueCode": "558031000220108"
-                    },
-                    {
-                      "url": "display",
-                      "valueString": "Ipramol Steri-Neb 0.5 mg/2.5 mg/2.5 mL nebuliser solution ampoule (20 ampoules)"
-                    }
-                  ]
-                },
-                {
-                  "url": "candidate",
-                  "extension": [
-                    {
-                      "url": "system",
-                      "valueUri": "http://snomed.info/sct"
-                    },
-                    {
-                      "url": "code",
-                      "valueCode": "558041000220104"
-                    },
-                    {
-                      "url": "display",
-                      "valueString": "Ipramol Steri-Neb 0.5 mg/2.5 mg/2.5 mL nebuliser solution ampoule (60 ampoules)"
-                    }
-                  ]
-                }
-              ]
             }
           ]
         }
@@ -2692,6 +2208,65 @@
       }
     },
     {
+      "fullUrl": "urn:uuid:d870d732-b649-5c0e-a785-663cc2410407",
+      "resource": {
+        "resourceType": "Device",
+        "id": "d870d732-b649-5c0e-a785-663cc2410407",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Device-uv-ips"
+          ]
+        },
+        "status": "active",
+        "type": {
+          "text": "Heart assist system"
+        },
+        "patient": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "note": [
+          {
+            "text": "Derived from the source implantation Procedure. The source bundle did not include device serial number, UDI, manufacturer, model, or implant-location details."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:930b00e1-8671-5481-a930-7b5722f55b49",
+      "resource": {
+        "resourceType": "DeviceUseStatement",
+        "id": "930b00e1-8671-5481-a930-7b5722f55b49",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/DeviceUseStatement-uv-ips"
+          ]
+        },
+        "status": "active",
+        "device": {
+          "reference": "urn:uuid:d870d732-b649-5c0e-a785-663cc2410407",
+          "display": "Heart assist system"
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "timingDateTime": "2014-10-20",
+        "derivedFrom": [
+          {
+            "reference": "urn:uuid:bd39b363-0202-469e-bd93-d71c852439ca",
+            "display": "Implantation of heart assist system"
+          }
+        ],
+        "bodySite": {
+          "text": "Heart"
+        },
+        "note": [
+          {
+            "text": "Derived from source Procedure evidence. Device identifiers, serial number, UDI, manufacturer, model, and more specific implant site/laterality were not present in the source bundle."
+          }
+        ]
+      }
+    },
+    {
       "fullUrl": "urn:uuid:6c939b65-8b3e-4782-afc5-59de9e4fa062",
       "resource": {
         "resourceType": "Provenance",
@@ -2707,7 +2282,7 @@
             {
               "system": "http://terminology.hl7.org/CodeSystem/v3-DataOperation",
               "code": "UPDATE",
-              "display": "Update"
+              "display": "revise"
             }
           ]
         },

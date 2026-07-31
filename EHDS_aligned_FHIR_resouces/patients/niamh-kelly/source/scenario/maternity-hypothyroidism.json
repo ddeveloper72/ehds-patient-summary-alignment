@@ -1,0 +1,129 @@
+{
+  "slug": "niamh-kelly",
+  "title": "Maternity and hypothyroidism Patient Summary",
+  "summaryDate": "2026-06-30T09:45:00+01:00",
+  "patient": {
+    "family": "Kelly",
+    "given": [
+      "Niamh"
+    ],
+    "gender": "female",
+    "birthDate": "1988-02-19",
+    "maritalStatus": {
+      "code": "M",
+      "display": "Married"
+    },
+    "language": {
+      "code": "en-IE",
+      "display": "English (Ireland)"
+    },
+    "ethnicity": {
+      "code": "irish",
+      "display": "Irish"
+    },
+    "address": {
+      "line": [
+        "16 Newcastle Road"
+      ],
+      "city": "Galway",
+      "postalCode": "H91 R7T2",
+      "country": "IE"
+    }
+  },
+  "author": "dr-ciara-nolan",
+  "organization": "galway-gp",
+  "serviceAuthority": "hse",
+  "custodianOrganization": "department-of-health",
+  "contacts": [
+    {
+      "role": "next-of-kin",
+      "relationship": "Spouse",
+      "family": "Kelly",
+      "given": [
+        "Ronan"
+      ],
+      "phone": "+353 87 000 3001",
+      "address": {
+        "line": [
+          "16 Newcastle Road"
+        ],
+        "city": "Galway",
+        "postalCode": "H91 R7T2",
+        "country": "IE"
+      }
+    },
+    {
+      "role": "emergency-contact",
+      "relationship": "Mother",
+      "family": "Murphy",
+      "given": [
+        "Bríd"
+      ],
+      "phone": "+353 86 000 3002"
+    }
+  ],
+  "consent": {
+    "status": "active",
+    "decision": "permit",
+    "scope": "patient-privacy",
+    "category": "patient summary sharing",
+    "policyText": "Synthetic consent for sharing Patient Summary data for maternity care coordination and validation testing."
+  },
+  "timeline": {
+    "gpEncounterOffsetDays": -7,
+    "allergyAssertedAge": 24,
+    "conditionOnsetAges": {
+      "hypothyroidism": 29,
+      "pregnancy": 38
+    },
+    "medicationStartOffsetDays": -1400,
+    "observationOffsetDays": -7,
+    "immunizationOffsetDays": -120
+  },
+  "blocks": {
+    "allergies": [
+      "nsaid-intolerance"
+    ],
+    "conditions": [
+      "hypothyroidism",
+      "pregnancy"
+    ],
+    "medications": [
+      "levothyroxine",
+      "folic-acid"
+    ],
+    "observations": [
+      {
+        "id": "pregnancy-status"
+      },
+      {
+        "id": "blood-pressure",
+        "components": [
+          110,
+          68
+        ]
+      },
+      {
+        "id": "bmi",
+        "value": 25.0
+      }
+    ],
+    "socialHistory": [
+      {
+        "id": "smoking-status-never"
+      },
+      {
+        "id": "alcohol-drinks-day",
+        "value": 0
+      }
+    ],
+    "functionalStatus": [
+      "pregnancy-usual-activities"
+    ],
+    "procedures": [],
+    "immunizations": [
+      "influenza",
+      "covid-19"
+    ]
+  }
+}

@@ -1,0 +1,2222 @@
+{
+  "resourceType": "Bundle",
+  "id": "ips-1579f377-6864-4808-9445-b796ef9b40be",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/ips/StructureDefinition/Bundle-uv-ips|2.0.0"
+    ]
+  },
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:007cc61f-90a0-43cb-8449-5e89df24fa46"
+  },
+  "type": "document",
+  "timestamp": "2025-11-04T10:16:37.254148Z",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:9d72d68d-0ffc-4f05-b8c3-683e74a903e9",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "522caef4-5a41-4cd1-b1eb-b02d7cd079ae",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Composition-uv-ips"
+          ]
+        },
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "60591-5",
+              "display": "Patient summary Document"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "date": "2025-11-04T10:16:37.252147Z",
+        "author": [
+          {
+            "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
+          }
+        ],
+        "title": "Patient Summary",
+        "custodian": {
+          "reference": "urn:uuid:9737880e-7709-4b6a-9915-482ff2330b31"
+        },
+        "section": [
+          {
+            "title": "Allergies and Intolerances",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48765-2",
+                  "display": "Allergies and adverse reactions Document"
+                }
+              ]
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>Food allergy to Kiwi fruit, Reaction: Eczema</p>\n                        <p>Food intolerance to Lactose, Reaction: Diarrhea</p>\n                        <p>Medication allergy to acetylsalicylic acid, Reaction: Asthma</p>\n                        <p>Allergy to Latex, Reaction: Urticaria</p>\n                        <table><colgroup><col width=\"15%\"></col><col width=\"10%\"></col><col width=\"10%\"></col><col width=\"10%\"></col><col width=\"10%\"></col><col width=\"10%\"></col><col width=\"10%\"></col><col width=\"10%\"></col><col width=\"15%\"></col></colgroup>\n                            <thead>\n                                <tr><th>Reaction Type</th><th>Clinical Manifestation</th><th>Agent</th><th>Time</th><th>Severity</th><th>Criticality</th><th>Status</th><th>Certainty</th><th>Process of establishing a problem</th></tr>\n                            </thead>\n                            <tbody>\n                                <tr><td><span><span>Propensity to adverse reaction</span><br></br></span></td><td><span>Eczema</span><br></br></td><td><span>Kiwi fruit</span><br></br></td><td>since 1990-01-10</td><td><span>Moderate to severe</span><br></br></td><td><span>low risk</span></td><td><span>active</span></td><td><span>confirmed</span></td><td><span>Finding reported by subject or history provider</span></td></tr>\n                                <tr><td><span><span>Propensity to adverse reaction</span><br></br></span></td><td><span>Diarrhea</span><br></br></td><td><span>Lactose</span><br></br></td><td>since 1983-05-05</td><td><span>Moderate to severe</span><br></br></td><td><span>high risk</span></td><td><span>active</span></td><td><span>confirmed</span></td><td><span>Finding reported by subject or history provider</span></td></tr>\n                                <tr><td><span><span>Propensity to adverse reaction</span><br></br></span></td><td><span>Asthma</span><br></br></td><td><span>acetylsalicylic acid</span><br></br></td><td>from 1994 until 2010</td><td><span>Moderate to severe</span><br></br></td><td><span>high risk</span></td><td><span>resolved</span></td><td><span>confirmed</span></td><td><span>Finding reported by subject or history provider</span></td></tr>\n                                <tr><td><span><span>Propensity to adverse reaction</span><br></br></span></td><td><span>Urticaria</span><br></br></td><td><span>Latex</span><br></br></td><td>since 1990-01-10</td><td><span>Moderate to severe</span><br></br></td><td><span>high risk</span></td><td><span>suspended</span></td><td><span>confirmed</span></td><td><span>Finding reported by subject or history provider</span></td></tr>\n                            </tbody>\n                        </table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:c1c75016-1656-402d-a9a7-1c781fe37bb0"
+              },
+              {
+                "reference": "urn:uuid:bc6906bc-e916-4c79-a9ce-af01747762f1"
+              },
+              {
+                "reference": "urn:uuid:82a45533-90b2-43a2-b6e4-04d2db527dc9"
+              },
+              {
+                "reference": "urn:uuid:87014625-c4c6-49e4-8cbe-7b6dfc53f703"
+              }
+            ]
+          },
+          {
+            "title": "Problem List",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "11450-4",
+                  "display": "Problem list - Reported"
+                }
+              ]
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>Predominantly allergic asthma since 1994-10-03</p><p>Postprocedural hypothyroidism since 1997-10-06</p><p>Other specified cardiac arrhythmias since 2013-01-09</p><p>Type 2 diabetes mellitus since 2013-01-09</p><p>Severe pre-eclampsia since 2017-05-06 active</p><p>Acute tubulo-interstitial nephritis (Moderate to severe) since 2017-05-07</p><p>Rare disease: Cornelia de Lange syndrome (199) since 2017-05-07</p>\n                        <table><colgroup><col width=\"20%\"></col><col width=\"20%\"></col><col width=\"20%\"></col><col width=\"20%\"></col></colgroup><thead>\n                            <tr><th>Active Problem</th><th>Problem Type</th><th>Time</th><th>Problem Status</th><th>Severity</th></tr></thead>\n                            <tbody>\n                                <tr><td><span><span>Predominantly allergic asthma</span><br></br></span></td><td><span>Clinical finding</span><br></br></td><td>since 1994-10-03</td><td>active</td><td></td></tr>\n                                <tr><td><span><span>Postprocedural hypothyroidism</span><br></br></span></td><td><span>Clinical finding</span><br></br></td><td>since 1997-10-06</td><td>active</td><td></td></tr>\n                                <tr><td><span><span>Other specified cardiac arrhythmias</span><br></br></span></td><td><span>Clinical finding</span><br></br></td><td>since 2013-01-09</td><td>active</td><td></td></tr>\n                                <tr><td><span><span>Type 2 diabetes mellitus</span><br></br></span></td><td><span>Clinical finding</span><br></br></td><td>since 2013-01-09</td><td>active</td><td></td></tr>\n                                <tr><td><span><span>Severe pre-eclampsia</span><br></br></span></td><td><span>Problem</span><br></br></td><td>since 2017-05-06</td><td>active</td><td><span><span>Severe</span></span></td></tr>\n                                <tr><td><span><span>Acute tubulo-interstitial nephritis</span><br></br></span></td><td><span>Problem</span><br></br></td><td>since 2017-05-07</td><td>active</td><td><span><span>Moderate to severe</span></span></td></tr>\n                            </tbody>\n                        </table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:d01a6de0-04cb-4ff6-b60e-4cbe978349fe"
+              },
+              {
+                "reference": "urn:uuid:ab31e3f9-c175-432d-a233-19ac3fea4fe2"
+              },
+              {
+                "reference": "urn:uuid:51e67c8a-a2b2-420b-9837-de051f967c9f"
+              },
+              {
+                "reference": "urn:uuid:9d44c320-9623-4282-bf7c-8e5450f68486"
+              },
+              {
+                "reference": "urn:uuid:ca3f4e6f-cd3a-4742-ba9b-44ba91e1092d"
+              },
+              {
+                "reference": "urn:uuid:ed389c36-72ff-4c2d-8bfd-e180558d00c5"
+              }
+            ]
+          },
+          {
+            "title": "History of Past Illness",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "11348-0",
+                  "display": "History of Past illness note"
+                }
+              ]
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>Health Status</p>\n                        <p>Carcinoma in situ: Thyroid and other endocrine glands, between 1997-10-01 and 1997-10-06, Disorder in remission.</p>\n                        <p>Diabetes mellitus arising in pregnancy, between 2011-10-12 and 2012-04-30, Disorder in remission.</p>\n                        <table><colgroup><col width=\"20%\"></col><col width=\"20%\"></col><col width=\"20%\"></col><col width=\"20%\"></col></colgroup>\n                            <thead>\n                                <tr><th>Closed/Inactive Problem</th><th>Problem Type</th><th>Time</th><th>Problem Status</th><th>Health Status</th></tr>\n                            </thead>\n                            <tbody>\n                                <tr><td><span><span>Carcinoma in situ: Thyroid and other endocrine glands</span><br></br></span></td><td><span>Problem</span><br></br></td><td>between 1997-10-01 and 1997-10-06</td><td>completed</td><td><span><span>Disorder in remission</span></span></td></tr>\n                                <tr><td><span><span>Diabetes mellitus arising in pregnancy</span><br></br></span></td><td><span>Problem</span><br></br></td><td>between 2011-10-12 and 2012-04-30</td><td>completed</td><td><span><span>Disorder in remission</span></span></td></tr>\n                            </tbody>\n                        </table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:789a6162-74ca-476a-a2b0-d8d5777f2249"
+              },
+              {
+                "reference": "urn:uuid:013867ca-4cd7-4cc8-9e22-5b24620b4c06"
+              }
+            ]
+          },
+          {
+            "title": "History of Procedures",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "47519-4",
+                  "display": "History of Procedures Document"
+                }
+              ]
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>Implantation of heart assist system, 2014-10-20</p><p>Cesarean section, 2012-04-14</p><p>Thyroidectomy, 1997-06-05</p>\n                        <table><colgroup><col width=\"20%\"></col><col width=\"20%\"></col></colgroup><thead><tr><th>Procedure</th><th>Procedure Date</th></tr></thead><tbody><tr><td><span>Implantation of heart\n                            assist system</span><br></br></td><td>2014-10-20</td></tr><tr><td><span>Cesarean\n                            section</span><br></br></td><td>2012-04-14</td></tr><tr><td><span>Thyroidectomy</span><br></br></td><td>1997-06-05</td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:bd39b363-0202-469e-bd93-d71c852439ca"
+              },
+              {
+                "reference": "urn:uuid:feca8e70-f75d-4ba2-aa88-a2d870c3ed82"
+              },
+              {
+                "reference": "urn:uuid:7a61ed3e-c19f-42d0-8964-8b114ce831c3"
+              }
+            ]
+          },
+          {
+            "title": "Medication Summary",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "10160-0",
+                  "display": "History of Medication use Narrative"
+                }
+              ]
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>Eutirox : levothyroxine sodium 100 ug Tablet : 1 ACM since 1997-10-06 (Oral use)</p><p>Triapin : ramipril 5 mg, felodipine 5 mg Prolonged-release tablet : 2 ACM since 2017-05-06</p><p>Tresiba : insulin degludec [100 [IU] / mL] Solution for injection in pre-filled pen : 10 [IU] per day since 2012-04-30 (Subcutaneous use)</p><p>Augmentin : amoxicillin 500 mg, clavulanic acid 125 mg Film-coated tablet : 1 every 8 h between 2017-05-07 and 2017-05-21</p><p>Combivent Unidose : salbutamol [2.5 mg / 2.5 mL] ipratropium bromide [0.5 mg / 2.5 mL] Nebuliser solution [in Single-dose container, 2.5 mL] : 2.5 mL every 8 h since 2015-01-02</p>\n                        <table>\n                            <colgroup>\n                                <col width=\"15%\"></col>\n                                <col width=\"30%\"></col>\n                                <col width=\"20%\"></col>\n                                <col width=\"5%\"></col>\n                                <col width=\"10%\"></col>\n                                <col width=\"10%\"></col>\n                                <col width=\"10%\"></col>\n                            </colgroup>\n                            <thead>\n                                <tr>\n                                    <th>Name (Class)</th>\n                                    <th>Active ingredients [Strength]</th>\n                                    <th>Dose Form [Package]</th>\n                                    <th>Dose Quantity</th>\n                                    <th>Dosage</th>\n                                    <th>Time</th>\n                                    <th>Route</th>\n                                    <th>Medical reason</th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr>\n                                    <td valign=\"top\">Eutirox</td>\n                                    <td valign=\"top\">\n                                        <span>levothyroxine sodium</span> (100 ug / 1)\n                                        <br></br>\n                                    </td>\n                                    <td>\n                                        <span>Tablet</span>\n                                        <br></br>\n                                    </td>\n                                    <td></td>\n                                    <td valign=\"top\">Event : ACM</td>\n                                    <td>since 1997-10-06</td>\n                                    <td>\n                                        <span>Oral use</span>\n                                        <br></br>\n                                    </td>\n                                    <td>\n                                        <span>Medical reason</span>\n                                        <br></br>\n                                    </td>\n                                </tr>\n                                <tr>\n                                    <td valign=\"top\">Triapin\n                                        <br></br> (\n                                        <span>ramipril and felodipine</span>)\n                                        <br></br>\n                                    </td>\n                                    <td>\n                                        <ul>\n                                            <li>\n                                                <span>ramipril</span> (5 mg/1)\n                                            </li>\n                                            <li>\n                                                <span>felodipine</span> (5 mg/1)\n                                            </li>\n                                        </ul>\n                                    </td>\n                                    <td valign=\"top\">\n                                        <span>Prolonged-release tablet</span>\n                                        <br></br>\n                                    </td>\n                                    <td valign=\"top\">2</td>\n                                    <td valign=\"top\">Event : ACM</td>\n                                    <td valign=\"top\">since 2017-05-06</td>\n                                    <td></td>\n                                </tr>\n                                <tr>\n                                    <td valign=\"top\">Tresiba</td>\n                                    <td valign=\"top\">\n                                        <span>insulin degludec</span> (100 [IU]/1 mL)</td>\n                                    <td valign=\"top\">\n                                        <span>Solution for injection in pre-filled pen</span>\n                                    </td>\n                                    <td valign=\"top\">10 [IU]</td>\n                                    <td valign=\"top\">Period : 1 d</td>\n                                    <td>since 2012-04-30</td>\n                                    <td valign=\"top\">\n                                        <span>Subcutaneous use</span>\n                                        <br></br>\n                                    </td>\n                                </tr>\n                                <tr>\n                                    <td valign=\"top\">Augmentin\n                                        <br></br>(\n                                        <span>amoxicillin and enzyme inhibitor</span>)</td>\n                                    <td valign=\"top\">\n                                        <ul>\n                                            <li>\n                                                <span>amoxicillin</span> (500 mg/1)\n                                            </li>\n                                            <li>Translation : clavulanic acid {CAS: 58001-44-8} (Ingredient name : clavulanic acid)</li>\n                                        </ul>\n                                    </td>\n                                    <td valign=\"top\">\n                                        <span>Film-coated tablet</span>\n                                        <br></br>\n                                    </td>\n                                    <td valign=\"top\">1</td>\n                                    <td valign=\"top\">\n                                        Period : 8 h</td>\n                                    <td valign=\"top\">between 2017-05-07 and 2017-05-21</td>\n                                    <td></td>\n                                </tr>\n                                <tr>\n                                    <td valign=\"top\">Combivent Unidose\n                                        <br></br> (\n                                        <span>salbutamol and ipratropium bromide</span>)</td>\n                                    <td valign=\"top\">\n                                        <ul>\n                                            <li>\n                                                <span>salbutamol</span> (2.5 mg/2.5 mL)\n                                            </li>\n                                            <li>\n                                                <span>ipratropium bromide</span> (0.5 mg/2.5 mL)\n                                            </li>\n                                        </ul>\n                                    </td>\n                                    <td valign=\"top\">\n                                        <span>Nebuliser solution</span>\n                                        <br></br> [Package form :\n                                        <span>Single-dose container</span>\n                                        <br></br> capacityQuantity : 2.5 mL]</td>\n                                    <td valign=\"top\">2.5 mL</td>\n                                    <td valign=\"top\">\n                                        Period : 8 h</td>\n                                    <td valign=\"top\">since 2015-01-02</td>\n                                    <td></td>\n                                </tr>\n                            </tbody>\n                        </table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:a50e351e-71d6-4e0d-a6eb-6d1fa1af64ab"
+              },
+              {
+                "reference": "urn:uuid:96d7d4cd-c1c5-45ca-81f8-62826f8824ab"
+              },
+              {
+                "reference": "urn:uuid:9f35b5d7-79aa-4b99-9e80-c29ad18b551f"
+              },
+              {
+                "reference": "urn:uuid:6f276609-e29e-44e6-8679-1546df277b9e"
+              },
+              {
+                "reference": "urn:uuid:f7b6ddeb-f878-4856-b5d8-43c1aa1f5b2b"
+              }
+            ]
+          },
+          {
+            "title": "Vital Signs",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8716-3",
+                  "display": "Vital signs note"
+                }
+              ]
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>Vital Signs</p>\n                        <p>Diastolic blood pressure: 110 mm[Hg]</p>\n                        <p>Systolic blood pressure: 160 mm[Hg]</p>\n                        <table><caption>Date: 2017-05-06 [ID: 2.999.10.1]</caption><colgroup><col width=\"40%\"></col><col width=\"20%\"></col><col width=\"20%\"></col><col width=\"20%\"></col></colgroup>\n                            <thead>\n                                <tr><th>Obs. Type</th><th>Obs. Value</th><th>Obs. time</th><th>Obs. ID</th></tr>\n                            </thead>\n                            <tbody>\n                                <tr><td><span>Diastolic blood pressure</span><br></br></td><td>110 mm[Hg]</td><td>2017-05-06</td><td>2.999</td></tr>\n                                <tr><td><span>Systolic blood pressure</span><br></br></td><td>160 mm[Hg]</td><td>2017-05-06</td><td>2.999</td></tr>\n                            </tbody>\n                        </table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:08c98828-ed0b-4185-bd29-34f15e739927"
+              }
+            ]
+          },
+          {
+            "title": "History of Immunizations",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "11369-6",
+                  "display": "History of Immunization note"
+                }
+              ]
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>Hepatitis B virus vaccine Engerix B (2294189) 1983-01-02</p><p>Diphtheria + tetanus + pertussis + poliomyelitis vaccine Tetravac (2782480) 1983-01-02</p><p>Haemophilus influenzae Type b vaccine Hiberix (2751881) 1983-01-02</p><p>Human papillomavirus vaccine Cervarix (5055173) 1994-05-20</p>\n                        <table>\n                            <colgroup>\n                                <col width=\"8%\"></col><col width=\"8%\"></col><col width=\"8%\"></col><col width=\"8%\"></col><col width=\"8%\"></col><col width=\"8%\"></col><col width=\"8%\"></col><col width=\"8%\"></col><col width=\"8%\"></col><col width=\"8%\"></col><col width=\"8%\"></col>\n                            </colgroup>\n                            <thead>\n                                <tr><th>Vaccination</th><th>Brand Name</th><th>Vaccination Date</th><th>Agent</th><th>Marketing Authorization Holder</th><th>Dose number in series</th><th>Batch/lot number</th><th>Administering Center</th><th>Health Professional Identification</th><th>Country of Vaccination</th><th>Annotations</th></tr>\n                            </thead>\n                            <tbody>\n                                <tr><td><span>Hepatitis B virus\n                                    vaccine</span><br></br></td><td>Engerix B (2294189)</td><td>1983-01-02</td><td>Acute Hepatitis B</td><td>SmithKline Beecham Biologicals S.A</td><td>12</td><td>1</td><td>Brussels vaccination center</td><td>Gregory House</td><td>BE</td><td></td></tr>\n                                <tr><td><span>Diphtheria + tetanus\n                                    + pertussis + poliomyelitis vaccine</span><br></br></td><td>Tetravac (2782480)</td><td>1983-01-02</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n                                <tr><td><span>Haemophilus\n                                    influenzae Type b vaccine</span><br></br></td><td>Hiberix (2751881)</td><td>1983-01-02</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n                                <tr><td><span>Human papillomavirus\n                                    vaccine</span><br></br></td><td>Cervarix (5055173)</td><td>1994-05-20</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>\n                            </tbody>\n                        </table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:e0c9b98d-d51f-49a0-8774-e4c76b48e07c"
+              },
+              {
+                "reference": "urn:uuid:5bd03c2a-07d8-48ea-aabb-26db1cd19d51"
+              },
+              {
+                "reference": "urn:uuid:cd1eb243-bb65-4439-ab09-528a2813f3af"
+              },
+              {
+                "reference": "urn:uuid:df0b8c69-658d-4231-a720-bc4cb47d244e"
+              }
+            ]
+          },
+          {
+            "title": "Social History",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "29762-2",
+                  "display": "Social history note"
+                }
+              ]
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>Tobacco use and exposure: 0.5 {pack}/d since 2017-04-15</p>\n                        <p>Alcohol intake: 4 {glass}/d since 2016-04-15</p>\n                        <table><colgroup><col width=\"20%\"></col><col width=\"20%\"></col><col width=\"20%\"></col></colgroup>\n                            <thead>\n                                <tr><th>Observation Type</th><th>Observation Value</th><th>Observation Time</th></tr>\n                            </thead>\n                            <tbody>\n                                <tr><td><span>Tobacco use and exposure</span><br></br></td><td>0.5 {pack}/d</td><td>since 2017-04-15</td></tr>\n                                <tr><td><span>Alcohol intake</span><br></br></td><td>4 {glass}/d</td><td>since 2016-04-15</td></tr>\n                            </tbody>\n                        </table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:5b42ef79-74d5-45a3-ac8e-9f617f5782d0"
+              },
+              {
+                "reference": "urn:uuid:cc2a1dc6-da26-4f05-b885-17c2166a62c2"
+              }
+            ]
+          },
+          {
+            "title": "Laboratory Results",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "30954-2",
+                  "display": "Relevant diagnostic tests/laboratory data note"
+                }
+              ]
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>Coded Results</p>\n                        <table><colgroup><col width=\"20%\"></col><col width=\"20%\"></col></colgroup>\n                            <thead>\n                                <tr><th>Diagnostic Date</th><th>Blood Group</th></tr>\n                            </thead>\n                            <tbody>\n                                <tr><td>2019-11-22</td><td>Blood Group: O+</td></tr>\n                            </tbody>\n                        </table>\n                        <table><colgroup><col width=\"20%\"></col><col width=\"20%\"></col><col width=\"20%\"></col><col width=\"20%\"></col><col width=\"20%\"></col></colgroup>\n                            <thead>\n                                <tr><th>Diagnostic Date</th><th>Result type</th><th>Result value</th><th>Performer</th><th>Reporter</th><th>Comment</th></tr>\n                            </thead>\n                            <tbody>\n                                <tr><td>2022-06-14</td><td>Magnetic resonance imaging (MRI)</td><td>Source of Measurement</td><td>Schuman Robert</td><td>Ursula Von Der Leyen, European Commission Radiology dept.</td><td>Comment line</td></tr>\n                            </tbody>\n                        </table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:c69497a3-c2b4-4830-8d87-b49613ceb375"
+              }
+            ]
+          },
+          {
+            "title": "History of Pregnancies",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "10162-6",
+                  "display": "History of pregnancies Narrative"
+                }
+              ]
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>Current Pregnancy status</p>\n                        <table><colgroup><col width=\"20%\"></col><col width=\"20%\"></col><col width=\"20%\"></col></colgroup>\n                            <thead>\n                                <tr><th>Observation Date</th><th>Pregnancy status</th><th>Delivery Date Estimated</th></tr>\n                            </thead>\n                            <tbody>\n                                <tr><td><span>2022-06-15</span><br></br></td><td>pregnant</td><td>2023-02-15</td></tr>\n                            </tbody>\n                        </table>\n                        <p>History of previous pregnancies</p>\n                        <table><colgroup><col width=\"40%\"></col><col width=\"30%\"></col><col width=\"30%\"></col></colgroup>\n                            <thead>\n                                <tr><th>Outcome</th><th>Date</th><th>SNOMED Code</th></tr>\n                            </thead>\n                            <tbody>\n                                <tr><td><span>Livebirth</span></td><td>2020-02-05</td><td>281050002</td></tr>\n                                <tr><td><span>Livebirth</span></td><td>2021-09-08</td><td>281050002</td></tr>\n                                <tr><td><span>Termination of pregnancy</span></td><td>2010-07-03</td><td>57797005</td></tr>\n                            </tbody>\n                        </table>\n                        <p>Previous pregnancies overview</p>\n                        <table><colgroup><col width=\"40%\"></col><col width=\"20%\"></col><col width=\"40%\"></col></colgroup>\n                            <thead>\n                                <tr><th>Outcome Type</th><th>Count</th><th>Outcome date(s)</th></tr>\n                            </thead>\n                            <tbody>\n                                <tr><td><span>Livebirth</span></td><td>2</td><td>2020-02-05, 2021-09-08</td></tr>\n                                <tr><td><span>Termination of pregnancy</span></td><td>1</td><td>2010-07-03</td></tr>\n                            </tbody>\n                        </table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:2f7adc3e-45e5-4a24-9d5a-c19af5923777"
+              },
+              {
+                "reference": "urn:uuid:d49db308-a7e1-4efa-86bd-1f35861fb9a9"
+              },
+              {
+                "reference": "urn:uuid:2febee79-3a89-47f3-b71d-2ce0827f8e43"
+              },
+              {
+                "reference": "urn:uuid:0a4ab19f-0156-441f-96f6-1b994d0857b1"
+              },
+              {
+                "reference": "urn:uuid:a94a3d1e-3407-4844-a749-26c6cc2da91a"
+              },
+              {
+                "reference": "urn:uuid:8eb796d7-99ce-4c7a-b1cb-01bf9b547a72"
+              },
+              {
+                "reference": "urn:uuid:7fff11bc-b31f-4c0d-a325-75a954843f6e"
+              },
+              {
+                "reference": "urn:uuid:adc39bfe-f1d8-43de-af87-8fefa8237a40"
+              }
+            ]
+          },
+          {
+            "title": "Functional Status",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "47420-5",
+                  "display": "Functional status assessment note"
+                }
+              ]
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>Functional statusses</p>\n                        <p>Bed mobility - self-performance during assessment period</p>\n                        <p>Walking (with assistive device if used)</p>\n                        <table><caption>Date: 2022-06-13 [ID: 2.999.13]</caption><colgroup><col width=\"40%\"></col><col width=\"20%\"></col><col width=\"20%\"></col><col width=\"20%\"></col></colgroup>\n                            <thead>\n                                <tr><th>Obs. time</th><th>Obs. code</th><th>Onset time</th><th>Result</th></tr>\n                            </thead>\n                            <tbody>\n                                <tr><td>2022-06-13</td><td><span>Bed mobility - self-performance during assessment period</span><br></br></td><td>2022-06-13</td><td>MILD impairment for mobility of joint\n                                </td></tr>\n                                <tr><td>2022-06-13</td><td><span>Walking (with assistive device if used)</span><br></br></td><td>2022-06-13</td><td>MILD impairment for mobility of joint\n                                </td></tr>\n                            </tbody>\n                        </table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:3cc5ce7b-d0db-4d7c-8724-0f9a82ee7d72"
+              },
+              {
+                "reference": "urn:uuid:92e68347-97ed-4ef4-ab9b-43076656925a"
+              }
+            ]
+          },
+          {
+            "title": "Advance Directives",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "42348-3",
+                  "display": "Advance healthcare directives"
+                }
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>1 advance directive(s)</p></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:847c1d11-39b5-4bdb-a3fd-544403879c3b"
+              }
+            ]
+          }
+        ],
+        "attester": [
+          {
+            "mode": "legal",
+            "time": "2010-10-01T00:00:00Z",
+            "party": {
+              "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "2-1234-W7",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Patient-uv-ips"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:2.16.17.710.850.1000.990.1.1000",
+            "value": "2-1234-W7"
+          }
+        ],
+        "name": [
+          {
+            "family": "Ferreira",
+            "given": [
+              "Diana"
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "351211234567",
+            "use": "home"
+          },
+          {
+            "system": "email",
+            "value": "paciente@gmail.com"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1982-05-08",
+        "address": [
+          {
+            "line": [
+              "155, Avenida da Liberdade"
+            ],
+            "city": "Lisbon",
+            "postalCode": "1250-141",
+            "country": "PT"
+          }
+        ],
+        "contact": [
+          {
+            "relationship": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+                    "code": "N",
+                    "display": "Next-of-Kin"
+                  }
+                ]
+              }
+            ],
+            "name": {
+              "family": "Baptista",
+              "given": [
+                "Joaquim"
+              ]
+            },
+            "telecom": [
+              {
+                "system": "email",
+                "value": "guardian@gmail.com"
+              },
+              {
+                "system": "phone",
+                "value": "351211234569"
+              }
+            ],
+            "address": {
+              "line": [
+                "155, Avenida da Liberdade"
+              ],
+              "city": "Lisbon",
+              "postalCode": "1250-141",
+              "country": "PT"
+            }
+          },
+          {
+            "relationship": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+                    "code": "N",
+                    "display": "Next-of-Kin"
+                  }
+                ]
+              }
+            ],
+            "name": {
+              "family": "Silva",
+              "given": [
+                "Vitória"
+              ]
+            },
+            "telecom": [
+              {
+                "system": "email",
+                "value": "paciente@gmail.com"
+              },
+              {
+                "system": "phone",
+                "value": "351211234570"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "cece1d25-55f6-43bf-ae74-4e384aff72f4",
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "PRN",
+                  "display": "Provider number"
+                }
+              ]
+            },
+            "system": "urn:oid:2.999.0",
+            "value": "nnn"
+          }
+        ],
+        "name": [
+          {
+            "family": "Pereira",
+            "given": [
+              "António"
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "351211234568",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "medico@gmail.com"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9737880e-7709-4b6a-9915-482ff2330b31",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "61a6c718-4174-4c80-8b09-b97ae1d9e5eb",
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "PRN",
+                  "display": "Provider number"
+                }
+              ]
+            },
+            "system": "urn:oid:2.999.0",
+            "value": "12345678"
+          }
+        ],
+        "name": "Centro Hospitalar de Lisboa Central",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "email",
+                "value": "hospital@gmail.com",
+                "use": "work"
+              }
+            ],
+            "address": {
+              "line": [
+                "3, Alameda Santo António dos Capuchos"
+              ],
+              "city": "Lisbon",
+              "postalCode": "1169-050",
+              "country": "PT"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c1c75016-1656-402d-a9a7-1c781fe37bb0",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "c1c75016-1656-402d-a9a7-1c781fe37bb0",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:2.999.2.1.1",
+            "value": "2.999.2.1.1"
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "inactive"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "260176001"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "onsetDateTime": "1990-01-10",
+        "recordedDate": "1990-01-10"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:bc6906bc-e916-4c79-a9ce-af01747762f1",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "bc6906bc-e916-4c79-a9ce-af01747762f1",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:2.999.2.2.1",
+            "value": "2.999.2.2.1"
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "inactive"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "47703008"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "onsetDateTime": "1983-05-05",
+        "recordedDate": "1983-05-05"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:82a45533-90b2-43a2-b6e4-04d2db527dc9",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "82a45533-90b2-43a2-b6e4-04d2db527dc9",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:2.999.2",
+            "value": "2.999.2"
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "inactive"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.whocc.no/atc",
+              "code": "N02BA01"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:87014625-c4c6-49e4-8cbe-7b6dfc53f703",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "87014625-c4c6-49e4-8cbe-7b6dfc53f703",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:2.999.2",
+            "value": "2.999.2"
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "inactive"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "111088007"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "onsetDateTime": "1990-01-10",
+        "recordedDate": "1990-01-10"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d01a6de0-04cb-4ff6-b60e-4cbe978349fe",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "d01a6de0-04cb-4ff6-b60e-4cbe978349fe",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:2.999.4.1.1",
+            "value": "2.999.4.1.1"
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "J45"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "onsetDateTime": "1994-10-03"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:ab31e3f9-c175-432d-a233-19ac3fea4fe2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "ab31e3f9-c175-432d-a233-19ac3fea4fe2",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:2.999.4.2.1",
+            "value": "2.999.4.2.1"
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "E89"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "onsetDateTime": "1997-10-06"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:51e67c8a-a2b2-420b-9837-de051f967c9f",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "51e67c8a-a2b2-420b-9837-de051f967c9f",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:2.999.4.3.1",
+            "value": "2.999.4.3.1"
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "I49"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "onsetDateTime": "2013-01-09"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9d44c320-9623-4282-bf7c-8e5450f68486",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "9d44c320-9623-4282-bf7c-8e5450f68486",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:2.999.4.6.1",
+            "value": "2.999.4.6.1"
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "O14"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "onsetDateTime": "2017-05-06"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:ca3f4e6f-cd3a-4742-ba9b-44ba91e1092d",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "ca3f4e6f-cd3a-4742-ba9b-44ba91e1092d",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:2.999.0",
+            "value": "2.999.0"
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "N10"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "onsetDateTime": "2017-05-07"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:ed389c36-72ff-4c2d-8bfd-e180558d00c5",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "ed389c36-72ff-4c2d-8bfd-e180558d00c5",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:2.999.0",
+            "value": "2.999.0"
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "urn:oid:1.3.6.1.4.1.12559.11.10.1.3.1.44.5",
+              "code": "199",
+              "display": "Past illness (epSOS code 199)"
+            }
+          ],
+          "text": "Past illness (epSOS code 199)"
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "onsetDateTime": "2020-01-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:789a6162-74ca-476a-a2b0-d8d5777f2249",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "789a6162-74ca-476a-a2b0-d8d5777f2249",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "D09",
+              "display": "Carcinoma in situ of other and unspecified sites"
+            }
+          ],
+          "text": "Unknown condition"
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "onsetDateTime": "1997-10-01",
+        "abatementDateTime": "1997-10-06"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:013867ca-4cd7-4cc8-9e22-5b24620b4c06",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "013867ca-4cd7-4cc8-9e22-5b24620b4c06",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "O24",
+              "display": "Diabetes mellitus in pregnancy"
+            }
+          ],
+          "text": "Unknown condition"
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "onsetDateTime": "2011-10-12",
+        "abatementDateTime": "2012-04-30"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:bd39b363-0202-469e-bd93-d71c852439ca",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "bd39b363-0202-469e-bd93-d71c852439ca",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Procedure-uv-ips"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:2.999.3.1",
+            "value": "2.999.3.1"
+          }
+        ],
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "64253000"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "performedDateTime": "2000-01-01T00:00:00Z"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:feca8e70-f75d-4ba2-aa88-a2d870c3ed82",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "feca8e70-f75d-4ba2-aa88-a2d870c3ed82",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Procedure-uv-ips"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:2.999.3.2",
+            "value": "2.999.3.2"
+          }
+        ],
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "11466000"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "performedDateTime": "2000-01-01T00:00:00Z"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7a61ed3e-c19f-42d0-8964-8b114ce831c3",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "7a61ed3e-c19f-42d0-8964-8b114ce831c3",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Procedure-uv-ips"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:2.999.3.3",
+            "value": "2.999.3.3"
+          }
+        ],
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "13619001"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "performedDateTime": "2000-01-01T00:00:00Z"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a50e351e-71d6-4e0d-a6eb-6d1fa1af64ab",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "a50e351e-71d6-4e0d-a6eb-6d1fa1af64ab",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationStatement-uv-ips"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:2.999.1.1",
+            "value": "2.999.1.1"
+          }
+        ],
+        "status": "active",
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "effectiveDateTime": "1997-10-06",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.whocc.no/atc",
+              "code": "H03AA01"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:96d7d4cd-c1c5-45ca-81f8-62826f8824ab",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "96d7d4cd-c1c5-45ca-81f8-62826f8824ab",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationStatement-uv-ips"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:2.999.1.2",
+            "value": "2.999.1.2"
+          }
+        ],
+        "status": "active",
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "effectiveDateTime": "2017-05-06",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.whocc.no/atc",
+              "code": "C09BB05"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9f35b5d7-79aa-4b99-9e80-c29ad18b551f",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "9f35b5d7-79aa-4b99-9e80-c29ad18b551f",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationStatement-uv-ips"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:2.999.1.3",
+            "value": "2.999.1.3"
+          }
+        ],
+        "status": "active",
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "effectiveDateTime": "2012-04-30",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.whocc.no/atc",
+              "code": "A10AE06"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f276609-e29e-44e6-8679-1546df277b9e",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "6f276609-e29e-44e6-8679-1546df277b9e",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationStatement-uv-ips"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:2.999.1.4",
+            "value": "2.999.1.4"
+          }
+        ],
+        "status": "completed",
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "effectiveDateTime": "2017-05-07",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.whocc.no/atc",
+              "code": "J01CR02"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f7b6ddeb-f878-4856-b5d8-43c1aa1f5b2b",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "f7b6ddeb-f878-4856-b5d8-43c1aa1f5b2b",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationStatement-uv-ips"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:2.999.1.5",
+            "value": "2.999.1.5"
+          }
+        ],
+        "status": "active",
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "effectiveDateTime": "2015-01-02",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.whocc.no/atc",
+              "code": "R03AL02"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:08c98828-ed0b-4185-bd29-34f15e739927",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "08c98828-ed0b-4185-bd29-34f15e739927",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/vitalsigns"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure panel with all children optional"
+            }
+          ],
+          "text": "Blood pressure systolic & diastolic"
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "effectiveDateTime": "2017-05-06",
+        "performer": [
+          {
+            "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
+          }
+        ],
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 160.0,
+              "unit": "mm[Hg]",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 110.0,
+              "unit": "mm[Hg]",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:e0c9b98d-d51f-49a0-8774-e4c76b48e07c",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "e0c9b98d-d51f-49a0-8774-e4c76b48e07c",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "836374004",
+              "display": "Hepatitis B virus antigen-containing vaccine product"
+            }
+          ],
+          "text": "Engerix B (2294189)"
+        },
+        "lotNumber": "1",
+        "patient": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "occurrenceDateTime": "1983-01-02"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5bd03c2a-07d8-48ea-aabb-26db1cd19d51",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "5bd03c2a-07d8-48ea-aabb-26db1cd19d51",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://www.whocc.no/atc",
+              "code": "J07AM",
+              "display": "Tetanus vaccines"
+            }
+          ],
+          "text": "Tetravac (2782480)"
+        },
+        "patient": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "occurrenceDateTime": "1983-01-02"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cd1eb243-bb65-4439-ab09-528a2813f3af",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "cd1eb243-bb65-4439-ab09-528a2813f3af",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://www.whocc.no/atc",
+              "code": "J07AG",
+              "display": "Haemophilus influenzae B vaccines"
+            }
+          ],
+          "text": "Hiberix (2751881)"
+        },
+        "patient": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "occurrenceDateTime": "1983-01-02"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:df0b8c69-658d-4231-a720-bc4cb47d244e",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "df0b8c69-658d-4231-a720-bc4cb47d244e",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://www.whocc.no/atc",
+              "code": "J07BM02",
+              "display": "papillomavirus (human types 16, 18)"
+            }
+          ],
+          "text": "Cervarix (5055173)"
+        },
+        "patient": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "occurrenceString": "Unknown date"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5b42ef79-74d5-45a3-ac8e-9f617f5782d0",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "5b42ef79-74d5-45a3-ac8e-9f617f5782d0",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "social-history",
+                "display": "Social History"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72166-2",
+              "display": "Tobacco smoking status"
+            }
+          ],
+          "text": "Social history observation"
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "effectiveDateTime": "2017-04-15",
+        "performer": [
+          {
+            "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
+          }
+        ],
+        "valueQuantity": {
+          "value": 0.5,
+          "unit": "/d",
+          "system": "http://unitsofmeasure.org",
+          "code": "/d"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cc2a1dc6-da26-4f05-b885-17c2166a62c2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "cc2a1dc6-da26-4f05-b885-17c2166a62c2",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "social-history",
+                "display": "Social History"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "74013-4",
+              "display": "Alcoholic drinks per day"
+            }
+          ],
+          "text": "Social history observation"
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "effectiveDateTime": "2016-04-15",
+        "performer": [
+          {
+            "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
+          }
+        ],
+        "valueQuantity": {
+          "value": 4.0,
+          "unit": "/d",
+          "system": "http://unitsofmeasure.org",
+          "code": "/d"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c69497a3-c2b4-4830-8d87-b49613ceb375",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "c69497a3-c2b4-4830-8d87-b49613ceb375",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34530-6",
+              "display": "ABO and Rh group panel - Blood"
+            }
+          ],
+          "text": "ABO and Rh group panel - Blood"
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "effectiveDateTime": "2019-11-22",
+        "performer": [
+          {
+            "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "278147001",
+              "display": "Blood group O Rh(D) positive"
+            }
+          ],
+          "text": "Blood group O Rh(D) positive"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2f7adc3e-45e5-4a24-9d5a-c19af5923777",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "2f7adc3e-45e5-4a24-9d5a-c19af5923777",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey",
+                "display": "Survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "82810-3",
+              "display": "Pregnancy status"
+            }
+          ],
+          "text": "Pregnancy observation"
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "effectiveDateTime": "2022-06-15",
+        "performer": [
+          {
+            "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "77386006",
+              "display": "Pregnant"
+            }
+          ],
+          "text": "Pregnant"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d49db308-a7e1-4efa-86bd-1f35861fb9a9",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "d49db308-a7e1-4efa-86bd-1f35861fb9a9",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey",
+                "display": "Survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "281050002",
+              "display": "Livebirth"
+            }
+          ],
+          "text": "Livebirth"
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "effectiveDateTime": "2022-06-08T10:49:00Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
+          }
+        ],
+        "valueQuantity": {
+          "value": 2.0,
+          "unit": "1",
+          "system": "http://unitsofmeasure.org",
+          "code": "1"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2febee79-3a89-47f3-b71d-2ce0827f8e43",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "2febee79-3a89-47f3-b71d-2ce0827f8e43",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey",
+                "display": "Survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "57797005",
+              "display": "Termination of pregnancy"
+            }
+          ],
+          "text": "Termination of pregnancy"
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "effectiveDateTime": "2022-06-08T10:49:00Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
+          }
+        ],
+        "valueQuantity": {
+          "value": 1.0,
+          "unit": "1",
+          "system": "http://unitsofmeasure.org",
+          "code": "1"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:0a4ab19f-0156-441f-96f6-1b994d0857b1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "0a4ab19f-0156-441f-96f6-1b994d0857b1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey",
+                "display": "Survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "93857-1",
+              "display": "Date and time of obstetric delivery"
+            }
+          ],
+          "text": "Pregnancy outcome"
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "effectiveDateTime": "2020-02-05",
+        "performer": [
+          {
+            "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "281050002",
+              "display": "Livebirth"
+            }
+          ],
+          "text": "Livebirth"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a94a3d1e-3407-4844-a749-26c6cc2da91a",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "a94a3d1e-3407-4844-a749-26c6cc2da91a",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey",
+                "display": "Survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "93857-1",
+              "display": "Date and time of obstetric delivery"
+            }
+          ],
+          "text": "Pregnancy outcome"
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "effectiveDateTime": "2021-09-08",
+        "performer": [
+          {
+            "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "281050002",
+              "display": "Livebirth"
+            }
+          ],
+          "text": "Livebirth"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:8eb796d7-99ce-4c7a-b1cb-01bf9b547a72",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "8eb796d7-99ce-4c7a-b1cb-01bf9b547a72",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey",
+                "display": "Survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "93857-1",
+              "display": "Date and time of obstetric delivery"
+            }
+          ],
+          "text": "Pregnancy outcome"
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "effectiveDateTime": "2010-07-03",
+        "performer": [
+          {
+            "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "57797005",
+              "display": "Termination of pregnancy"
+            }
+          ],
+          "text": "Termination of pregnancy"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7fff11bc-b31f-4c0d-a325-75a954843f6e",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "7fff11bc-b31f-4c0d-a325-75a954843f6e",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey",
+                "display": "Survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "93857-1",
+              "display": "Date and time of obstetric delivery"
+            }
+          ],
+          "text": "Pregnancy observation"
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "effectiveDateTime": "2022-06-16",
+        "performer": [
+          {
+            "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
+          }
+        ],
+        "valueDateTime": "2020-02-05"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:adc39bfe-f1d8-43de-af87-8fefa8237a40",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "adc39bfe-f1d8-43de-af87-8fefa8237a40",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey",
+                "display": "Survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "93857-1",
+              "display": "Date and time of obstetric delivery"
+            }
+          ],
+          "text": "Pregnancy observation"
+        },
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "effectiveDateTime": "2022-06-16",
+        "performer": [
+          {
+            "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
+          }
+        ],
+        "valueDateTime": "2021-09-08"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3cc5ce7b-d0db-4d7c-8724-0f9a82ee7d72",
+      "resource": {
+        "resourceType": "ClinicalImpression",
+        "id": "3cc5ce7b-d0db-4d7c-8724-0f9a82ee7d72",
+        "status": "completed",
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "45588-1",
+              "display": "Bed mobility - self-performance during assessment period [CMS Assessment]"
+            }
+          ],
+          "text": "Bed mobility - self-performance during assessment period"
+        },
+        "effectiveDateTime": "2022-06-13",
+        "finding": [
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/sid/icf",
+                  "code": "b710",
+                  "display": "Mobility of joint functions"
+                }
+              ],
+              "text": "Mobility of joint functions"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:92e68347-97ed-4ef4-ab9b-43076656925a",
+      "resource": {
+        "resourceType": "ClinicalImpression",
+        "id": "92e68347-97ed-4ef4-ab9b-43076656925a",
+        "status": "completed",
+        "subject": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "54750-5",
+              "display": "Walking (with assistive device if used) during assessment period [CMS Assessment]"
+            }
+          ],
+          "text": "Walking (with assistive device if used)"
+        },
+        "effectiveDateTime": "2022-06-13",
+        "finding": [
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/sid/icf",
+                  "code": "b710",
+                  "display": "Mobility of joint functions"
+                }
+              ],
+              "text": "Mobility of joint functions"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:847c1d11-39b5-4bdb-a3fd-544403879c3b",
+      "resource": {
+        "resourceType": "Consent",
+        "id": "847c1d11-39b5-4bdb-a3fd-544403879c3b",
+        "status": "active",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "IDSCL",
+                "display": "information disclosure"
+              }
+            ]
+          }
+        ],
+        "scope": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/consentscope",
+              "code": "adr",
+              "display": "Advanced Care Directive"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:80b2e96f-93d6-4e79-990b-b63ff52e30a6"
+        },
+        "policyRule": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/consentpolicycodes",
+              "code": "cric",
+              "display": "Common Rule Informed Consent"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6c939b65-8b3e-4782-afc5-59de9e4fa062",
+      "resource": {
+        "resourceType": "Provenance",
+        "id": "6c939b65-8b3e-4782-afc5-59de9e4fa062",
+        "target": [
+          {
+            "reference": "urn:uuid:9d72d68d-0ffc-4f05-b8c3-683e74a903e9"
+          }
+        ],
+        "recorded": "2010-10-01T00:00:00Z",
+        "activity": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-DataOperation",
+              "code": "UPDATE",
+              "display": "Update"
+            }
+          ]
+        },
+        "agent": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                  "code": "author",
+                  "display": "Author"
+                }
+              ]
+            },
+            "who": {
+              "reference": "urn:uuid:2e76b2e9-6cc7-442d-9e79-191bc67444dd"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

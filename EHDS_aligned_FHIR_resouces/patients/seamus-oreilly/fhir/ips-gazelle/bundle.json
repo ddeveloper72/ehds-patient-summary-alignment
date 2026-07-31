@@ -1,0 +1,1367 @@
+{
+  "resourceType": "Bundle",
+  "id": "seamus-oreilly-bundle-patient-summary",
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:85e33b43-58c2-5147-96f0-507a0273ed36"
+  },
+  "type": "document",
+  "timestamp": "2026-06-24T14:30:00+01:00",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:75dbc835-1784-5b58-9139-55ac47058c58",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "seamus-oreilly-composition-summary",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "60591-5",
+              "display": "Patient summary Document"
+            }
+          ],
+          "text": "Patient summary Document"
+        },
+        "subject": {
+          "reference": "urn:uuid:3599a0c9-7105-518b-b747-f441feddf44d"
+        },
+        "date": "2026-06-24T14:30:00+01:00",
+        "author": [
+          {
+            "reference": "urn:uuid:02bcb0bc-0174-5f56-af01-efbb40dbe32b"
+          }
+        ],
+        "title": "Moderate chronic-care Patient Summary",
+        "custodian": {
+          "reference": "urn:uuid:63c51ee7-ebdd-5c57-af2c-8e6b83004930"
+        },
+        "section": [
+          {
+            "title": "Allergies and Intolerances",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48765-2",
+                  "display": "Allergies and adverse reactions Document"
+                }
+              ],
+              "text": "Allergies and Intolerances"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>1 entry recorded for Allergies and Intolerances.</p><table><thead><tr><th>Allergy Type</th><th>Substance</th><th>Onset</th><th>Clinical Status</th><th>Verification Status</th><th>Reaction</th></tr></thead><tbody><tr><td>medication</td><td>Allergy to penicillin</td><td>2002-11-03</td><td>Active</td><td>Confirmed</td><td>Wheal (moderate)</td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:f105d990-d793-586a-966e-3102575145c2"
+              }
+            ]
+          },
+          {
+            "title": "Problem List",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "11450-4",
+                  "display": "Problem list - Reported"
+                }
+              ],
+              "text": "Problem List"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>3 entries recorded for Problem List.</p><table><thead><tr><th>Problem</th><th>Onset</th><th>Clinical Status</th><th>Verification Status</th><th>Severity</th></tr></thead><tbody><tr><td>Type 2 diabetes mellitus</td><td>2015-11-03</td><td>Active</td><td>Confirmed</td><td></td></tr><tr><td>Hypertensive disorder</td><td>2018-11-03</td><td>Active</td><td>Confirmed</td><td></td></tr><tr><td>Hyperlipidemia</td><td>2019-11-03</td><td>Active</td><td>Confirmed</td><td></td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:71ed4c3a-cb65-5a67-a56c-8286b23e5cf0"
+              },
+              {
+                "reference": "urn:uuid:0d54d92f-4713-523f-8db0-d95bd1237264"
+              },
+              {
+                "reference": "urn:uuid:21b314f6-e5f3-5a7a-9900-4d79cbb36e48"
+              }
+            ]
+          },
+          {
+            "title": "Medication Summary",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "10160-0",
+                  "display": "History of Medication use Narrative"
+                }
+              ],
+              "text": "Medication Summary"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>3 entries recorded for Medication Summary.</p><table><thead><tr><th>Medication</th><th>Dates</th><th>Dosage-Timing</th><th>Status</th><th>Route</th></tr></thead><tbody><tr><td>Metformin 500 mg tablet</td><td>since 2023-09-28</td><td>One tablet twice daily with meals</td><td>active</td><td></td></tr><tr><td>Ramipril 5 mg capsule</td><td>since 2023-09-28</td><td>One capsule each morning</td><td>active</td><td></td></tr><tr><td>Atorvastatin 20 mg tablet</td><td>since 2023-09-28</td><td>One tablet at night</td><td>active</td><td></td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:c8b76393-fff1-547e-b6e4-07c9d07372f7"
+              },
+              {
+                "reference": "urn:uuid:a8c10fd1-3774-54aa-9f87-acd24144c349"
+              },
+              {
+                "reference": "urn:uuid:cb927183-8705-51b1-a76c-b4643fbe9c44"
+              }
+            ]
+          },
+          {
+            "title": "Vital Signs",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8716-3",
+                  "display": "Vital signs note"
+                }
+              ],
+              "text": "Vital Signs"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>2 entries recorded for Vital Signs.</p><table><thead><tr><th>Vital Sign</th><th>Value</th><th>Date</th><th>Status</th></tr></thead><tbody><tr><td>Blood pressure panel with all children optional</td><td>Systolic blood pressure: 132 mm[Hg]; Diastolic blood pressure: 82 mm[Hg]</td><td>2026-06-10T10:00:00+01:00</td><td>final</td></tr><tr><td>Body mass index (BMI) [Ratio]</td><td>29.1 kg/m2</td><td>2026-06-10T10:00:00+01:00</td><td>final</td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:d4531e95-cde2-54a6-a55b-eb8e60eb6a4b"
+              },
+              {
+                "reference": "urn:uuid:1fbbc165-a75f-54a7-a575-741dc00d4db6"
+              }
+            ]
+          },
+          {
+            "title": "Laboratory Results",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "30954-2",
+                  "display": "Relevant diagnostic tests/laboratory data note"
+                }
+              ],
+              "text": "Laboratory Results"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>2 entries recorded for Laboratory Results.</p><table><thead><tr><th>Result</th><th>Value</th><th>Date</th><th>Status</th></tr></thead><tbody><tr><td>Hemoglobin A1c/Hemoglobin.total in Blood</td><td>7.2 %</td><td>2026-06-10T10:00:00+01:00</td><td>final</td></tr><tr><td>Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (CKD-EPI)/1.73 sq M</td><td>82 mL/min</td><td>2026-06-10T10:00:00+01:00</td><td>final</td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:e9ad9185-22ec-55fc-ba7a-dc62de3aee3f"
+              },
+              {
+                "reference": "urn:uuid:383eb61a-4756-583c-8c69-159d58f6231d"
+              }
+            ]
+          },
+          {
+            "title": "Social History",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "29762-2",
+                  "display": "Social history note"
+                }
+              ],
+              "text": "Social History"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>2 entries recorded for Social History.</p><table><thead><tr><th>Social History Observation</th><th>Value</th><th>Date</th><th>Status</th></tr></thead><tbody><tr><td>Tobacco smoking status</td><td>Ex-smoker</td><td>2026-06-10T10:00:00+01:00</td><td>final</td></tr><tr><td>Alcoholic drinks per day</td><td>0.9 /d</td><td>2026-06-10T10:00:00+01:00</td><td>final</td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:3a4b6d53-8078-58a5-b03b-c87330adc044"
+              },
+              {
+                "reference": "urn:uuid:7d0bb96a-13f9-5bf2-801a-a5c7c0ebc65a"
+              }
+            ]
+          },
+          {
+            "title": "Functional Status",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "47420-5",
+                  "display": "Functional status assessment note"
+                }
+              ],
+              "text": "Functional Status"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>2 entries recorded for Functional Status.</p><table><thead><tr><th>Assessment</th><th>Summary</th><th>Time</th><th>Status</th></tr></thead><tbody><tr><td>Walking (with assistive device if used) during assessment period [CMS Assessment]</td><td>Independent mobility; no assistive device used.</td><td>2026-06-10</td><td>completed</td></tr><tr><td>Cognitive function [Interpretation]</td><td>Independent with usual activities of daily living.</td><td>2026-06-10</td><td>completed</td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:bcf69291-819b-54ca-980b-1fe2bb72af4d"
+              },
+              {
+                "reference": "urn:uuid:25fa545f-19b8-5c02-9af1-fbc131bac3e9"
+              }
+            ]
+          },
+          {
+            "title": "History of Procedures",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "47519-4",
+                  "display": "History of Procedures Document"
+                }
+              ],
+              "text": "History of Procedures"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>1 entry recorded for History of Procedures.</p><table><thead><tr><th>Procedure</th><th>Date</th><th>Status</th></tr></thead><tbody><tr><td>Appendectomy</td><td>1990-11-03</td><td>completed</td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:0c4120fc-c559-54b4-9ba3-3e924b047ef5"
+              }
+            ]
+          },
+          {
+            "title": "History of Immunizations",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "11369-6",
+                  "display": "History of Immunization note"
+                }
+              ],
+              "text": "History of Immunizations"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>2 entries recorded for History of Immunizations.</p><table><thead><tr><th>Vaccine</th><th>Date</th><th>Status</th><th>Lot Number</th></tr></thead><tbody><tr><td>Influenza, split virus, trivalent, PF</td><td>2025-11-26</td><td>completed</td><td></td></tr><tr><td>SARS-CoV-2 mRNA vaccine</td><td>2025-11-26</td><td>completed</td><td></td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:ed976048-bfec-5cf2-b0a7-cb1d9de638ae"
+              },
+              {
+                "reference": "urn:uuid:6fa6326c-a305-5768-a607-bdb384ae2fa3"
+              }
+            ]
+          },
+          {
+            "title": "Medical Devices",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "46264-8",
+                  "display": "History of medical device use"
+                }
+              ],
+              "text": "Medical Devices"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>No information available in source scenario</p></div>"
+            },
+            "emptyReason": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+                  "code": "unavailable",
+                  "display": "Unavailable"
+                }
+              ],
+              "text": "No information available in source scenario"
+            }
+          },
+          {
+            "title": "Advance Directives",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "42348-3",
+                  "display": "Advance healthcare directives"
+                }
+              ],
+              "text": "Advance Directives"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>No information available in source scenario</p></div>"
+            },
+            "emptyReason": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+                  "code": "unavailable",
+                  "display": "Unavailable"
+                }
+              ],
+              "text": "No information available in source scenario"
+            }
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Composition-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3599a0c9-7105-518b-b747-f441feddf44d",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "seamus-oreilly-patient-main",
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.372.999.1.1",
+            "value": "seamus-oreilly"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "O'Reilly",
+            "given": [
+              "Seamus"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1968-11-03",
+        "address": [
+          {
+            "line": [
+              "7 Shandon Street"
+            ],
+            "city": "Cork",
+            "postalCode": "T23 K8P1",
+            "country": "IE"
+          }
+        ],
+        "communication": [
+          {
+            "language": {
+              "coding": [
+                {
+                  "system": "urn:ietf:bcp:47",
+                  "code": "en-IE",
+                  "display": "English (Ireland)"
+                }
+              ],
+              "text": "English (Ireland)"
+            },
+            "preferred": true
+          }
+        ],
+        "generalPractitioner": [
+          {
+            "reference": "urn:uuid:02bcb0bc-0174-5f56-af01-efbb40dbe32b"
+          }
+        ],
+        "managingOrganization": {
+          "reference": "urn:uuid:58f39da4-3138-5cc3-bf78-a68ab671a9f8"
+        },
+        "maritalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
+              "code": "M",
+              "display": "Married"
+            }
+          ],
+          "text": "Married"
+        },
+        "contact": [
+          {
+            "relationship": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+                    "code": "N",
+                    "display": "Next-of-Kin"
+                  }
+                ],
+                "text": "Spouse"
+              }
+            ],
+            "name": {
+              "family": "O'Reilly",
+              "given": [
+                "Eileen"
+              ]
+            },
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "+353 87 000 2001",
+                "use": "mobile"
+              }
+            ],
+            "address": {
+              "line": [
+                "7 Shandon Street"
+              ],
+              "city": "Cork",
+              "postalCode": "T23 K8P1",
+              "country": "IE"
+            }
+          },
+          {
+            "relationship": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+                    "code": "N",
+                    "display": "Next-of-Kin"
+                  }
+                ],
+                "text": "Son"
+              }
+            ],
+            "name": {
+              "family": "O'Reilly",
+              "given": [
+                "Cian"
+              ]
+            }
+          },
+          {
+            "relationship": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+                    "code": "C",
+                    "display": "Emergency Contact"
+                  }
+                ],
+                "text": "Brother"
+              }
+            ],
+            "name": {
+              "family": "O'Reilly",
+              "given": [
+                "Patrick"
+              ]
+            },
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "+353 86 000 2002",
+                "use": "mobile"
+              }
+            ]
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Patient-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:02bcb0bc-0174-5f56-af01-efbb40dbe32b",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "seamus-oreilly-practitioner-dr-brian-walsh",
+        "name": [
+          {
+            "family": "Walsh",
+            "given": [
+              "Brian"
+            ],
+            "prefix": [
+              "Dr"
+            ]
+          }
+        ],
+        "qualification": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "62247001",
+                  "display": "General practitioner"
+                }
+              ],
+              "text": "General practitioner"
+            },
+            "issuer": {
+              "reference": "urn:uuid:d500df76-8045-53b8-93df-5db10697fedb"
+            }
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Practitioner-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d500df76-8045-53b8-93df-5db10697fedb",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "seamus-oreilly-org-cork-gp",
+        "name": "Lee Road Medical Centre",
+        "address": [
+          {
+            "line": [
+              "45 Lee Road"
+            ],
+            "city": "Cork",
+            "postalCode": "T23 C4D5",
+            "country": "IE"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Organization-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:58f39da4-3138-5cc3-bf78-a68ab671a9f8",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "ireland-org-hse",
+        "name": "Health Service Executive",
+        "address": [
+          {
+            "line": [
+              "Dr Steevens' Hospital"
+            ],
+            "city": "Dublin",
+            "postalCode": "D08 W2A8",
+            "country": "IE"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.372.980010.1.10",
+            "value": "hse"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Organization-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:63c51ee7-ebdd-5c57-af2c-8e6b83004930",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "ireland-org-department-of-health",
+        "name": "Department of Health",
+        "address": [
+          {
+            "line": [
+              "Miesian Plaza",
+              "50-58 Lower Baggot Street"
+            ],
+            "city": "Dublin",
+            "postalCode": "D02 XW14",
+            "country": "IE"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.372.980010.1.11",
+            "value": "department-of-health"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Organization-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f105d990-d793-586a-966e-3102575145c2",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "seamus-oreilly-allergy-penicillin",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "type": "allergy",
+        "category": [
+          "medication"
+        ],
+        "criticality": "high",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "91936005",
+              "display": "Allergy to penicillin"
+            }
+          ],
+          "text": "Allergy to penicillin"
+        },
+        "patient": {
+          "reference": "urn:uuid:3599a0c9-7105-518b-b747-f441feddf44d"
+        },
+        "recordedDate": "2002-11-03",
+        "reaction": [
+          {
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "247472004",
+                    "display": "Wheal"
+                  }
+                ],
+                "text": "Wheal"
+              }
+            ],
+            "severity": "moderate"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:71ed4c3a-cb65-5a67-a56c-8286b23e5cf0",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "seamus-oreilly-condition-type-2-diabetes",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44054006",
+              "display": "Type 2 diabetes mellitus"
+            }
+          ],
+          "text": "Type 2 diabetes mellitus"
+        },
+        "subject": {
+          "reference": "urn:uuid:3599a0c9-7105-518b-b747-f441feddf44d"
+        },
+        "onsetDateTime": "2015-11-03",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:0d54d92f-4713-523f-8db0-d95bd1237264",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "seamus-oreilly-condition-hypertension",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "38341003",
+              "display": "Hypertensive disorder"
+            }
+          ],
+          "text": "Hypertensive disorder"
+        },
+        "subject": {
+          "reference": "urn:uuid:3599a0c9-7105-518b-b747-f441feddf44d"
+        },
+        "onsetDateTime": "2018-11-03",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:21b314f6-e5f3-5a7a-9900-4d79cbb36e48",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "seamus-oreilly-condition-hyperlipidaemia",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "55822004",
+              "display": "Hyperlipidemia"
+            }
+          ],
+          "text": "Hyperlipidemia"
+        },
+        "subject": {
+          "reference": "urn:uuid:3599a0c9-7105-518b-b747-f441feddf44d"
+        },
+        "onsetDateTime": "2019-11-03",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c8b76393-fff1-547e-b6e4-07c9d07372f7",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "seamus-oreilly-medication-metformin",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Metformin 500 mg tablet",
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "860975",
+              "display": "metFORMIN HCl 500 MG 24 HR Extended Release Oral Tablet"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:3599a0c9-7105-518b-b747-f441feddf44d"
+        },
+        "effectivePeriod": {
+          "start": "2023-09-28"
+        },
+        "dateAsserted": "2026-06-24",
+        "dosage": [
+          {
+            "text": "One tablet twice daily with meals"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationStatement-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a8c10fd1-3774-54aa-9f87-acd24144c349",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "seamus-oreilly-medication-ramipril",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Ramipril 5 mg capsule"
+        },
+        "subject": {
+          "reference": "urn:uuid:3599a0c9-7105-518b-b747-f441feddf44d"
+        },
+        "effectivePeriod": {
+          "start": "2023-09-28"
+        },
+        "dateAsserted": "2026-06-24",
+        "dosage": [
+          {
+            "text": "One capsule each morning"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationStatement-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cb927183-8705-51b1-a76c-b4643fbe9c44",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "seamus-oreilly-medication-atorvastatin",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Atorvastatin 20 mg tablet",
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "617318",
+              "display": "atorvastatin 20 MG Oral Tablet [Lipitor]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:3599a0c9-7105-518b-b747-f441feddf44d"
+        },
+        "effectivePeriod": {
+          "start": "2023-09-28"
+        },
+        "dateAsserted": "2026-06-24",
+        "dosage": [
+          {
+            "text": "One tablet at night"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationStatement-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:e9ad9185-22ec-55fc-ba7a-dc62de3aee3f",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "seamus-oreilly-observation-hba1c",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4548-4",
+              "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+            }
+          ],
+          "text": "Hemoglobin A1c/Hemoglobin.total in Blood"
+        },
+        "subject": {
+          "reference": "urn:uuid:3599a0c9-7105-518b-b747-f441feddf44d"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:02bcb0bc-0174-5f56-af01-efbb40dbe32b"
+          }
+        ],
+        "effectiveDateTime": "2026-06-10T10:00:00+01:00",
+        "valueQuantity": {
+          "value": 7.2,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-laboratory-pathology-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:383eb61a-4756-583c-8c69-159d58f6231d",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "seamus-oreilly-observation-egfr",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "62238-1",
+              "display": "Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (CKD-EPI)/1.73 sq M"
+            }
+          ],
+          "text": "Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (CKD-EPI)/1.73 sq M"
+        },
+        "subject": {
+          "reference": "urn:uuid:3599a0c9-7105-518b-b747-f441feddf44d"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:02bcb0bc-0174-5f56-af01-efbb40dbe32b"
+          }
+        ],
+        "effectiveDateTime": "2026-06-10T10:00:00+01:00",
+        "valueQuantity": {
+          "value": 82,
+          "unit": "mL/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "mL/min"
+        },
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-results-laboratory-pathology-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d4531e95-cde2-54a6-a55b-eb8e60eb6a4b",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "seamus-oreilly-observation-blood-pressure",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure panel with all children optional"
+            }
+          ],
+          "text": "Blood pressure panel with all children optional"
+        },
+        "subject": {
+          "reference": "urn:uuid:3599a0c9-7105-518b-b747-f441feddf44d"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:02bcb0bc-0174-5f56-af01-efbb40dbe32b"
+          }
+        ],
+        "effectiveDateTime": "2026-06-10T10:00:00+01:00",
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic blood pressure"
+                }
+              ],
+              "text": "Systolic blood pressure"
+            },
+            "valueQuantity": {
+              "value": 132,
+              "unit": "mm[Hg]",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic blood pressure"
+                }
+              ],
+              "text": "Diastolic blood pressure"
+            },
+            "valueQuantity": {
+              "value": 82,
+              "unit": "mm[Hg]",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/bp"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:1fbbc165-a75f-54a7-a575-741dc00d4db6",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "seamus-oreilly-observation-bmi",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5",
+              "display": "Body mass index (BMI) [Ratio]"
+            }
+          ],
+          "text": "Body mass index (BMI) [Ratio]"
+        },
+        "subject": {
+          "reference": "urn:uuid:3599a0c9-7105-518b-b747-f441feddf44d"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:02bcb0bc-0174-5f56-af01-efbb40dbe32b"
+          }
+        ],
+        "effectiveDateTime": "2026-06-10T10:00:00+01:00",
+        "valueQuantity": {
+          "value": 29.1,
+          "unit": "kg/m2",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg/m2"
+        },
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/bmi"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3a4b6d53-8078-58a5-b03b-c87330adc044",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "seamus-oreilly-observation-smoking-status-former",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "social-history",
+                "display": "Social History"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72166-2",
+              "display": "Tobacco smoking status"
+            }
+          ],
+          "text": "Tobacco smoking status"
+        },
+        "subject": {
+          "reference": "urn:uuid:3599a0c9-7105-518b-b747-f441feddf44d"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:02bcb0bc-0174-5f56-af01-efbb40dbe32b"
+          }
+        ],
+        "effectiveDateTime": "2026-06-10T10:00:00+01:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "8517006",
+              "display": "Ex-smoker"
+            }
+          ],
+          "text": "Ex-smoker"
+        },
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-tobaccouse-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7d0bb96a-13f9-5bf2-801a-a5c7c0ebc65a",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "seamus-oreilly-observation-alcohol-drinks-day",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "social-history",
+                "display": "Social History"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "74013-4",
+              "display": "Alcoholic drinks per day"
+            }
+          ],
+          "text": "Alcoholic drinks per day"
+        },
+        "subject": {
+          "reference": "urn:uuid:3599a0c9-7105-518b-b747-f441feddf44d"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:02bcb0bc-0174-5f56-af01-efbb40dbe32b"
+          }
+        ],
+        "effectiveDateTime": "2026-06-10T10:00:00+01:00",
+        "valueQuantity": {
+          "value": 0.9,
+          "unit": "/d",
+          "system": "http://unitsofmeasure.org",
+          "code": "/d"
+        },
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-alcoholuse-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:bcf69291-819b-54ca-980b-1fe2bb72af4d",
+      "resource": {
+        "resourceType": "ClinicalImpression",
+        "id": "seamus-oreilly-functional-independent-mobility",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "54750-5",
+              "display": "Walking (with assistive device if used) during assessment period [CMS Assessment]"
+            }
+          ],
+          "text": "Walking (with assistive device if used) during assessment period [CMS Assessment]"
+        },
+        "subject": {
+          "reference": "urn:uuid:3599a0c9-7105-518b-b747-f441feddf44d"
+        },
+        "effectiveDateTime": "2026-06-10",
+        "summary": "Independent mobility; no assistive device used."
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:25fa545f-19b8-5c02-9af1-fbc131bac3e9",
+      "resource": {
+        "resourceType": "ClinicalImpression",
+        "id": "seamus-oreilly-functional-independent-activities",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75275-8",
+              "display": "Cognitive function [Interpretation]"
+            }
+          ],
+          "text": "Cognitive function [Interpretation]"
+        },
+        "subject": {
+          "reference": "urn:uuid:3599a0c9-7105-518b-b747-f441feddf44d"
+        },
+        "effectiveDateTime": "2026-06-10",
+        "summary": "Independent with usual activities of daily living."
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:0c4120fc-c559-54b4-9ba3-3e924b047ef5",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "seamus-oreilly-procedure-appendicectomy",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Appendectomy"
+            }
+          ],
+          "text": "Appendectomy"
+        },
+        "subject": {
+          "reference": "urn:uuid:3599a0c9-7105-518b-b747-f441feddf44d"
+        },
+        "performedDateTime": "1990-11-03",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Procedure-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:ed976048-bfec-5cf2-b0a7-cb1d9de638ae",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "seamus-oreilly-immunization-influenza",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/cvx",
+              "code": "140",
+              "display": "Influenza, split virus, trivalent, PF"
+            }
+          ],
+          "text": "Influenza, split virus, trivalent, PF"
+        },
+        "patient": {
+          "reference": "urn:uuid:3599a0c9-7105-518b-b747-f441feddf44d"
+        },
+        "occurrenceDateTime": "2025-11-26",
+        "primarySource": true,
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Immunization-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6fa6326c-a305-5768-a607-bdb384ae2fa3",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "seamus-oreilly-immunization-covid-19",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "1119349007",
+              "display": "SARS-CoV-2 mRNA vaccine"
+            }
+          ],
+          "text": "SARS-CoV-2 mRNA vaccine"
+        },
+        "patient": {
+          "reference": "urn:uuid:3599a0c9-7105-518b-b747-f441feddf44d"
+        },
+        "occurrenceDateTime": "2025-11-26",
+        "primarySource": true,
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Immunization-uv-ips"
+          ]
+        }
+      }
+    }
+  ],
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/ips/StructureDefinition/Bundle-uv-ips|2.0.0"
+    ]
+  }
+}

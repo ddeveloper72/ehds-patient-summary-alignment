@@ -1,0 +1,1022 @@
+{
+  "resourceType": "Bundle",
+  "id": "aoife-byrne-bundle-patient-summary",
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:a39b5b2a-8d5c-5d39-9ace-c08f807baeb8"
+  },
+  "type": "document",
+  "timestamp": "2026-06-18T10:15:00+01:00",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:04cd277a-43e1-5829-86ea-5fa7bcf62de2",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "aoife-byrne-composition-summary",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "60591-5",
+              "display": "Patient summary Document"
+            }
+          ],
+          "text": "Patient summary Document"
+        },
+        "subject": {
+          "reference": "urn:uuid:5dd6bbfa-9f27-5b82-b702-a2d61d59d040"
+        },
+        "date": "2026-06-18T10:15:00+01:00",
+        "author": [
+          {
+            "reference": "urn:uuid:ed7ebd50-3713-5cac-b82f-60753a72474a"
+          }
+        ],
+        "title": "Simple adult asthma Patient Summary",
+        "custodian": {
+          "reference": "urn:uuid:8385c26f-d170-52f0-9939-eec29d63faec"
+        },
+        "section": [
+          {
+            "title": "Allergies and Intolerances",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48765-2",
+                  "display": "Allergies and adverse reactions Document"
+                }
+              ],
+              "text": "Allergies and Intolerances"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>1 entry recorded for Allergies and Intolerances.</p><table><thead><tr><th>Allergy Type</th><th>Substance</th><th>Onset</th><th>Clinical Status</th><th>Verification Status</th><th>Reaction</th></tr></thead><tbody><tr><td>medication</td><td>No known allergy</td><td>2011-04-12</td><td>Active</td><td>Confirmed</td><td></td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:c43d1102-cbe1-5123-81f6-c90302b7d0dc"
+              }
+            ]
+          },
+          {
+            "title": "Problem List",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "11450-4",
+                  "display": "Problem list - Reported"
+                }
+              ],
+              "text": "Problem List"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>1 entry recorded for Problem List.</p><table><thead><tr><th>Problem</th><th>Onset</th><th>Clinical Status</th><th>Verification Status</th><th>Severity</th></tr></thead><tbody><tr><td>Asthma</td><td>2007-04-12</td><td>Active</td><td>Confirmed</td><td></td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:c3f9dd09-0dc5-5e53-bd33-517393f7722c"
+              }
+            ]
+          },
+          {
+            "title": "Medication Summary",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "10160-0",
+                  "display": "History of Medication use Narrative"
+                }
+              ],
+              "text": "Medication Summary"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>2 entries recorded for Medication Summary.</p><table><thead><tr><th>Medication</th><th>Dates</th><th>Dosage-Timing</th><th>Status</th><th>Route</th></tr></thead><tbody><tr><td>Salbutamol 100 micrograms/dose inhaler</td><td>since 2024-06-18</td><td>Two puffs when required for wheeze or shortness of breath</td><td>active</td><td></td></tr><tr><td>Beclometasone 100 micrograms/dose inhaler</td><td>since 2024-06-18</td><td>One puff twice daily</td><td>active</td><td></td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:d68b8259-e89f-56fd-83ec-b4931eaad43e"
+              },
+              {
+                "reference": "urn:uuid:5cd3e03b-2828-5b12-83c7-4855c8e76371"
+              }
+            ]
+          },
+          {
+            "title": "Vital Signs",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8716-3",
+                  "display": "Vital signs note"
+                }
+              ],
+              "text": "Vital Signs"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>2 entries recorded for Vital Signs.</p><table><thead><tr><th>Vital Sign</th><th>Value</th><th>Date</th><th>Status</th></tr></thead><tbody><tr><td>Body mass index (BMI) [Ratio]</td><td>23.4 kg/m2</td><td>2026-05-28T10:00:00+01:00</td><td>final</td></tr><tr><td>Blood pressure panel with all children optional</td><td>Systolic blood pressure: 118 mm[Hg]; Diastolic blood pressure: 74 mm[Hg]</td><td>2026-05-28T10:00:00+01:00</td><td>final</td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:23a3e34f-273a-5ec8-ad38-5dda7ebff09f"
+              },
+              {
+                "reference": "urn:uuid:56edb464-bbeb-5721-ad2e-f7649ccfc43a"
+              }
+            ]
+          },
+          {
+            "title": "Social History",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "29762-2",
+                  "display": "Social history note"
+                }
+              ],
+              "text": "Social History"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>2 entries recorded for Social History.</p><table><thead><tr><th>Social History Observation</th><th>Value</th><th>Date</th><th>Status</th></tr></thead><tbody><tr><td>Tobacco smoking status</td><td>Never smoked tobacco</td><td>2026-05-28T10:00:00+01:00</td><td>final</td></tr><tr><td>Alcoholic drinks per day</td><td>0.3 /d</td><td>2026-05-28T10:00:00+01:00</td><td>final</td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:6042c94f-8389-507a-ae5d-d65b380b0d2a"
+              },
+              {
+                "reference": "urn:uuid:b33fcf29-c228-5819-ae3b-c3f918925efe"
+              }
+            ]
+          },
+          {
+            "title": "Functional Status",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "47420-5",
+                  "display": "Functional status assessment note"
+                }
+              ],
+              "text": "Functional Status"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>2 entries recorded for Functional Status.</p><table><thead><tr><th>Assessment</th><th>Summary</th><th>Time</th><th>Status</th></tr></thead><tbody><tr><td>Walking (with assistive device if used) during assessment period [CMS Assessment]</td><td>Independent mobility; no assistive device used.</td><td>2026-05-28</td><td>completed</td></tr><tr><td>Cognitive function [Interpretation]</td><td>Independent with usual activities of daily living.</td><td>2026-05-28</td><td>completed</td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:255b3875-a3f7-51c5-b5b4-d562a28ae8eb"
+              },
+              {
+                "reference": "urn:uuid:1d5ca26d-d9e5-54db-aba0-b1ebbb6948c9"
+              }
+            ]
+          },
+          {
+            "title": "History of Procedures",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "47519-4",
+                  "display": "History of Procedures Document"
+                }
+              ],
+              "text": "History of Procedures"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>No information available in source scenario</p></div>"
+            },
+            "emptyReason": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+                  "code": "unavailable",
+                  "display": "Unavailable"
+                }
+              ],
+              "text": "No information available in source scenario"
+            }
+          },
+          {
+            "title": "History of Immunizations",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "11369-6",
+                  "display": "History of Immunization note"
+                }
+              ],
+              "text": "History of Immunizations"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>1 entry recorded for History of Immunizations.</p><table><thead><tr><th>Vaccine</th><th>Date</th><th>Status</th><th>Lot Number</th></tr></thead><tbody><tr><td>Influenza, split virus, trivalent, PF</td><td>2025-10-11</td><td>completed</td><td></td></tr></tbody></table></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:ea447b80-b205-5fe8-a073-84b6c92274ed"
+              }
+            ]
+          },
+          {
+            "title": "Medical Devices",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "46264-8",
+                  "display": "History of medical device use"
+                }
+              ],
+              "text": "Medical Devices"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>No information available in source scenario</p></div>"
+            },
+            "emptyReason": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+                  "code": "unavailable",
+                  "display": "Unavailable"
+                }
+              ],
+              "text": "No information available in source scenario"
+            }
+          },
+          {
+            "title": "Advance Directives",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "42348-3",
+                  "display": "Advance healthcare directives"
+                }
+              ],
+              "text": "Advance Directives"
+            },
+            "text": {
+              "status": "additional",
+              "div": "<div xmlns='http://www.w3.org/1999/xhtml'><p>No information available in source scenario</p></div>"
+            },
+            "emptyReason": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+                  "code": "unavailable",
+                  "display": "Unavailable"
+                }
+              ],
+              "text": "No information available in source scenario"
+            }
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Composition-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5dd6bbfa-9f27-5b82-b702-a2d61d59d040",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "aoife-byrne-patient-main",
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.372.999.1.1",
+            "value": "aoife-byrne"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Byrne",
+            "given": [
+              "Aoife"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1991-04-12",
+        "address": [
+          {
+            "line": [
+              "24 Rathmines Road Lower"
+            ],
+            "city": "Dublin",
+            "postalCode": "D06 X2Y4",
+            "country": "IE"
+          }
+        ],
+        "communication": [
+          {
+            "language": {
+              "coding": [
+                {
+                  "system": "urn:ietf:bcp:47",
+                  "code": "en-IE",
+                  "display": "English (Ireland)"
+                }
+              ],
+              "text": "English (Ireland)"
+            },
+            "preferred": true
+          }
+        ],
+        "generalPractitioner": [
+          {
+            "reference": "urn:uuid:ed7ebd50-3713-5cac-b82f-60753a72474a"
+          }
+        ],
+        "managingOrganization": {
+          "reference": "urn:uuid:81adeba5-2590-5f2a-9d4d-ddc17844edbe"
+        },
+        "maritalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
+              "code": "S",
+              "display": "Never Married"
+            }
+          ],
+          "text": "Never Married"
+        },
+        "contact": [
+          {
+            "relationship": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+                    "code": "N",
+                    "display": "Next-of-Kin"
+                  }
+                ],
+                "text": "Sister"
+              }
+            ],
+            "name": {
+              "family": "Byrne",
+              "given": [
+                "Maeve"
+              ]
+            },
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "+353 87 000 1001",
+                "use": "mobile"
+              }
+            ],
+            "address": {
+              "line": [
+                "42 Clanbrassil Street"
+              ],
+              "city": "Dublin",
+              "postalCode": "D08 A1B2",
+              "country": "IE"
+            }
+          },
+          {
+            "relationship": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+                    "code": "C",
+                    "display": "Emergency Contact"
+                  }
+                ],
+                "text": "Friend"
+              }
+            ],
+            "name": {
+              "family": "Ryan",
+              "given": [
+                "Clodagh"
+              ]
+            },
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "+353 86 000 1002",
+                "use": "mobile"
+              }
+            ]
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Patient-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:ed7ebd50-3713-5cac-b82f-60753a72474a",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "aoife-byrne-practitioner-dr-aoife-kennedy",
+        "name": [
+          {
+            "family": "Kennedy",
+            "given": [
+              "Aoife"
+            ],
+            "prefix": [
+              "Dr"
+            ]
+          }
+        ],
+        "qualification": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "62247001",
+                  "display": "General practitioner"
+                }
+              ],
+              "text": "General practitioner"
+            },
+            "issuer": {
+              "reference": "urn:uuid:a709f93b-e50e-55ba-8b3a-d7aa0f11e387"
+            }
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Practitioner-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a709f93b-e50e-55ba-8b3a-d7aa0f11e387",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "aoife-byrne-org-dublin-gp",
+        "name": "Liffey Family Practice",
+        "address": [
+          {
+            "line": [
+              "12 Capel Street"
+            ],
+            "city": "Dublin",
+            "postalCode": "D01 A2B3",
+            "country": "IE"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Organization-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:81adeba5-2590-5f2a-9d4d-ddc17844edbe",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "ireland-org-hse",
+        "name": "Health Service Executive",
+        "address": [
+          {
+            "line": [
+              "Dr Steevens' Hospital"
+            ],
+            "city": "Dublin",
+            "postalCode": "D08 W2A8",
+            "country": "IE"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.372.980010.1.10",
+            "value": "hse"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Organization-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:8385c26f-d170-52f0-9939-eec29d63faec",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "ireland-org-department-of-health",
+        "name": "Department of Health",
+        "address": [
+          {
+            "line": [
+              "Miesian Plaza",
+              "50-58 Lower Baggot Street"
+            ],
+            "city": "Dublin",
+            "postalCode": "D02 XW14",
+            "country": "IE"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.372.980010.1.11",
+            "value": "department-of-health"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Organization-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c43d1102-cbe1-5123-81f6-c90302b7d0dc",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "aoife-byrne-allergy-no-known-allergies",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "type": "allergy",
+        "category": [
+          "medication"
+        ],
+        "criticality": "low",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "716186003",
+              "display": "No known allergy"
+            }
+          ],
+          "text": "No known allergy"
+        },
+        "patient": {
+          "reference": "urn:uuid:5dd6bbfa-9f27-5b82-b702-a2d61d59d040"
+        },
+        "recordedDate": "2011-04-12",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c3f9dd09-0dc5-5e53-bd33-517393f7722c",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "aoife-byrne-condition-asthma",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "195967001",
+              "display": "Asthma"
+            }
+          ],
+          "text": "Asthma"
+        },
+        "subject": {
+          "reference": "urn:uuid:5dd6bbfa-9f27-5b82-b702-a2d61d59d040"
+        },
+        "onsetDateTime": "2007-04-12",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d68b8259-e89f-56fd-83ec-b4931eaad43e",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "aoife-byrne-medication-salbutamol-inhaler",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Salbutamol 100 micrograms/dose inhaler",
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "745752",
+              "display": "ProAir HFA 90 MCG/ACTUAT Metered Dose Inhaler, 200 ACTUAT"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:5dd6bbfa-9f27-5b82-b702-a2d61d59d040"
+        },
+        "effectivePeriod": {
+          "start": "2024-06-18"
+        },
+        "dateAsserted": "2026-06-18",
+        "dosage": [
+          {
+            "text": "Two puffs when required for wheeze or shortness of breath"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationStatement-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5cd3e03b-2828-5b12-83c7-4855c8e76371",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "aoife-byrne-medication-beclometasone-inhaler",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Beclometasone 100 micrograms/dose inhaler"
+        },
+        "subject": {
+          "reference": "urn:uuid:5dd6bbfa-9f27-5b82-b702-a2d61d59d040"
+        },
+        "effectivePeriod": {
+          "start": "2024-06-18"
+        },
+        "dateAsserted": "2026-06-18",
+        "dosage": [
+          {
+            "text": "One puff twice daily"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationStatement-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:23a3e34f-273a-5ec8-ad38-5dda7ebff09f",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "aoife-byrne-observation-bmi",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5",
+              "display": "Body mass index (BMI) [Ratio]"
+            }
+          ],
+          "text": "Body mass index (BMI) [Ratio]"
+        },
+        "subject": {
+          "reference": "urn:uuid:5dd6bbfa-9f27-5b82-b702-a2d61d59d040"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:ed7ebd50-3713-5cac-b82f-60753a72474a"
+          }
+        ],
+        "effectiveDateTime": "2026-05-28T10:00:00+01:00",
+        "valueQuantity": {
+          "value": 23.4,
+          "unit": "kg/m2",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg/m2"
+        },
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/bmi"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:56edb464-bbeb-5721-ad2e-f7649ccfc43a",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "aoife-byrne-observation-blood-pressure",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure panel with all children optional"
+            }
+          ],
+          "text": "Blood pressure panel with all children optional"
+        },
+        "subject": {
+          "reference": "urn:uuid:5dd6bbfa-9f27-5b82-b702-a2d61d59d040"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:ed7ebd50-3713-5cac-b82f-60753a72474a"
+          }
+        ],
+        "effectiveDateTime": "2026-05-28T10:00:00+01:00",
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic blood pressure"
+                }
+              ],
+              "text": "Systolic blood pressure"
+            },
+            "valueQuantity": {
+              "value": 118,
+              "unit": "mm[Hg]",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic blood pressure"
+                }
+              ],
+              "text": "Diastolic blood pressure"
+            },
+            "valueQuantity": {
+              "value": 74,
+              "unit": "mm[Hg]",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/bp"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6042c94f-8389-507a-ae5d-d65b380b0d2a",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "aoife-byrne-observation-smoking-status-never",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "social-history",
+                "display": "Social History"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72166-2",
+              "display": "Tobacco smoking status"
+            }
+          ],
+          "text": "Tobacco smoking status"
+        },
+        "subject": {
+          "reference": "urn:uuid:5dd6bbfa-9f27-5b82-b702-a2d61d59d040"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:ed7ebd50-3713-5cac-b82f-60753a72474a"
+          }
+        ],
+        "effectiveDateTime": "2026-05-28T10:00:00+01:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "266919005",
+              "display": "Never smoked tobacco"
+            }
+          ],
+          "text": "Never smoked tobacco"
+        },
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-tobaccouse-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:b33fcf29-c228-5819-ae3b-c3f918925efe",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "aoife-byrne-observation-alcohol-drinks-day",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "social-history",
+                "display": "Social History"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "74013-4",
+              "display": "Alcoholic drinks per day"
+            }
+          ],
+          "text": "Alcoholic drinks per day"
+        },
+        "subject": {
+          "reference": "urn:uuid:5dd6bbfa-9f27-5b82-b702-a2d61d59d040"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:ed7ebd50-3713-5cac-b82f-60753a72474a"
+          }
+        ],
+        "effectiveDateTime": "2026-05-28T10:00:00+01:00",
+        "valueQuantity": {
+          "value": 0.3,
+          "unit": "/d",
+          "system": "http://unitsofmeasure.org",
+          "code": "/d"
+        },
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-alcoholuse-uv-ips"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:255b3875-a3f7-51c5-b5b4-d562a28ae8eb",
+      "resource": {
+        "resourceType": "ClinicalImpression",
+        "id": "aoife-byrne-functional-independent-mobility",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "54750-5",
+              "display": "Walking (with assistive device if used) during assessment period [CMS Assessment]"
+            }
+          ],
+          "text": "Walking (with assistive device if used) during assessment period [CMS Assessment]"
+        },
+        "subject": {
+          "reference": "urn:uuid:5dd6bbfa-9f27-5b82-b702-a2d61d59d040"
+        },
+        "effectiveDateTime": "2026-05-28",
+        "summary": "Independent mobility; no assistive device used."
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:1d5ca26d-d9e5-54db-aba0-b1ebbb6948c9",
+      "resource": {
+        "resourceType": "ClinicalImpression",
+        "id": "aoife-byrne-functional-independent-activities",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75275-8",
+              "display": "Cognitive function [Interpretation]"
+            }
+          ],
+          "text": "Cognitive function [Interpretation]"
+        },
+        "subject": {
+          "reference": "urn:uuid:5dd6bbfa-9f27-5b82-b702-a2d61d59d040"
+        },
+        "effectiveDateTime": "2026-05-28",
+        "summary": "Independent with usual activities of daily living."
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:ea447b80-b205-5fe8-a073-84b6c92274ed",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "aoife-byrne-immunization-influenza",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/cvx",
+              "code": "140",
+              "display": "Influenza, split virus, trivalent, PF"
+            }
+          ],
+          "text": "Influenza, split virus, trivalent, PF"
+        },
+        "patient": {
+          "reference": "urn:uuid:5dd6bbfa-9f27-5b82-b702-a2d61d59d040"
+        },
+        "occurrenceDateTime": "2025-10-11",
+        "primarySource": true,
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Immunization-uv-ips"
+          ]
+        }
+      }
+    }
+  ],
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/ips/StructureDefinition/Bundle-uv-ips|2.0.0"
+    ]
+  }
+}
