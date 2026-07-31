@@ -12,3 +12,4 @@ EHDS_aligned_FHIR_resouces.zip
 
 # Ignore temporary files
 temp.*
+temp*
