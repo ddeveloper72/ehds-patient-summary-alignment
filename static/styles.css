@@ -77,6 +77,18 @@ footer span {
   align-items: center;
 }
 
+.header-actions {
+  flex: 0 0 auto;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.header-actions .action-link {
+  justify-content: center;
+  white-space: nowrap;
+}
+
 .control-bar {
   justify-content: space-between;
   border: 1px solid var(--border-strong);
@@ -741,6 +753,15 @@ footer span {
 
   .segmented-control {
     width: 100%;
+  }
+
+  .header-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .header-actions .select-control {
+    flex: 1 0 100%;
   }
 
   .segment-button {
