@@ -155,6 +155,8 @@ http://127.0.0.1:5050/
 This repository is configured for Heroku with a `Procfile` that starts the
 application using Gunicorn. Heroku installs the pinned packages from
 `requirements.txt` during the build.
+The `runtime.txt` file pins Heroku to Python 3.12.4, which has compatible
+Linux wheels for the native packages in the requirements file.
 
 To enable automatic deployment from GitHub:
 
