@@ -211,7 +211,14 @@
                   <div class="clinical-section-heading">
                     <div>
                       <h3>{{ section.title }}</h3>
-                      <p>LOINC {{ section.code }}{% if section.empty_reason %} &middot; {{ section.empty_reason }}{% endif %}</p>
+                      <p>
+                        {% for coding in section.codings %}
+                          {{ coding.system }} {{ coding.code }}{% if not loop.last %} &middot; {% endif %}
+                        {% else %}
+                          No section coding
+                        {% endfor %}
+                        {% if section.empty_reason %} &middot; {{ section.empty_reason }}{% endif %}
+                      </p>
                     </div>
                     <span>{{ section.entry_count }} entries</span>
                   </div>
