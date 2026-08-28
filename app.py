@@ -10,7 +10,7 @@ from __future__ import annotations
 from datetime import datetime
 from pathlib import Path
 
-from flask import Flask, Response, jsonify, redirect, render_template, request, url_for
+from flask import Flask, Response, jsonify, redirect, render_template, request, url_for  # pyright: ignore[reportMissingImports]
 
 from patient_summary import dashboard_model, smart_bundle_model
 
