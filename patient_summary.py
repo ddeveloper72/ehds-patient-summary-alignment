@@ -83,11 +83,26 @@ def find_composition(bundle: dict[str, Any]) -> dict[str, Any] | None:
 
 
 def section_code(section: dict[str, Any]) -> str:
-    """Return the first coded section code, usually the LOINC code."""
+    """Return the first available section code, regardless of coding system."""
     for coding in section.get("code", {}).get("coding", []):
         if coding.get("code"):
             return str(coding["code"])
     return ""
+
+
+def codeable_codings(value: dict[str, Any] | None) -> list[dict[str, str]]:
+    """Return display-ready codings directly from a FHIR CodeableConcept."""
+    if not isinstance(value, dict):
+        return []
+    return [
+        {
+            "system": str(coding.get("system") or "Unspecified code system"),
+            "code": str(coding.get("code") or "No code"),
+            "display": str(coding.get("display") or ""),
+        }
+        for coding in value.get("coding", [])
+        if isinstance(coding, dict) and (coding.get("system") or coding.get("code"))
+    ]
 
 
 def section_key(section: dict[str, Any]) -> str:
@@ -480,11 +495,13 @@ def bundle_model(path: Path, variant: str) -> dict[str, Any]:
 
     for section in composition.get("section", []):
         entries = summarize_section_entries(section, index)
+        codings = codeable_codings(section.get("code"))
         sections.append(
             {
                 "key": section_key(section),
                 "title": section.get("title") or section_code(section) or "Untitled section",
                 "code": section_code(section) or "No code",
+                "codings": codings,
                 "empty_reason": display_from_codeable(section.get("emptyReason")),
                 "entry_count": len(entries),
                 "entries": entries,
@@ -553,6 +570,7 @@ def smart_bundle_model(slug: str, variant: str) -> dict[str, Any]:
 
     for section in composition.get("section", []):
         section_codings = collect_codings(section.get("code", {}), "Composition.section.code")
+        section_code_labels = codeable_codings(section.get("code"))
         rows = []
         for entry in section.get("entry", []):
             reference = str(entry.get("reference") or "")
@@ -565,6 +583,7 @@ def smart_bundle_model(slug: str, variant: str) -> dict[str, Any]:
             {
                 "title": section.get("title") or section_code(section) or "Untitled section",
                 "code": section_code(section) or "No code",
+                "code_labels": section_code_labels,
                 "narrative": clean_xhtml(section.get("text", {}).get("div", "")),
                 "empty_reason": display_from_codeable(section.get("emptyReason")),
                 "codings": section_codings,
