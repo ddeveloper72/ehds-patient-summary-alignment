@@ -150,6 +150,23 @@ Then open:
 http://127.0.0.1:5050/
 ```
 
+## Deploying to Heroku
+
+This repository is configured for Heroku with a `Procfile` that starts the
+application using Gunicorn. Heroku installs the pinned packages from
+`requirements.txt` during the build.
+
+To enable automatic deployment from GitHub:
+
+1. Create a Heroku app and open its **Deploy** tab.
+2. Select **GitHub** under Deployment method and connect the repository
+  `ddeveloper72/ehds-patient-summary-alignment`.
+3. Select the branch to deploy, then enable **Automatic deploys**.
+4. Use **Manual deploy** once to confirm the first build succeeds.
+
+Heroku serves the app on its assigned port through the `web` process defined
+in `Procfile`. Do not commit real patient-identifiable data or secrets.
+
 ## Exporting a Standalone Report
 
 Use the `Export HTML` button in the browser. The generated file embeds the CSS and JavaScript needed for interactive switching, so recipients can open it directly in a browser without this Flask app.
