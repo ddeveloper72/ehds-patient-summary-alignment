@@ -75,7 +75,14 @@
           {% for section in sections %}
             <a href="#section-{{ loop.index }}">
               <strong>{{ section.title }}</strong>
-              <span>LOINC {{ section.code }}{% if section.trace_count %} · {{ section.trace_count }} traces{% endif %}</span>
+              <span>
+                {% for coding in section.code_labels %}
+                  {{ coding.system }} {{ coding.code }}{% if not loop.last %} · {% endif %}
+                {% else %}
+                  No section coding
+                {% endfor %}
+                {% if section.trace_count %} · {{ section.trace_count }} traces{% endif %}
+              </span>
             </a>
           {% endfor %}
         </aside>
@@ -86,7 +93,14 @@
               <div class="clinical-section-heading">
                 <div>
                   <h3>{{ section.title }}</h3>
-                  <p>LOINC {{ section.code }}{% if section.empty_reason %} · {{ section.empty_reason }}{% endif %}</p>
+                  <p>
+                    {% for coding in section.code_labels %}
+                      {{ coding.system }} {{ coding.code }}{% if not loop.last %} · {% endif %}
+                    {% else %}
+                      No section coding
+                    {% endfor %}
+                    {% if section.empty_reason %} · {{ section.empty_reason }}{% endif %}
+                  </p>
                 </div>
                 <div class="trace-badge-row">
                   {% for service in section.services %}
